@@ -239,4 +239,3 @@
       lucide.createIcons();
       setLanguage('en');
     });
-  </script>
