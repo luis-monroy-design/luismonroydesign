@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Luis M Portfolio" },
+      { name: "description", content: "Portafolio UX/UI & Product Design de Luis Monroy" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Luis M Portfolio" },
+      { property: "og:description", content: "Portafolio UX/UI & Product Design de Luis Monroy" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Luis M Portfolio" },
+      { name: "twitter:description", content: "Portafolio UX/UI & Product Design de Luis Monroy" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/77ddae1a0752c35bd75e55cd02a6c82d/id-preview-7f13b037--b606f18e-931c-4d78-8191-966aaa9be4d1.lovable.app-1786071271412.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/77ddae1a0752c35bd75e55cd02a6c82d/id-preview-7f13b037--b606f18e-931c-4d78-8191-966aaa9be4d1.lovable.app-1786071271412.png" },
     ],
     links: [
       {
