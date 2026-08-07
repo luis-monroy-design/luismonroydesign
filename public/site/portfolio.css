@@ -395,6 +395,13 @@
     .logo-item i {
       color: var(--accent-green);
     }
+    .logo-item .logo-img {
+      height: 68px;
+      width: auto;
+      max-width: 220px;
+      object-fit: contain;
+      display: block;
+    }
 
     /* Sections Shared */
     section {
