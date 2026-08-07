@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
-// @ts-expect-error - raw HTML import handled by Vite
 import bodyHtml from "../portfolio-body.html?raw";
+
 
 const title = "Luis Monroy — Product Designer & UX/UI Designer";
 const description =
