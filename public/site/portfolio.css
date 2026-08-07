@@ -396,9 +396,9 @@
       color: var(--accent-green);
     }
     .logo-item .logo-img {
-      height: 34px;
+      height: 68px;
       width: auto;
-      max-width: 160px;
+      max-width: 220px;
       object-fit: contain;
       display: block;
     }
