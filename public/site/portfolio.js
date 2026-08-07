@@ -223,7 +223,7 @@
       // Translate all data-i18n elements
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if {translations[lang] && translations[lang][key]} {
+        if (translations[lang] && translations[lang][key]) {
           el.innerHTML = translations[lang][key];
         }
       });
@@ -235,7 +235,5 @@
     document.getElementById('btn-es').addEventListener('click', () => setLanguage('es'));
 
     // Initialize Lucide icons & language
-    document.addEventListener('DOMContentLoaded', () => {
-      lucide.createIcons();
-      setLanguage('en');
-    });
+    if (window.lucide) lucide.createIcons();
+    setLanguage('en');
