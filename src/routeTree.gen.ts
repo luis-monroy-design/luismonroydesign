@@ -14,6 +14,7 @@ import { Route as LegalSplitRouteImport } from './routes/legal-split'
 import { Route as MicrositiosRouteImport } from './routes/micrositios'
 import { Route as RentekRouteImport } from './routes/rentek'
 import { Route as SeosEnergyRouteImport } from './routes/seos-energy'
+import { Route as UnalRouteImport } from './routes/unal'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,6 +41,11 @@ const SeosEnergyRoute = SeosEnergyRouteImport.update({
   path: '/seos-energy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UnalRoute = UnalRouteImport.update({
+  id: '/unal',
+  path: '/unal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/micrositios': typeof MicrositiosRoute
   '/rentek': typeof RentekRoute
   '/seos-energy': typeof SeosEnergyRoute
+  '/unal': typeof UnalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/micrositios': typeof MicrositiosRoute
   '/rentek': typeof RentekRoute
   '/seos-energy': typeof SeosEnergyRoute
+  '/unal': typeof UnalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,12 +70,15 @@ export interface FileRoutesById {
   '/micrositios': typeof MicrositiosRoute
   '/rentek': typeof RentekRoute
   '/seos-energy': typeof SeosEnergyRoute
+  '/unal': typeof UnalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/legal-split' | '/micrositios' | '/rentek' | '/seos-energy'
+  fullPaths:
+    '/' | '/legal-split' | '/micrositios' | '/rentek' | '/seos-energy' | '/unal'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/legal-split' | '/micrositios' | '/rentek' | '/seos-energy'
+  to:
+    '/' | '/legal-split' | '/micrositios' | '/rentek' | '/seos-energy' | '/unal'
   id:
     | '__root__'
     | '/'
@@ -75,6 +86,7 @@ export interface FileRouteTypes {
     | '/micrositios'
     | '/rentek'
     | '/seos-energy'
+    | '/unal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -83,6 +95,7 @@ export interface RootRouteChildren {
   MicrositiosRoute: typeof MicrositiosRoute
   RentekRoute: typeof RentekRoute
   SeosEnergyRoute: typeof SeosEnergyRoute
+  UnalRoute: typeof UnalRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -122,6 +135,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SeosEnergyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/unal': {
+      id: '/unal'
+      path: '/unal'
+      fullPath: '/unal'
+      preLoaderRoute: typeof UnalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -131,6 +151,7 @@ const rootRouteChildren: RootRouteChildren = {
   MicrositiosRoute: MicrositiosRoute,
   RentekRoute: RentekRoute,
   SeosEnergyRoute: SeosEnergyRoute,
+  UnalRoute: UnalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
