@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as IWannaTravelRouteImport } from './routes/i-wanna-travel'
+import { Route as LegalSplitRouteImport } from './routes/legal-split'
+import { Route as MicrositiosRouteImport } from './routes/micrositios'
+import { Route as RentekRouteImport } from './routes/rentek'
+import { Route as SeosEnergyRouteImport } from './routes/seos-energy'
+import { Route as UnalRouteImport } from './routes/unal'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IWannaTravelRoute = IWannaTravelRouteImport.update({
+  id: '/i-wanna-travel',
+  path: '/i-wanna-travel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalSplitRoute = LegalSplitRouteImport.update({
+  id: '/legal-split',
+  path: '/legal-split',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MicrositiosRoute = MicrositiosRouteImport.update({
+  id: '/micrositios',
+  path: '/micrositios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RentekRoute = RentekRouteImport.update({
+  id: '/rentek',
+  path: '/rentek',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeosEnergyRoute = SeosEnergyRouteImport.update({
+  id: '/seos-energy',
+  path: '/seos-energy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UnalRoute = UnalRouteImport.update({
+  id: '/unal',
+  path: '/unal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/i-wanna-travel': typeof IWannaTravelRoute
+  '/legal-split': typeof LegalSplitRoute
+  '/micrositios': typeof MicrositiosRoute
+  '/rentek': typeof RentekRoute
+  '/seos-energy': typeof SeosEnergyRoute
+  '/unal': typeof UnalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/i-wanna-travel': typeof IWannaTravelRoute
+  '/legal-split': typeof LegalSplitRoute
+  '/micrositios': typeof MicrositiosRoute
+  '/rentek': typeof RentekRoute
+  '/seos-energy': typeof SeosEnergyRoute
+  '/unal': typeof UnalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/i-wanna-travel': typeof IWannaTravelRoute
+  '/legal-split': typeof LegalSplitRoute
+  '/micrositios': typeof MicrositiosRoute
+  '/rentek': typeof RentekRoute
+  '/seos-energy': typeof SeosEnergyRoute
+  '/unal': typeof UnalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/i-wanna-travel'
+    | '/legal-split'
+    | '/micrositios'
+    | '/rentek'
+    | '/seos-energy'
+    | '/unal'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/i-wanna-travel'
+    | '/legal-split'
+    | '/micrositios'
+    | '/rentek'
+    | '/seos-energy'
+    | '/unal'
+  id:
+    | '__root__'
+    | '/'
+    | '/i-wanna-travel'
+    | '/legal-split'
+    | '/micrositios'
+    | '/rentek'
+    | '/seos-energy'
+    | '/unal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  IWannaTravelRoute: typeof IWannaTravelRoute
+  LegalSplitRoute: typeof LegalSplitRoute
+  MicrositiosRoute: typeof MicrositiosRoute
+  RentekRoute: typeof RentekRoute
+  SeosEnergyRoute: typeof SeosEnergyRoute
+  UnalRoute: typeof UnalRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +130,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/i-wanna-travel': {
+      id: '/i-wanna-travel'
+      path: '/i-wanna-travel'
+      fullPath: '/i-wanna-travel'
+      preLoaderRoute: typeof IWannaTravelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal-split': {
+      id: '/legal-split'
+      path: '/legal-split'
+      fullPath: '/legal-split'
+      preLoaderRoute: typeof LegalSplitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/micrositios': {
+      id: '/micrositios'
+      path: '/micrositios'
+      fullPath: '/micrositios'
+      preLoaderRoute: typeof MicrositiosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rentek': {
+      id: '/rentek'
+      path: '/rentek'
+      fullPath: '/rentek'
+      preLoaderRoute: typeof RentekRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seos-energy': {
+      id: '/seos-energy'
+      path: '/seos-energy'
+      fullPath: '/seos-energy'
+      preLoaderRoute: typeof SeosEnergyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/unal': {
+      id: '/unal'
+      path: '/unal'
+      fullPath: '/unal'
+      preLoaderRoute: typeof UnalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  IWannaTravelRoute: IWannaTravelRoute,
+  LegalSplitRoute: LegalSplitRoute,
+  MicrositiosRoute: MicrositiosRoute,
+  RentekRoute: RentekRoute,
+  SeosEnergyRoute: SeosEnergyRoute,
+  UnalRoute: UnalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

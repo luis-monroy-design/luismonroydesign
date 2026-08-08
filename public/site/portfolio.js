@@ -102,7 +102,10 @@
         "cases.p6": "E-learning portal redesign focusing on gamified student engagement, parent tracking, and accessible UI.",
 
         "contact.tag": "// GET IN TOUCH",
-        "contact.heading": "Let's build digital products that make an impact."
+        "contact.heading": "Let's build digital products that make an impact.",
+        "soon.title": "Case study in progress",
+        "soon.desc": "This item is currently being updated. Come back soon to see the full case study.",
+        "soon.close": "Got it"
       },
       es: {
         "nav.experience": "Experiencia",
@@ -207,7 +210,10 @@
         "cases.p6": "Rediseño de portal e-learning enfocado en ludificación para estudiantes, seguimiento de padres y UX accesible.",
 
         "contact.tag": "// CONTACTO",
-        "contact.heading": "Construyamos productos digitales que generen impacto real."
+        "contact.heading": "Construyamos productos digitales que generen impacto real.",
+        "soon.title": "Caso de estudio en proceso",
+        "soon.desc": "Este ítem está en proceso de actualización. Vuelve pronto para ver el caso de estudio completo.",
+        "soon.close": "Entendido"
       }
     };
 
@@ -237,3 +243,26 @@
     // Initialize Lucide icons & language
     if (window.lucide) lucide.createIcons();
     setLanguage('en');
+
+
+    // Clickable company cards
+    (function () {
+      const modal = document.getElementById('soonModal');
+      const openModal = () => modal && modal.classList.add('open');
+      const closeModal = () => modal && modal.classList.remove('open');
+      const closeBtn = document.getElementById('soonClose');
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+      document.querySelectorAll('.clickable-card').forEach((card) => {
+        card.addEventListener('click', () => {
+          const url = card.getAttribute('data-link');
+          if (url) {
+            window.open(url, '_blank', 'noopener,noreferrer');
+          } else {
+            openModal();
+          }
+        });
+      });
+    })();
