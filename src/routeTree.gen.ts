@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LegalSplitRouteImport } from './routes/legal-split'
 import { Route as RentekRouteImport } from './routes/rentek'
 import { Route as SeosEnergyRouteImport } from './routes/seos-energy'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalSplitRoute = LegalSplitRouteImport.update({
+  id: '/legal-split',
+  path: '/legal-split',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RentekRoute = RentekRouteImport.update({
@@ -31,30 +37,34 @@ const SeosEnergyRoute = SeosEnergyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/legal-split': typeof LegalSplitRoute
   '/rentek': typeof RentekRoute
   '/seos-energy': typeof SeosEnergyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/legal-split': typeof LegalSplitRoute
   '/rentek': typeof RentekRoute
   '/seos-energy': typeof SeosEnergyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/legal-split': typeof LegalSplitRoute
   '/rentek': typeof RentekRoute
   '/seos-energy': typeof SeosEnergyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/rentek' | '/seos-energy'
+  fullPaths: '/' | '/legal-split' | '/rentek' | '/seos-energy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/rentek' | '/seos-energy'
-  id: '__root__' | '/' | '/rentek' | '/seos-energy'
+  to: '/' | '/legal-split' | '/rentek' | '/seos-energy'
+  id: '__root__' | '/' | '/legal-split' | '/rentek' | '/seos-energy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LegalSplitRoute: typeof LegalSplitRoute
   RentekRoute: typeof RentekRoute
   SeosEnergyRoute: typeof SeosEnergyRoute
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal-split': {
+      id: '/legal-split'
+      path: '/legal-split'
+      fullPath: '/legal-split'
+      preLoaderRoute: typeof LegalSplitRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/rentek': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LegalSplitRoute: LegalSplitRoute,
   RentekRoute: RentekRoute,
   SeosEnergyRoute: SeosEnergyRoute,
 }
