@@ -187,7 +187,7 @@ export function CompanyPage({
       {gallery && gallery.length > 0 && (
         <>
           <div className="section-header" style={{ marginTop: 56, marginBottom: 16 }}>
-            <span className="section-tag">{(galleryTag ?? ui[lang])[lang] ?? t.gallery}</span>
+            <span className="section-tag">{galleryTag ? galleryTag[lang] : t.gallery}</span>
             <h2 className="section-title" style={{ margin: 0 }}>
               {galleryTitle ? galleryTitle[lang] : t.galleryTitle}
             </h2>
