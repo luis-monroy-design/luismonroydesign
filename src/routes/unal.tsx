@@ -35,7 +35,7 @@ export const Route = createFileRoute("/unal")({
           "WordPress maintenance of the UNAL Alumni Program website and design of digital pieces aimed at the alumni audience of Universidad Nacional de Colombia, including rebranding work for the 'Diálogos con Egresados' initiative.",
         tags: ["WordPress", "Digital Pieces", "Rebranding", "Alumni Audience"],
         impact:
-          "Kept the alumni portal current and consistent while unifying the program's digital identity across web and campaign pieces.",
+          "Reduced Home page bounce rate by 25% and boosted readership of 'Soy Egresado' magazine articles by 15%, while unifying the program's digital identity across web and campaign pieces.",
         projects: [
           {
             name: "Sitio Web Egresados UNAL",
@@ -57,7 +57,7 @@ export const Route = createFileRoute("/unal")({
           "Mantenimiento del sitio en WordPress y diseño de piezas digitales dirigidas a la audiencia de egresados de la Universidad Nacional de Colombia, incluyendo el rebranding de la iniciativa 'Diálogos con Egresados'.",
         tags: ["WordPress", "Piezas Digitales", "Rebranding", "Audiencia de Egresados"],
         impact:
-          "Mantuvimos el portal de egresados actualizado y consistente, unificando la identidad digital del programa entre el sitio web y las piezas de campaña.",
+          "Disminuimos en un 25% la tasa de rebote en el Home y aumentamos en un 15% las visitas a los artículos de la revista 'Soy Egresado', unificando la identidad digital del programa.",
         projects: [
           {
             name: "Sitio Web Egresados UNAL",
