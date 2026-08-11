@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CompanyPage, companyHeadLinks } from "../components/CompanyPage";
 
 const title = "Universidad Nacional de Colombia — UX/UI Design | Luis Monroy";
-const description = "UNAL case overview: experience design for the UNAL Alumni Program web portal.";
+const description =
+  "UNAL case: WordPress maintenance of the alumni portal and digital pieces designed for the UNAL alumni audience.";
 
 export const Route = createFileRoute("/unal")({
   head: () => ({
@@ -19,23 +20,32 @@ export const Route = createFileRoute("/unal")({
   component: () => (
     <CompanyPage
       company="Universidad Nacional de Colombia"
+      cta={{
+        href: "https://egresados.unal.edu.co/",
+        label: { en: "Visit egresados.unal.edu.co", es: "Visitar egresados.unal.edu.co" },
+        note: {
+          en: "The portal is live and continuously updated by the program team. Explore it to see the structure, sections and digital pieces in their real context.",
+          es: "El portal está en vivo y el equipo del programa lo actualiza continuamente. Explóralo para ver la estructura, las secciones y las piezas digitales en su contexto real.",
+        },
+      }}
       en={{
         role: "UX/UI Designer",
         period: "Oct 2022 – Sep 2023",
         intro:
-          "Experience design for the UNAL Alumni Program web portal, including rebranding work for the 'Diálogos con Egresados' initiative.",
-        tags: ["EdTech", "Rebranding", "Web Portal", "UX/UI"],
+          "WordPress maintenance of the UNAL Alumni Program website and design of digital pieces aimed at the alumni audience of Universidad Nacional de Colombia, including rebranding work for the 'Diálogos con Egresados' initiative.",
+        tags: ["WordPress", "Digital Pieces", "Rebranding", "Alumni Audience"],
         impact:
-          "Unified the alumni program's digital identity and made program content easier to browse and share.",
+          "Kept the alumni portal current and consistent while unifying the program's digital identity across web and campaign pieces.",
         projects: [
           {
             name: "Sitio Web Egresados UNAL",
             summary:
-              "Portal design for the alumni community, covering events, benefits and program communication.",
+              "Ongoing WordPress maintenance and content design for the alumni portal: events, benefits and program communication.",
             highlights: [
-              "Visual identity and rebranding application",
+              "WordPress page and content maintenance",
               "Information architecture for alumni content",
-              "Responsive page templates",
+              "Digital pieces for campaigns and program events",
+              "'Diálogos con Egresados' visual identity applied across the site",
             ],
           },
         ],
@@ -44,19 +54,20 @@ export const Route = createFileRoute("/unal")({
         role: "Diseñador UX/UI",
         period: "Oct 2022 – Sep 2023",
         intro:
-          "Diseño de experiencia para el portal web del Programa de Egresados de la UNAL, incluyendo el rebranding de la iniciativa 'Diálogos con Egresados'.",
-        tags: ["EdTech", "Rebranding", "Portal Web", "UX/UI"],
+          "Mantenimiento del sitio en WordPress y diseño de piezas digitales dirigidas a la audiencia de egresados de la Universidad Nacional de Colombia, incluyendo el rebranding de la iniciativa 'Diálogos con Egresados'.",
+        tags: ["WordPress", "Piezas Digitales", "Rebranding", "Audiencia de Egresados"],
         impact:
-          "Unificamos la identidad digital del programa y facilitamos la navegación y difusión de sus contenidos.",
+          "Mantuvimos el portal de egresados actualizado y consistente, unificando la identidad digital del programa entre el sitio web y las piezas de campaña.",
         projects: [
           {
             name: "Sitio Web Egresados UNAL",
             summary:
-              "Diseño del portal para la comunidad de egresados: eventos, beneficios y comunicación del programa.",
+              "Mantenimiento continuo en WordPress y diseño de contenidos del portal: eventos, beneficios y comunicación del programa.",
             highlights: [
-              "Aplicación de identidad visual y rebranding",
+              "Mantenimiento de páginas y contenidos en WordPress",
               "Arquitectura de información para contenido de egresados",
-              "Plantillas de página responsive",
+              "Piezas digitales para campañas y eventos del programa",
+              "Identidad visual de 'Diálogos con Egresados' aplicada en el sitio",
             ],
           },
         ],
