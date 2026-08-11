@@ -20,6 +20,8 @@ export type CompanyContent = {
 
 export type GalleryItem = {
   url: string;
+  /** Optional max render width in px (useful for narrow mobile screenshots). */
+  maxWidth?: number;
   title: { en: string; es: string };
   caption: { en: string; es: string };
 };
@@ -31,7 +33,9 @@ export type CompanyPageProps = {
   gallery?: GalleryItem[];
   galleryTag?: { en: string; es: string };
   galleryTitle?: { en: string; es: string };
+  cta?: { href: string; label: { en: string; es: string }; note?: { en: string; es: string } };
 };
+
 
 const ui = {
   en: {
@@ -61,6 +65,7 @@ export function CompanyPage({
   gallery,
   galleryTag,
   galleryTitle,
+  cta,
 }: CompanyPageProps) {
   const [lang, setLang] = useState<"en" | "es">("en");
   const c = lang === "en" ? en : es;
@@ -201,6 +206,7 @@ export function CompanyPage({
                   loading="lazy"
                   style={{
                     width: "100%",
+                    maxWidth: g.maxWidth ?? "100%",
                     display: "block",
                     borderRadius: 12,
                     border: "1px solid var(--border-color)",
@@ -213,6 +219,23 @@ export function CompanyPage({
             ))}
           </div>
         </>
+      )}
+
+      {cta && (
+        <div className="company-impact" style={{ marginTop: 48, flexWrap: "wrap" }}>
+          <div className="impact-text">
+            {cta.note && <p style={{ margin: "0 0 12px" }}>{cta.note[lang]}</p>}
+            <a
+              className="tech-tag"
+              href={cta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", display: "inline-block" }}
+            >
+              {cta.label[lang]} ↗
+            </a>
+          </div>
+        </div>
       )}
     </main>
   );

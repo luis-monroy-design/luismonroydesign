@@ -3,7 +3,11 @@ import { CompanyPage, companyHeadLinks } from "../components/CompanyPage";
 
 const title = "SEOS Energy — Product Design | Luis Monroy";
 const description =
-  "How I led end-to-end product design at SEOS Energy: website, SEOS Studio and SEOS Partners.";
+  "SEOS Energy case: SEOS Partners mobile app, SEOS Studio solar CRM and the seosenergy.co website built on Webflow.";
+
+const partners = "/__l5e/assets-v1/e577bc0c-f148-4859-a654-1643a22f26c1/SEOS_Partners.jpg";
+const studio = "/__l5e/assets-v1/fba46f5f-8ae4-473f-a5b7-651609bcbb34/SEOS_Studio.jpg";
+const site = "/__l5e/assets-v1/f72a7ceb-ece6-40cc-af0f-e3025ef297ac/SEOS_WEBSITE.jpg";
 
 export const Route = createFileRoute("/seos-energy")({
   head: () => ({
@@ -20,43 +24,74 @@ export const Route = createFileRoute("/seos-energy")({
   component: () => (
     <CompanyPage
       company="SEOS Energy"
+      galleryTag={{ en: "// CASE BOARDS", es: "// TABLEROS DEL CASO" }}
+      galleryTitle={{ en: "Process & interfaces", es: "Proceso e interfaces" }}
+      gallery={[
+        {
+          url: partners,
+          title: { en: "SEOS Partners — Product design", es: "SEOS Partners — Product design" },
+          caption: {
+            en: "Discovery, UX research and Design Sprint: How Might We definition, user flow for the credit request, usability testing, service design (Auth0, Treble.ai, HubSpot) and the MVP screens of the native mobile app.",
+            es: "Discovery, UX research y Design Sprint: definición de How Might We, flujo de uso para la solicitud de crédito, prueba de usabilidad, diseño de servicios (Auth0, Treble.ai, HubSpot) y las pantallas del MVP de la app nativa.",
+          },
+        },
+        {
+          url: studio,
+          title: { en: "SEOS Studio — Solar CRM", es: "SEOS Studio — CRM solar" },
+          caption: {
+            en: "Context and objective, role and module system, workflow builder (Stages, Checks, Tools, AI Agents), look & feel of the operational tables and the updated features of the platform.",
+            es: "Contexto y objetivo, sistema de roles y de módulos, creación de workflows (Stages, Checks, Tools, AI Agents), look & feel de las tablas operativas y funcionalidades actualizadas de la plataforma.",
+          },
+        },
+        {
+          url: site,
+          title: { en: "Web 2.0 — seosenergy.co", es: "Web 2.0 — seosenergy.co" },
+          caption: {
+            en: "Problem statement, objectives, benchmark (Niko, Solara, Ruut) and the resulting visual design of the public website, built and shipped on Webflow.",
+            es: "Problemática, objetivos, benchmark (Niko, Solara, Ruut) y el resultado visual del sitio web público, construido e implementado en Webflow.",
+          },
+        },
+      ]}
       en={{
         role: "Product Designer",
         period: "Sep 2023 – Jan 2026",
         intro:
-          "Digital platform design and optimization for residential solar energy financing. I owned design strategy, the design system and the full UX/UI across desktop and mobile, working closely with a lean product and engineering team.",
-        tags: ["Fintech / Cleantech", "End-to-End Product", "Design Strategy", "Design System"],
+          "End-to-end product design for residential solar energy financing across three products: a native mobile app for fast project simulation, an all-in-one operational platform, and the public website. I owned design strategy, the design system and the full UX/UI on desktop and mobile alongside a lean product and engineering team.",
+        tags: ["Fintech / Cleantech", "Native Mobile App", "Operational Platform", "Webflow"],
         impact:
           "Reduced customer support tickets by 55% while maintaining operations with only 20% of the original Product/Tech team size.",
         projects: [
           {
-            name: "Website",
+            name: "SEOS Partners",
             summary:
-              "Public marketing site redesign focused on explaining solar financing clearly and converting qualified leads.",
+              "Native mobile app for fast simulation of solar energy projects, used by both end customers and the sales force.",
             highlights: [
-              "Information architecture and messaging hierarchy",
-              "Responsive desktop and mobile layouts",
-              "Lead capture flow and conversion tracking",
+              "Quick project simulation and credit request flow",
+              "Discovery, UX research and Design Sprint (How Might We)",
+              "Service design with Auth0, Treble.ai and HubSpot",
+              "MVP screens validated through usability testing",
             ],
           },
           {
             name: "SEOS Studio",
             summary:
-              "Internal design and configuration tool used by the operations team to build and manage solar proposals.",
+              "All-in-one platform grouping simulation, credit assessment, portfolio/collections, technical site visits, project tracking and energy consumption monitoring.",
             highlights: [
-              "Workflow mapping with operations stakeholders",
-              "Component library and reusable patterns",
-              "Usability testing and iterative refinement",
+              "Role system and modular structure per team",
+              "Workflow builder with stages, checks, tools and AI agents",
+              "Operational tables and dashboards for daily management",
+              "Design system reused across every module",
             ],
           },
           {
-            name: "SEOS Partners",
+            name: "SEOS website",
             summary:
-              "Partner-facing portal for installers and commercial allies to track opportunities and financing status.",
+              "Public website (seosenergy.co) redesigned and implemented on Webflow to modernize the brand and attract investors and customers.",
             highlights: [
-              "Role-based dashboards and permissions UX",
-              "Status tracking and notification design",
-              "Onboarding flow for new partners",
+              "Benchmark of solar market references (Niko, Solara, Ruut)",
+              "Clearer messaging hierarchy for the solar offer",
+              "Modern, transparent visual language for investors",
+              "Responsive build and shipping on Webflow",
             ],
           },
         ],
@@ -65,39 +100,42 @@ export const Route = createFileRoute("/seos-energy")({
         role: "Product Designer",
         period: "Sep 2023 – Ene 2026",
         intro:
-          "Diseño y optimización de la plataforma digital para financiamiento de energía solar residencial. Lideré la estrategia de diseño, el design system y todo el UX/UI en desktop y mobile, trabajando con un equipo reducido de producto e ingeniería.",
-        tags: ["Fintech / Cleantech", "Producto End-to-End", "Estrategia de Diseño", "Design System"],
+          "Diseño de producto end-to-end para financiamiento de energía solar residencial en tres productos: una app nativa mobile para simulación rápida de proyectos, una plataforma operativa integral y el sitio web público. Lideré la estrategia de diseño, el design system y todo el UX/UI en desktop y mobile junto a un equipo reducido de producto e ingeniería.",
+        tags: ["Fintech / Cleantech", "App Nativa Mobile", "Plataforma Operativa", "Webflow"],
         impact:
           "Redujimos los tickets de soporte en un 55% manteniendo la operación con solo el 20% del equipo original de Producto/Tech.",
         projects: [
           {
-            name: "Website",
+            name: "SEOS Partners",
             summary:
-              "Rediseño del sitio público, enfocado en explicar con claridad el financiamiento solar y convertir leads calificados.",
+              "App nativa mobile para la simulación rápida de proyectos de energía solar, usada tanto por clientes como por vendedores.",
             highlights: [
-              "Arquitectura de información y jerarquía de mensajes",
-              "Layouts responsive para desktop y mobile",
-              "Flujo de captación de leads y medición de conversión",
+              "Simulación rápida del proyecto y flujo de solicitud de crédito",
+              "Discovery, UX research y Design Sprint (How Might We)",
+              "Diseño de servicios con Auth0, Treble.ai y HubSpot",
+              "Pantallas del MVP validadas con pruebas de usabilidad",
             ],
           },
           {
             name: "SEOS Studio",
             summary:
-              "Herramienta interna de configuración usada por el equipo de operaciones para construir y gestionar propuestas solares.",
+              "Plataforma integral que agrupa la simulación, los estudios de crédito, la cartera, las visitas técnicas, el seguimiento de proyectos y el monitoreo de consumo energético.",
             highlights: [
-              "Mapeo de flujos con el equipo de operaciones",
-              "Librería de componentes y patrones reutilizables",
-              "Pruebas de usabilidad e iteración continua",
+              "Sistema de roles y estructura modular por equipo",
+              "Creación de workflows con stages, checks, tools y AI agents",
+              "Tablas y dashboards operativos para la gestión diaria",
+              "Design system reutilizado en todos los módulos",
             ],
           },
           {
-            name: "SEOS Partners",
+            name: "Sitio Web SEOS",
             summary:
-              "Portal para instaladores y aliados comerciales, para hacer seguimiento a oportunidades y estados de financiación.",
+              "Sitio web público (seosenergy.co) rediseñado e implementado en Webflow para modernizar la marca y atraer inversionistas y clientes.",
             highlights: [
-              "Dashboards por rol y UX de permisos",
-              "Diseño de seguimiento de estados y notificaciones",
-              "Flujo de onboarding para nuevos aliados",
+              "Benchmark de referentes del mercado solar (Niko, Solara, Ruut)",
+              "Jerarquía de mensajes más clara para la oferta solar",
+              "Lenguaje visual moderno y transparente para inversionistas",
+              "Construcción e implementación responsive en Webflow",
             ],
           },
         ],

@@ -24,18 +24,18 @@
 
         "exp.c1.role": "Product Designer",
         "exp.c1.period": "Sep 2023 – Jan 2026",
-        "exp.c1.desc": "Digital platform design and optimization for residential solar energy financing.",
-        "exp.c1.p1": "Design strategy & End-to-end Product Launch",
-        "exp.c1.p2": "End-to-end digital product design & design system",
-        "exp.c1.p3": "Full UX/UI Design across Desktop & Mobile platforms",
+        "exp.c1.desc": "End-to-end product design for residential solar energy financing across three products: SEOS Partners, SEOS Studio and the SEOS website.",
+        "exp.c1.p1": "SEOS Partners: native mobile app for fast solar project simulation",
+        "exp.c1.p2": "SEOS Studio: simulation, credit, collections, site visits & monitoring",
+        "exp.c1.p3": "SEOS website: design and implementation on Webflow",
         "exp.c1.impact": "<strong>Key Impact:</strong> Reduced customer support tickets by 55% while maintaining operations with only 20% of the original Product/Tech team size.",
 
         "exp.c2.role": "UX/UI Designer",
         "exp.c2.period": "Oct 2024 – Feb 2025",
-        "exp.c2.desc": "Loan simulator design for asset renting tailored for B2B enterprises and retail clients.",
-        "exp.c2.p1": "UI design & implementation on Webflow platform",
-        "exp.c2.p2": "UX Benchmarking for competitive renting market analysis",
-        "exp.c2.p3": "Interactive Desktop & Mobile simulator prototyping",
+        "exp.c2.desc": "Renting simulator redesign and full corporate website redesign (rentek.com.co) built on Webflow.",
+        "exp.c2.p1": "Corporate website redesign & implementation on Webflow",
+        "exp.c2.p2": "Copy and visual assets optimized for the financial product portfolio",
+        "exp.c2.p3": "Renting simulator redesign for desktop & mobile",
         "exp.c2.impact": "<strong>Key Impact:</strong> Increased lead capture by 30% compared to the previous simulator design.",
 
         "exp.c3.role": "UX/UI Designer",
@@ -48,15 +48,15 @@
 
         "exp.c4.role": "UX/UI Designer",
         "exp.c4.period": "Feb 2026 – Apr 2026",
-        "exp.c4.desc": "User experience design for high-traffic Colombian Government websites.",
+        "exp.c4.desc": "User experience design for high-traffic Colombian Government websites: Transmilenio and Unicolmayor.",
         "exp.c4.p1": "Mid and high-fidelity interactive prototyping",
         "exp.c4.p2": "Responsive Desktop & Mobile design architecture",
-        "exp.c4.p3": "Visibility improvements for extensive educational content",
+        "exp.c4.p3": "Menu reduction to cut unnecessary scrolling on long-form content",
         "exp.c4.impact": "<strong>Key Impact:</strong> Redesigned lateral menu systems for Transmilenio & Unicolmayor government portals, reducing user scrolling by 68%.",
 
         "exp.c5.role": "UX/UI Designer",
         "exp.c5.period": "Oct 2022 – Sep 2023",
-        "exp.c5.desc": "Experience design for the UNAL Alumni Program web portal.",
+        "exp.c5.desc": "WordPress maintenance and digital pieces for the UNAL Alumni Program portal.",
         "exp.c5.p1": "Website design & low-code maintenance on WordPress",
         "exp.c5.p2": "UX copywriting & visual assets for institutional portal",
         "exp.c5.p3": "Complete re-branding of the Alumni Portal",
@@ -132,18 +132,18 @@
 
         "exp.c1.role": "Product Designer",
         "exp.c1.period": "Sep 2023 – Ene 2026",
-        "exp.c1.desc": "Diseño y mejoramiento de plataforma digital para financiamiento de sistemas de energía solar en el sector residencial.",
-        "exp.c1.p1": "Estrategia de Diseño y Lanzamiento de Producto",
-        "exp.c1.p2": "Diseño de productos digitales end-to-end",
-        "exp.c1.p3": "Diseño UX/UI para Desktop y Mobile",
+        "exp.c1.desc": "Diseño de producto end-to-end para financiamiento de energía solar residencial en tres productos: SEOS Partners, SEOS Studio y el sitio web SEOS.",
+        "exp.c1.p1": "SEOS Partners: app nativa mobile para simulación rápida de proyectos solares",
+        "exp.c1.p2": "SEOS Studio: simulación, crédito, cartera, visitas técnicas y monitoreo",
+        "exp.c1.p3": "Sitio Web SEOS: diseño e implementación en Webflow",
         "exp.c1.impact": "<strong>Impacto Clave:</strong> Redujimos los tickets de soporte en un 55% en la plataforma, utilizando solo el 20% del equipo original de Product/Tech.",
 
         "exp.c2.role": "Diseñador UX/UI",
         "exp.c2.period": "Oct 2024 – Feb 2025",
-        "exp.c2.desc": "Diseño de simulador de préstamos para renta de activos para empresas y personas naturales.",
-        "exp.c2.p1": "Diseño e implementación de UI para sitio web alojado en Webflow",
-        "exp.c2.p2": "Benchmark para diseño UX competitivo en el mercado del renting",
-        "exp.c2.p3": "Prototipado y Diseño Interactivo para Desktop y Mobile",
+        "exp.c2.desc": "Rediseño del simulador de renting y rediseño integral del sitio web corporativo (rentek.com.co) en Webflow.",
+        "exp.c2.p1": "Rediseño e implementación del sitio corporativo en Webflow",
+        "exp.c2.p2": "Optimización de copys y piezas visuales del portafolio financiero",
+        "exp.c2.p3": "Rediseño del simulador de renting para desktop y mobile",
         "exp.c2.impact": "<strong>Impacto Clave:</strong> Aumentamos la captación de leads en un 30% en comparación con el simulador anterior.",
 
         "exp.c3.role": "Diseñador UX/UI",
@@ -156,15 +156,15 @@
 
         "exp.c4.role": "Diseñador UX/UI",
         "exp.c4.period": "Feb 2026 – Abr 2026",
-        "exp.c4.desc": "Diseño de experiencia de usuario para sitios web del Gobierno de Colombia.",
+        "exp.c4.desc": "Diseño de experiencia de usuario para sitios web del Gobierno de Colombia: Transmilenio y Unicolmayor.",
         "exp.c4.p1": "Prototipado en media y alta fidelidad",
         "exp.c4.p2": "Diseño en versión Desktop y Mobile",
-        "exp.c4.p3": "Mejoras de visibilidad para contenido educativo extenso",
+        "exp.c4.p3": "Reducción de menús para disminuir el scroll innecesario en contenidos extensos",
         "exp.c4.impact": "<strong>Impacto Clave:</strong> Mejoré la visualización de los menús laterales en los sitios web de Transmilenio y Unicolmayor, reduciendo el scroll en un 68%.",
 
         "exp.c5.role": "Diseñador UX/UI",
         "exp.c5.period": "Oct 2022 – Sep 2023",
-        "exp.c5.desc": "Diseño de experiencia para el sitio web del Programa de Egresados de la UNAL.",
+        "exp.c5.desc": "Mantenimiento en WordPress y diseño de piezas digitales para el portal de Egresados UNAL.",
         "exp.c5.p1": "Diseño y mantenimiento del sitio web alojado en WordPress (Low-Code)",
         "exp.c5.p2": "Diseño de copys y piezas visuales para sitio web institucional",
         "exp.c5.p3": "Re-branding del portal de Egresados",
@@ -257,12 +257,16 @@
 
       document.querySelectorAll('.clickable-card').forEach((card) => {
         card.addEventListener('click', () => {
+          const route = card.getAttribute('data-route');
           const url = card.getAttribute('data-link');
-          if (url) {
+          if (route) {
+            window.location.href = route;
+          } else if (url) {
             window.open(url, '_blank', 'noopener,noreferrer');
           } else {
             openModal();
           }
         });
       });
+
     })();
