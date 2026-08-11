@@ -3,7 +3,10 @@ import { CompanyPage, companyHeadLinks } from "../components/CompanyPage";
 
 const title = "Rentek — UX/UI Design | Luis Monroy";
 const description =
-  "Rentek case overview: website design on Webflow and an interactive renting loan simulator.";
+  "Rentek case: renting simulator redesign (+30% leads) and full corporate website redesign built on Webflow.";
+
+const simulator = "/__l5e/assets-v1/1719db25-f09e-4bdc-a3c6-c13f13c8ea5d/Simulador-Mobile-02.jpg";
+const website = "/__l5e/assets-v1/c1877d06-2b87-4b31-9797-48866a6b21d0/Home_Rentek_Website.jpg";
 
 export const Route = createFileRoute("/rentek")({
   head: () => ({
@@ -20,32 +23,56 @@ export const Route = createFileRoute("/rentek")({
   component: () => (
     <CompanyPage
       company="Rentek"
+      galleryTag={{ en: "// INTERFACE DESIGN", es: "// DISEÑO DE INTERFAZ" }}
+      galleryTitle={{ en: "Designed screens", es: "Pantallas diseñadas" }}
+      gallery={[
+        {
+          url: simulator,
+          maxWidth: 420,
+          title: { en: "Renting simulator (mobile)", es: "Simulador de renting (mobile)" },
+          caption: {
+            en: "Two-step simulation: product type and amount, with term selection and the monthly fee as the immediate result. The share action turns the result into a lead.",
+            es: "Simulación en dos pasos: tipo de producto y monto, con selección de plazo y el canon mensual como resultado inmediato. La acción de compartir convierte el resultado en un lead.",
+          },
+        },
+        {
+          url: website,
+          title: { en: "rentek.com.co — Home", es: "rentek.com.co — Home" },
+          caption: {
+            en: "Corporate home built on Webflow: value proposition, renting vs. lending tracks, popular services and an advisory form as the main conversion point.",
+            es: "Home corporativo desarrollado en Webflow: propuesta de valor, rutas de renting y préstamo, servicios más populares y formulario de asesoría como punto principal de conversión.",
+          },
+        },
+      ]}
       en={{
         role: "UX/UI Designer",
         period: "Oct 2024 – Feb 2025",
         intro:
-          "Loan simulator and website design for asset renting, tailored for B2B enterprises and retail clients. Work included UX benchmarking of the renting market and hands-on implementation in Webflow.",
-        tags: ["Webflow", "Loan Simulator", "B2B & B2C", "UX Benchmarking"],
-        impact: "Increased lead capture by 30% compared to the previous simulator design.",
+          "Redesign of the renting simulator and of the corporate website (rentek.com.co) for an asset renting and business financing company, serving both B2B enterprises and retail clients.",
+        tags: ["Webflow", "Renting Simulator", "B2B & B2C", "Conversion / Lead Gen"],
+        impact:
+          "Renting simulator redesign delivering a 30% increase in lead capture compared to the previous version. In addition, a full redesign of the corporate website (rentek.com.co) built on Webflow, optimizing copy and visual assets to communicate the company's purpose and its portfolio of financial products with total clarity.",
         projects: [
           {
-            name: "Website",
+            name: "Renting simulator",
             summary:
-              "Corporate site redesign and Webflow implementation, aligning the brand with a clearer B2B and retail offer.",
+              "Simulator that lets a user estimate a monthly fee in two simple steps, before talking to sales.",
             highlights: [
-              "UI design and Webflow build",
-              "Content structure for two audience tracks",
-              "Responsive desktop and mobile layouts",
+              "Two-step flow: product type and amount",
+              "Term selection with instant monthly fee",
+              "Share action used as the lead capture point",
+              "+30% lead capture vs. the previous simulator",
             ],
           },
           {
-            name: "Simulador",
+            name: "Corporate website (rentek.com.co)",
             summary:
-              "Interactive renting simulator that lets users estimate monthly fees and terms before contacting sales.",
+              "Full redesign and hands-on Webflow implementation of the public site.",
             highlights: [
-              "UX benchmarking of competing simulators",
-              "Interactive desktop and mobile prototypes",
-              "Lead capture integrated into the results step",
+              "Copy optimization to clarify the company purpose",
+              "Visual assets aligned to the financial product portfolio",
+              "Renting and lending tracks split for two audiences",
+              "Responsive desktop and mobile build in Webflow",
             ],
           },
         ],
@@ -54,28 +81,31 @@ export const Route = createFileRoute("/rentek")({
         role: "Diseñador UX/UI",
         period: "Oct 2024 – Feb 2025",
         intro:
-          "Diseño del simulador de préstamos y del sitio web para renting de activos, dirigido a empresas B2B y clientes naturales. Incluyó benchmarking UX del mercado de renting e implementación directa en Webflow.",
-        tags: ["Webflow", "Simulador de Crédito", "B2B y B2C", "Benchmarking UX"],
-        impact: "Aumentamos la captación de leads en un 30% frente al simulador anterior.",
+          "Rediseño del simulador de renting y del sitio web corporativo (rentek.com.co) para una compañía de arrendamiento de activos y financiación empresarial, dirigida a empresas B2B y clientes naturales.",
+        tags: ["Webflow", "Simulador de Renting", "B2B y B2C", "Conversión / Leads"],
+        impact:
+          "Rediseño del simulador de renta, logrando un aumento del 30% en la captación de leads en comparación con la versión anterior. Adicionalmente, rediseño integral del sitio web corporativo (rentek.com.co) desarrollado en Webflow, optimizando los copys y las piezas visuales para comunicar con total claridad el propósito de la empresa y su portafolio de productos financieros.",
         projects: [
           {
-            name: "Website",
+            name: "Simulador de renting",
             summary:
-              "Rediseño del sitio corporativo e implementación en Webflow, alineando la marca con una oferta B2B y retail más clara.",
+              "Simulador que permite estimar el canon mensual en dos pasos simples, antes de hablar con el equipo comercial.",
             highlights: [
-              "Diseño UI e implementación en Webflow",
-              "Estructura de contenido para dos audiencias",
-              "Layouts responsive para desktop y mobile",
+              "Flujo en dos pasos: tipo de producto y monto",
+              "Selección de plazo con canon mensual inmediato",
+              "Acción de compartir como punto de captación de leads",
+              "+30% en captación de leads frente al simulador anterior",
             ],
           },
           {
-            name: "Simulador",
+            name: "Sitio web corporativo (rentek.com.co)",
             summary:
-              "Simulador interactivo de renting que permite estimar cuotas y plazos antes de contactar al equipo comercial.",
+              "Rediseño integral e implementación directa del sitio público en Webflow.",
             highlights: [
-              "Benchmarking UX de simuladores competidores",
-              "Prototipos interactivos en desktop y mobile",
-              "Captación de leads integrada al paso de resultados",
+              "Optimización de copys para clarificar el propósito de la empresa",
+              "Piezas visuales alineadas al portafolio de productos financieros",
+              "Rutas de renting y préstamo separadas para dos audiencias",
+              "Construcción responsive en Webflow (desktop y mobile)",
             ],
           },
         ],
