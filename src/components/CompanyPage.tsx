@@ -31,7 +31,9 @@ export type CompanyPageProps = {
   gallery?: GalleryItem[];
   galleryTag?: { en: string; es: string };
   galleryTitle?: { en: string; es: string };
+  cta?: { href: string; label: { en: string; es: string }; note?: { en: string; es: string } };
 };
+
 
 const ui = {
   en: {
