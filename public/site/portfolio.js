@@ -257,12 +257,16 @@
 
       document.querySelectorAll('.clickable-card').forEach((card) => {
         card.addEventListener('click', () => {
+          const route = card.getAttribute('data-route');
           const url = card.getAttribute('data-link');
-          if (url) {
+          if (route) {
+            window.location.href = route;
+          } else if (url) {
             window.open(url, '_blank', 'noopener,noreferrer');
           } else {
             openModal();
           }
         });
       });
+
     })();
