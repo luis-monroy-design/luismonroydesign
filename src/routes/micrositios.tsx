@@ -28,6 +28,7 @@ export const Route = createFileRoute("/micrositios")({
       gallery={[
         {
           url: unicolmayor,
+          maxWidth: 964,
           title: { en: "Unicolmayor — Home", es: "Unicolmayor — Home" },
           caption: {
             en: "Home restructured around blocks of direct access (services, alumni, library, contracting) and a tabbed programs module, so the full academic offer is readable without endless scrolling.",

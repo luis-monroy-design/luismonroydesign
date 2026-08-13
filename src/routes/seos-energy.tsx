@@ -29,6 +29,7 @@ export const Route = createFileRoute("/seos-energy")({
       gallery={[
         {
           url: partners,
+          maxWidth: 458,
           title: { en: "SEOS Partners — Product design", es: "SEOS Partners — Product design" },
           caption: {
             en: "Discovery, UX research and Design Sprint: How Might We definition, user flow for the credit request, usability testing, service design (Auth0, Treble.ai, HubSpot) and the MVP screens of the native mobile app.",
@@ -37,6 +38,7 @@ export const Route = createFileRoute("/seos-energy")({
         },
         {
           url: studio,
+          maxWidth: 644,
           title: { en: "SEOS Studio — Solar CRM", es: "SEOS Studio — CRM solar" },
           caption: {
             en: "Context and objective, role and module system, workflow builder (Stages, Checks, Tools, AI Agents), look & feel of the operational tables and the updated features of the platform.",
@@ -45,6 +47,7 @@ export const Route = createFileRoute("/seos-energy")({
         },
         {
           url: site,
+          maxWidth: 464,
           title: { en: "Web 2.0 — seosenergy.co", es: "Web 2.0 — seosenergy.co" },
           caption: {
             en: "Problem statement, objectives, benchmark (Niko, Solara, Ruut) and the resulting visual design of the public website, built and shipped on Webflow.",

@@ -31,6 +31,7 @@ export const Route = createFileRoute("/i-wanna-travel")({
       gallery={[
         {
           url: home,
+          maxWidth: 788,
           title: { en: "Home — high fidelity", es: "Home — alta fidelidad" },
           caption: {
             en: "Hero with an inline search (destination, dates, travellers) placed above the fold, followed by featured destinations with visible prices, trust reasons, expert packages, a countdown offer, testimonials and a newsletter block — each step designed to move the visitor toward a direct booking request.",
@@ -39,6 +40,7 @@ export const Route = createFileRoute("/i-wanna-travel")({
         },
         {
           url: wfDestinos,
+          maxWidth: 933,
           title: { en: "Wireframe — Destinations", es: "Wireframe — Destinos" },
           caption: {
             en: "Destination catalog structure: continent filters, a featured grid with price and 'Ver itinerarios' as the primary action, and a rescue block ('¿No encuentras tu destino ideal?') to recover users who would otherwise drop off.",
@@ -47,6 +49,7 @@ export const Route = createFileRoute("/i-wanna-travel")({
         },
         {
           url: wfNosotros,
+          maxWidth: 829,
           title: { en: "Wireframe — About us", es: "Wireframe — Nosotros" },
           caption: {
             en: "Trust-building page: metrics bar, brand story, values, team and a year-by-year timeline, closing with a dual CTA (quote your trip / talk to an expert) so credibility converts into contact.",
