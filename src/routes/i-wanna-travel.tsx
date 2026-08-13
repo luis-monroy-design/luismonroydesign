@@ -31,7 +31,7 @@ export const Route = createFileRoute("/i-wanna-travel")({
       gallery={[
         {
           url: home,
-          maxWidth: 394,
+          maxWidth: 788,
           title: { en: "Home — high fidelity", es: "Home — alta fidelidad" },
           caption: {
             en: "Hero with an inline search (destination, dates, travellers) placed above the fold, followed by featured destinations with visible prices, trust reasons, expert packages, a countdown offer, testimonials and a newsletter block — each step designed to move the visitor toward a direct booking request.",
