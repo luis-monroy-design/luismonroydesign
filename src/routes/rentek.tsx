@@ -66,8 +66,7 @@ export const Route = createFileRoute("/rentek")({
           },
           {
             name: "Corporate website (rentek.com.co)",
-            summary:
-              "Full redesign and hands-on Webflow implementation of the public site.",
+            summary: "Full redesign and hands-on Webflow implementation of the public site.",
             highlights: [
               "Copy optimization to clarify the company purpose",
               "Visual assets aligned to the financial product portfolio",
@@ -99,8 +98,7 @@ export const Route = createFileRoute("/rentek")({
           },
           {
             name: "Sitio web corporativo (rentek.com.co)",
-            summary:
-              "Rediseño integral e implementación directa del sitio público en Webflow.",
+            summary: "Rediseño integral e implementación directa del sitio público en Webflow.",
             highlights: [
               "Optimización de copys para clarificar el propósito de la empresa",
               "Piezas visuales alineadas al portafolio de productos financieros",
