@@ -5,9 +5,9 @@ const title = "SEOS Energy — Product Design | Luis Monroy";
 const description =
   "SEOS Energy case: SEOS Partners mobile app, SEOS Studio solar CRM and the seosenergy.co website built on Webflow.";
 
-const partners = "/__l5e/assets-v1/e577bc0c-f148-4859-a654-1643a22f26c1/SEOS_Partners.jpg";
-const studio = "/__l5e/assets-v1/fba46f5f-8ae4-473f-a5b7-651609bcbb34/SEOS_Studio.jpg";
-const site = "/__l5e/assets-v1/f72a7ceb-ece6-40cc-af0f-e3025ef297ac/SEOS_WEBSITE.jpg";
+const partners = "/__l5e/assets-v1/50be8150-b46c-4b46-bac5-1af4f955b367/SEOS_Partners-2.jpg";
+const studio = "/__l5e/assets-v1/c37ef322-acef-4725-bc4d-53d3b6abd2ea/SEOS_Studio-2.jpg";
+const site = "/__l5e/assets-v1/6c4ae9d4-8914-4c87-bf9e-99e46bbe761e/SEOS_WEBSITE-2.jpg";
 
 export const Route = createFileRoute("/seos-energy")({
   head: () => ({

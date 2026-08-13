@@ -103,6 +103,7 @@
 
         "contact.tag": "// GET IN TOUCH",
         "contact.heading": "Let's build digital products that make an impact.",
+        "contact.cv": "Download CV",
         "soon.title": "Case study in progress",
         "soon.desc": "This item is currently being updated. Come back soon to see the full case study.",
         "soon.close": "Got it"
@@ -211,6 +212,7 @@
 
         "contact.tag": "// CONTACTO",
         "contact.heading": "Construyamos productos digitales que generen impacto real.",
+        "contact.cv": "Descargar CV",
         "soon.title": "Caso de estudio en proceso",
         "soon.desc": "Este ítem está en proceso de actualización. Vuelve pronto para ver el caso de estudio completo.",
         "soon.close": "Entendido"
