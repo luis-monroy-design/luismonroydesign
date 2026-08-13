@@ -5,7 +5,7 @@ const title = "I Wanna Travel — UX/UI Design | Luis Monroy";
 const description =
   "I Wanna Travel case: conversion-focused UX for a boutique travel agency, increasing direct bookings and reducing checkout abandonment.";
 
-const home = "/__l5e/assets-v1/0ebbdd43-b02a-4d8b-825f-d2d57cf1a5dd/Home_-_I_Wanna_Travel.jpg";
+const home = "/__l5e/assets-v1/4a74ea39-2237-4b1a-b41b-a7e4b7300844/Home_-_I_Wanna_Travel-2.jpg";
 const wfDestinos =
   "/__l5e/assets-v1/30814a09-2910-4063-a00a-aa7586c02a3b/Wireframe_-_Destinos_-_I_Wanna_Travel.jpg";
 const wfNosotros =

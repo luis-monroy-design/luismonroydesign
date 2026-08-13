@@ -103,6 +103,7 @@
 
         "contact.tag": "// GET IN TOUCH",
         "contact.heading": "Let's build digital products that make an impact.",
+        "contact.cv": "Download CV",
         "soon.title": "Case study in progress",
         "soon.desc": "This item is currently being updated. Come back soon to see the full case study.",
         "soon.close": "Got it"
@@ -211,6 +212,7 @@
 
         "contact.tag": "// CONTACTO",
         "contact.heading": "Construyamos productos digitales que generen impacto real.",
+        "contact.cv": "Descargar CV",
         "soon.title": "Caso de estudio en proceso",
         "soon.desc": "Este ítem está en proceso de actualización. Vuelve pronto para ver el caso de estudio completo.",
         "soon.close": "Entendido"
@@ -234,8 +236,16 @@
         }
       });
 
+      const cvBtn = document.getElementById('cvDownload');
+      if (cvBtn) {
+        cvBtn.href = lang === 'es'
+          ? '/__l5e/assets-v1/eb079817-8ec9-4b63-9401-d8ffc739010e/CV_Luis-Monroy_ES_PD-2026.pdf'
+          : '/__l5e/assets-v1/aa5e97cf-78c2-4613-82d0-0f4e62a4ef48/CV_Luis-Monroy_EN_PD-2026.pdf';
+      }
+
       document.documentElement.lang = lang;
     }
+
 
     document.getElementById('btn-en').addEventListener('click', () => setLanguage('en'));
     document.getElementById('btn-es').addEventListener('click', () => setLanguage('es'));
