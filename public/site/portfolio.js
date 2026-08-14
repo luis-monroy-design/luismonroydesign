@@ -94,6 +94,7 @@
         "cases.tag": "// SELECTED CASE STUDIES",
         "cases.title": "Featured Projects",
         "cases.view": "View Case Study",
+        "cases.p0": "Design of a new content rating and recommendation feature for the Mercado Play streaming platform.",
         "cases.p1": "Eco-friendly delivery initiative integration, reducing single-use plastics and tracking carbon emissions per order.",
         "cases.p2": "Content discovery interface redesign and personalized watch-party social experience for LATAM subscribers.",
         "cases.p3": "Digital platform for music artist monetization, fan subscriptions, and exclusive drop management.",
@@ -203,6 +204,7 @@
         "cases.tag": "// CASOS DE ESTUDIO SELECCIONADOS",
         "cases.title": "Proyectos Destacados",
         "cases.view": "Ver Caso de Estudio",
+        "cases.p0": "Diseño de nueva funcionalidad de calificación y recomendación de contenidos para la plataforma de streaming Mercado Play.",
         "cases.p1": "Integración de iniciativa eco-amigable para domicilios, reduciendo plásticos de un solo uso y rastreando emisiones de carbono por pedido.",
         "cases.p2": "Rediseño de la interfaz de descubrimiento de contenido y experiencia social de visualización para suscriptores en LATAM.",
         "cases.p3": "Plataforma digital para monetización de artistas musicales, suscripciones de fans y gestión de lanzamientos exclusivos.",
@@ -236,12 +238,11 @@
         }
       });
 
-      const cvBtn = document.getElementById('cvDownload');
-      if (cvBtn) {
-        cvBtn.href = lang === 'es'
-          ? '/__l5e/assets-v1/eb079817-8ec9-4b63-9401-d8ffc739010e/CV_Luis-Monroy_ES_PD-2026.pdf'
-          : '/__l5e/assets-v1/aa5e97cf-78c2-4613-82d0-0f4e62a4ef48/CV_Luis-Monroy_EN_PD-2026.pdf';
-      }
+      const cvHref = lang === 'es'
+        ? '/__l5e/assets-v1/eb079817-8ec9-4b63-9401-d8ffc739010e/CV_Luis-Monroy_ES_PD-2026.pdf'
+        : '/__l5e/assets-v1/aa5e97cf-78c2-4613-82d0-0f4e62a4ef48/CV_Luis-Monroy_EN_PD-2026.pdf';
+      document.querySelectorAll('.cv-btn').forEach((btn) => { btn.href = cvHref; });
+      try { localStorage.setItem('lm-lang', lang); } catch (e) {}
 
       document.documentElement.lang = lang;
     }
@@ -252,7 +253,7 @@
 
     // Initialize Lucide icons & language
     if (window.lucide) lucide.createIcons();
-    setLanguage('en');
+    setLanguage((() => { try { return localStorage.getItem('lm-lang') === 'es' ? 'es' : 'en'; } catch (e) { return 'en'; } })());
 
 
     // Clickable company cards
