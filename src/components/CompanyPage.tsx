@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useLang } from "../lib/lang";
 
 export type CompanyProject = {
   name: string;
@@ -67,7 +68,7 @@ export function CompanyPage({
   galleryTitle,
   cta,
 }: CompanyPageProps) {
-  const [lang, setLang] = useState<"en" | "es">("en");
+  const [lang] = useLang();
   const c = lang === "en" ? en : es;
   const t = ui[lang];
 
@@ -80,7 +81,7 @@ export function CompanyPage({
   }, [lang]);
 
   return (
-    <main style={{ maxWidth: 960, margin: "0 auto", padding: "72px 24px 96px" }}>
+    <main style={{ maxWidth: 960, margin: "0 auto", padding: "112px 24px 96px" }}>
       <div
         style={{
           display: "flex",
@@ -94,24 +95,6 @@ export function CompanyPage({
         <Link to="/" className="tech-tag" style={{ textDecoration: "none", display: "inline-block" }}>
           {t.back}
         </Link>
-        <div className="lang-switcher">
-          <button
-            type="button"
-            className={`lang-btn${lang === "en" ? " active" : ""}`}
-            onClick={() => setLang("en")}
-            aria-pressed={lang === "en"}
-          >
-            EN
-          </button>
-          <button
-            type="button"
-            className={`lang-btn${lang === "es" ? " active" : ""}`}
-            onClick={() => setLang("es")}
-            aria-pressed={lang === "es"}
-          >
-            ES
-          </button>
-        </div>
       </div>
 
       <div className="section-header" style={{ marginBottom: 24 }}>
