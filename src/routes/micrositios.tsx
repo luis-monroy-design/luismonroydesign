@@ -5,7 +5,7 @@ const title = "Micrositios S.A.S. — UX/UI Design | Luis Monroy";
 const description =
   "Micrositios case: UX for Transmilenio and Unicolmayor government portals, cutting unnecessary scroll through menu reduction.";
 
-const unicolmayor = "/__l5e/assets-v1/e11d2014-70a6-40b7-aea0-0fb418b6e7ca/Home_UnicolMayor-2.jpg";
+const unicolmayor = "/__l5e/assets-v1/99d19d4c-65eb-447d-9000-25dfb61da41a/x3_Website_Micrositios-Unicolmayor.jpg";
 const transmilenio = "/__l5e/assets-v1/f2f1951e-cd58-4338-935d-40703f95faad/transmilenio1.JPG";
 
 export const Route = createFileRoute("/micrositios")({
@@ -28,7 +28,6 @@ export const Route = createFileRoute("/micrositios")({
       gallery={[
         {
           url: unicolmayor,
-          maxWidth: 964,
           title: { en: "Unicolmayor — Home", es: "Unicolmayor — Home" },
           caption: {
             en: "Home restructured around blocks of direct access (services, alumni, library, contracting) and a tabbed programs module, so the full academic offer is readable without endless scrolling.",
