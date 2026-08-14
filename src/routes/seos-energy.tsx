@@ -5,9 +5,9 @@ const title = "SEOS Energy — Product Design | Luis Monroy";
 const description =
   "SEOS Energy case: SEOS Partners mobile app, SEOS Studio solar CRM and the seosenergy.co website built on Webflow.";
 
-const partners = "/__l5e/assets-v1/50be8150-b46c-4b46-bac5-1af4f955b367/SEOS_Partners-2.jpg";
-const studio = "/__l5e/assets-v1/c37ef322-acef-4725-bc4d-53d3b6abd2ea/SEOS_Studio-2.jpg";
-const site = "/__l5e/assets-v1/6c4ae9d4-8914-4c87-bf9e-99e46bbe761e/SEOS_WEBSITE-2.jpg";
+const partners = "/__l5e/assets-v1/788747de-9c0f-4883-9675-cdd68c74ba0c/x3_SEOS_Partners.jpg";
+const studio = "/__l5e/assets-v1/fb7646f9-efd4-4456-868d-77347fb93934/x3_Seos_Studio.jpg";
+const site = "/__l5e/assets-v1/a292a942-c03b-4b6b-9085-50591caa718d/x3_SEOS_-_Website.jpg";
 
 export const Route = createFileRoute("/seos-energy")({
   head: () => ({
@@ -29,7 +29,6 @@ export const Route = createFileRoute("/seos-energy")({
       gallery={[
         {
           url: partners,
-          maxWidth: 458,
           title: { en: "SEOS Partners — Product design", es: "SEOS Partners — Product design" },
           caption: {
             en: "Discovery, UX research and Design Sprint: How Might We definition, user flow for the credit request, usability testing, service design (Auth0, Treble.ai, HubSpot) and the MVP screens of the native mobile app.",
@@ -38,7 +37,6 @@ export const Route = createFileRoute("/seos-energy")({
         },
         {
           url: studio,
-          maxWidth: 644,
           title: { en: "SEOS Studio — Solar CRM", es: "SEOS Studio — CRM solar" },
           caption: {
             en: "Context and objective, role and module system, workflow builder (Stages, Checks, Tools, AI Agents), look & feel of the operational tables and the updated features of the platform.",
@@ -47,7 +45,6 @@ export const Route = createFileRoute("/seos-energy")({
         },
         {
           url: site,
-          maxWidth: 464,
           title: { en: "Web 2.0 — seosenergy.co", es: "Web 2.0 — seosenergy.co" },
           caption: {
             en: "Problem statement, objectives, benchmark (Niko, Solara, Ruut) and the resulting visual design of the public website, built and shipped on Webflow.",

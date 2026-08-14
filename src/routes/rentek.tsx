@@ -8,7 +8,7 @@ const description =
 const simulator = "/__l5e/assets-v1/1719db25-f09e-4bdc-a3c6-c13f13c8ea5d/Simulador-Mobile-02.jpg";
 const simLogin = "/__l5e/assets-v1/81ca75a5-9e74-4531-b559-baf65d54cf43/Simulador-Mobile-01-1.jpg";
 const simStep = "/__l5e/assets-v1/c142774b-5ee0-462b-899e-4bd87beb7764/Simulador-Mobile-01.jpg";
-const website = "/__l5e/assets-v1/c1877d06-2b87-4b31-9797-48866a6b21d0/Home_Rentek_Website.jpg";
+const website = "/__l5e/assets-v1/0c58f02f-349e-4b2b-b7ce-e66d0f102ce7/x3_Rentek_-_Sitio_Web.jpg";
 
 export const Route = createFileRoute("/rentek")({
   head: () => ({

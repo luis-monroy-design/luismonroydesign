@@ -932,3 +932,17 @@
   transition: background .2s ease;
 }
 .soon-close:hover { background: rgba(255,255,255,.08); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-cv-btn {
+      padding: 9px 16px;
+      font-size: 12px;
+      border-radius: 20px;
+    }
+    @media (max-width: 640px) {
+      .nav-cv-btn { display: none; }
+    }
