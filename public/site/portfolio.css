@@ -1104,3 +1104,59 @@ header.navbar.is-scrolled { backdrop-filter: blur(20px); -webkit-backdrop-filter
   .case-footer { align-items: flex-start; gap: 12px; flex-direction: column; }
   .contact-item { overflow-wrap: anywhere; }
 }
+
+/* Harmoni Systems brand tile (monogram + wordmark) */
+.company-cover-img { max-height: 120px; width: auto; max-width: 100%; margin-inline: auto; }
+.company-cover-brand { flex-direction: column; gap: 10px; padding: 18px 14px; }
+.company-cover-brand .company-cover-img { max-height: 64px; }
+.company-cover-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  letter-spacing: .2px;
+}
+.logo-item-brand { gap: 14px; min-height: 86px; color: var(--text-main); }
+.logo-item .logo-img.harmoni-mark { height: 40px; width: auto; }
+.logo-item-brand span { font-family: var(--font-display); font-size: 20px; font-weight: 700; }
+
+/* Compact experience cards: logo panel on the left, content in a tight grid on the right */
+@media (min-width: 961px) {
+  .company-timeline { gap: 16px; }
+  .company-card {
+    display: grid;
+    grid-template-columns: 176px minmax(0, 1fr);
+    column-gap: 24px;
+    row-gap: 10px;
+    align-content: start;
+    padding: 18px 22px;
+  }
+  .company-card > * { grid-column: 2; min-width: 0; }
+  .company-card > .company-cover-container {
+    grid-column: 1;
+    grid-row: 1 / span 5;
+    align-self: stretch;
+    margin: 0;
+    padding: 12px;
+    min-height: 120px;
+  }
+  .company-cover-container .company-cover-img { max-height: 84px; }
+  .company-cover-brand .company-cover-img { max-height: 56px; }
+  .company-card .company-header { margin: 0; gap: 8px; align-items: center; flex-wrap: nowrap; }
+  .company-card .company-header::before { top: 32px; }
+  .company-info h3 { font-size: 18px; }
+  .company-role { margin-top: 2px; }
+  .company-desc { margin: 0; font-size: 14px; line-height: 1.5; }
+  .projects-subgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0; }
+  .project-item { padding: 8px 10px; gap: 8px; }
+  .project-item-text { font-size: 12.5px; line-height: 1.35; }
+  .company-impact { margin: 0; padding: 8px 12px; }
+  .impact-text { font-size: 13px; line-height: 1.4; }
+  .tag-cloud { margin: 0; gap: 6px; }
+}
+
+@media (max-width: 960px) {
+  .company-cover-container { padding: 12px; }
+  .company-cover-img { max-height: 96px; }
+}
