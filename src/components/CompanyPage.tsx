@@ -41,20 +41,20 @@ export type CompanyPageProps = {
 const ui = {
   en: {
     back: "← Back to portfolio",
-    overview: "// CASE OVERVIEW",
-    projectsTag: "// ASSOCIATED PROJECTS",
+    overview: "Case overview",
+    projectsTag: "Associated projects",
     projects: "Projects",
     impact: "Key Impact:",
-    gallery: "// INTERFACE DESIGN",
+    gallery: "Interface design",
     galleryTitle: "UI Screens",
   },
   es: {
     back: "← Volver al portafolio",
-    overview: "// RESUMEN DEL CASO",
-    projectsTag: "// PROYECTOS ASOCIADOS",
+    overview: "Resumen del caso",
+    projectsTag: "Proyectos asociados",
     projects: "Proyectos",
     impact: "Impacto Clave:",
-    gallery: "// DISEÑO DE INTERFAZ",
+    gallery: "Diseño de interfaz",
     galleryTitle: "Pantallas UI",
   },
 } as const;
@@ -229,7 +229,7 @@ export const companyHeadLinks = [
   { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" as const },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap",
   },
   { rel: "stylesheet", href: "/site/portfolio.css" },
 ];

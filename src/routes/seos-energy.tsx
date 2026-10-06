@@ -24,7 +24,7 @@ export const Route = createFileRoute("/seos-energy")({
   component: () => (
     <CompanyPage
       company="SEOS Energy"
-      galleryTag={{ en: "// CASE BOARDS", es: "// TABLEROS DEL CASO" }}
+      galleryTag={{ en: "Case boards", es: "Tableros del caso" }}
       galleryTitle={{ en: "Process & interfaces", es: "Proceso e interfaces" }}
       gallery={[
         {

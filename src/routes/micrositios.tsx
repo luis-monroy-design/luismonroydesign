@@ -23,7 +23,7 @@ export const Route = createFileRoute("/micrositios")({
   component: () => (
     <CompanyPage
       company="Micrositios S.A.S."
-      galleryTag={{ en: "// INTERFACE DESIGN", es: "// DISEÑO DE INTERFAZ" }}
+      galleryTag={{ en: "Interface design", es: "Diseño de interfaz" }}
       galleryTitle={{ en: "Designed screens", es: "Pantallas diseñadas" }}
       gallery={[
         {

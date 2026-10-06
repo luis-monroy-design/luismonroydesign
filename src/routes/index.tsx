@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap",
       },
       { rel: "stylesheet", href: "/site/portfolio.css" },
     ],
@@ -49,7 +49,7 @@ function Index() {
     let cancelled = false;
     (async () => {
       try {
-        await loadScript("https://unpkg.com/lucide@latest");
+        await loadScript("https://unpkg.com/lucide@latest").catch(() => undefined); // icons are decorative
         if (cancelled) return;
         await loadScript("/site/portfolio.js");
       } catch (err) {

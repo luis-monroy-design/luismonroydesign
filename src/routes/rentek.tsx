@@ -25,7 +25,7 @@ export const Route = createFileRoute("/rentek")({
   component: () => (
     <CompanyPage
       company="Rentek"
-      galleryTag={{ en: "// INTERFACE DESIGN", es: "// DISEÑO DE INTERFAZ" }}
+      galleryTag={{ en: "Interface design", es: "Diseño de interfaz" }}
       galleryTitle={{ en: "Designed screens", es: "Pantallas diseñadas" }}
       gallery={[
         {

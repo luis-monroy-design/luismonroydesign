@@ -7,19 +7,19 @@
         "nav.contact": "Contact",
 
         "hero.status": "Available for new opportunities — Bogotá, CO (Remote)",
-        "hero.role": "PRODUCT DESIGNER & UX/UI DESIGNER",
+        "hero.role": "Product Designer & UX/UI Designer",
         "hero.subtitle": "Digital Product & UX/UI Designer with 4+ years of experience blending user research, interface prototyping, data-driven iterations, and modern tech workflows (Vibe Coding + AI) to scale digital products.",
         "hero.btnExplore": "Explore Experience",
         "hero.btnContact": "Get In Touch",
-        "hero.marqueeTag": "// TEAMS & COMPANIES I'VE WORKED WITH",
+        "hero.marqueeTag": "Teams and companies I've worked with",
 
-        "stats.cardTitle": "// EXPERIENCE & IMPACT",
+        "stats.cardTitle": "Experience and impact",
         "stats.years": "Years Experience",
         "stats.startups": "Key Companies",
         "stats.markets": "Market Sectors",
         "stats.websites": "Live Websites",
 
-        "exp.tag": "// WORK EXPERIENCE",
+        "exp.tag": "Experience",
         "exp.title": "Companies & Key Projects",
 
         "exp.c1.role": "Product Designer",
@@ -70,18 +70,18 @@
         "exp.c6.p3": "Visual storytelling and brand asset design for travel experiences",
         "exp.c6.impact": "<strong>Key Impact:</strong> Increased direct booking conversions by 28% and reduced checkout cart abandonment rate.",
 
-        "profile.tag": "// PROFESSIONAL PROFILE",
+        "profile.tag": "About",
         "profile.title": "Strategic Design & Execution",
         "profile.subtitle": "Product Designer & UX/UI Designer",
         "profile.p1": "Digital Product Designer with <strong>over 4 years of experience</strong> creating highly functional, user-centric experiences across financial, artistic, educational, medical, and technology industries.",
         "profile.p2": "Specialized in <strong>user research, ideation, prototyping, and strategic product design</strong>. In recent projects, I have optimized critical conversion and user satisfaction metrics through rigorous data-backed design iterations.",
         "profile.p3": "Driven by delivering both <strong>quantitative and qualitative results</strong> that empower users and accelerate business growth.",
-        "profile.focusTitle": "// CORE DESIGN PHILOSOPHY",
+        "profile.focusTitle": "Design philosophy",
         "profile.f1": "Data-Informed UX — Research & analytics over assumptions.",
         "profile.f2": "Vibe Coding & Modern Workflows — Accelerating delivery with AI & low-code tools.",
         "profile.f3": "End-to-End Ownership — From user discovery to production UI and metric tracking.",
 
-        "caps.tag": "// CAPABILITIES",
+        "caps.tag": "Capabilities",
         "caps.title": "Skills & Toolkit",
         "caps.skillsTitle": "Skills & Methodologies",
         "caps.toolsTitle": "Tools & Stack",
@@ -91,7 +91,7 @@
         "tools.automation": "Automation & Operations",
         "tools.analytics": "Research, Analytics & AI",
 
-        "cases.tag": "// SELECTED CASE STUDIES",
+        "cases.tag": "Selected work",
         "cases.title": "Featured Projects",
         "cases.view": "View Case Study",
         "cases.visit": "Visit Website",
@@ -111,7 +111,7 @@
         "cases.p5": "Cloud kitchen operations management dashboard, streamlining kitchen tickets and supplier ordering.",
         "cases.p6": "E-learning portal redesign focusing on gamified student engagement, parent tracking, and accessible UI.",
 
-        "contact.tag": "// GET IN TOUCH",
+        "contact.tag": "Contact",
         "contact.heading": "Let's build digital products that make an impact.",
         "contact.cv": "Download CV",
         "contact.copyEmail": "Copy email",
@@ -128,19 +128,19 @@
         "nav.contact": "Contacto",
 
         "hero.status": "Disponible para nuevas oportunidades — Bogotá, CO (Remoto)",
-        "hero.role": "DISEÑADOR DE PRODUCTO & DISEÑADOR UX/UI",
+        "hero.role": "Diseñador de Producto y UX/UI",
         "hero.subtitle": "Diseñador de Productos Digitales y UX/UI con +4 años de experiencia combinando investigación de usuarios, prototipado de interfaces, iteraciones basadas en datos y flujos modernos (Vibe Coding + IA) para escalar productos.",
         "hero.btnExplore": "Explorar Experiencia",
         "hero.btnContact": "Contactar",
-        "hero.marqueeTag": "// EQUIPOS Y EMPRESAS CON LAS QUE HE TRABAJADO",
+        "hero.marqueeTag": "Equipos y empresas con las que he trabajado",
 
-        "stats.cardTitle": "// EXPERIENCIA E IMPACTO",
+        "stats.cardTitle": "Experiencia e impacto",
         "stats.years": "Años de Experiencia",
         "stats.startups": "Empresas Clave",
         "stats.markets": "Mercados Distintos",
         "stats.websites": "Sitios Web al Aire",
 
-        "exp.tag": "// EXPERIENCIA LABORAL",
+        "exp.tag": "Experiencia",
         "exp.title": "Empresas y Proyectos Clave",
 
         "exp.c1.role": "Product Designer",
@@ -191,18 +191,18 @@
         "exp.c6.p3": "Diseño visual y narrativo de experiencias de viaje",
         "exp.c6.impact": "<strong>Impacto Clave:</strong> Aumentó la conversión de reservas directas en un 28% y redujo la tasa de abandono del proceso de compra.",
 
-        "profile.tag": "// PERFIL PROFESIONAL",
+        "profile.tag": "Perfil",
         "profile.title": "Diseño Estratégico y Ejecución",
         "profile.subtitle": "Diseñador de Productos & Diseñador UX/UI",
         "profile.p1": "Diseñador de Productos Digitales con <strong>más de 4 años de experiencia</strong> creando experiencias de usuario altamente funcionales y satisfactorias en empresas de diversos sectores como financiero, artístico, educativo, médico y tecnológico.",
         "profile.p2": "Especializado en <strong>investigación de usuarios, ideación, prototipado y diseño estratégico</strong>. En mis proyectos recientes, he logrado optimizar métricas clave de conversión y satisfacción mediante iteraciones basadas en datos.",
         "profile.p3": "Me impulsa generar <strong>resultados cuantitativos y cualitativos</strong> que beneficien tanto a los usuarios como al crecimiento del negocio.",
-        "profile.focusTitle": "// FILOSOFÍA DE DISEÑO",
+        "profile.focusTitle": "Filosofía de diseño",
         "profile.f1": "UX Basado en Datos — Investigación y métricas por encima de suposiciones.",
         "profile.f2": "Vibe Coding y Flujos Modernos — Aceleración de entregables con IA y no-code.",
         "profile.f3": "Dominio End-to-End — Desde el descubrimiento de usuarios hasta la interfaz en producción.",
 
-        "caps.tag": "// CAPACIDADES",
+        "caps.tag": "Capacidades",
         "caps.title": "Habilidades y Herramientas",
         "caps.skillsTitle": "Habilidades y Metodologías",
         "caps.toolsTitle": "Herramientas y Stack",
@@ -212,7 +212,7 @@
         "tools.automation": "Automatización y Operaciones",
         "tools.analytics": "Investigación, Analítica e IA",
 
-        "cases.tag": "// CASOS DE ESTUDIO SELECCIONADOS",
+        "cases.tag": "Trabajo seleccionado",
         "cases.title": "Proyectos Destacados",
         "cases.view": "Ver Caso de Estudio",
         "cases.visit": "Visitar Sitio Web",
@@ -232,7 +232,7 @@
         "cases.p5": "Dashboard operacional para gestión de dark kitchens, optimizando comanda de tickets e insumos con proveedores.",
         "cases.p6": "Rediseño de portal e-learning enfocado en ludificación para estudiantes, seguimiento de padres y UX accesible.",
 
-        "contact.tag": "// CONTACTO",
+        "contact.tag": "Contacto",
         "contact.heading": "Construyamos productos digitales que generen impacto real.",
         "contact.cv": "Descargar CV",
         "contact.copyEmail": "Copiar correo",
@@ -395,21 +395,6 @@
         });
       });
 
-      if (window.matchMedia('(hover: hover)').matches && !reducedMotion) {
-        document.querySelectorAll('.case-card').forEach((card) => {
-          card.addEventListener('pointermove', (event) => {
-            const rect = card.getBoundingClientRect();
-            const rotateY = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
-            const rotateX = ((event.clientY - rect.top) / rect.height - 0.5) * -8;
-            card.style.setProperty('--tilt-x', `${rotateX.toFixed(2)}deg`);
-            card.style.setProperty('--tilt-y', `${rotateY.toFixed(2)}deg`);
-          });
-          card.addEventListener('pointerleave', () => {
-            card.style.setProperty('--tilt-x', '0deg');
-            card.style.setProperty('--tilt-y', '0deg');
-          });
-        });
-      }
 
       const copyButton = document.getElementById('copyEmail');
       const copyToast = document.getElementById('copyToast');

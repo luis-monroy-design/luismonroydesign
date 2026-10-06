@@ -27,8 +27,7 @@ export function SiteNavbar() {
     <header className="navbar">
       <div className="nav-container">
         <a href="/" className="brand-logo">
-          <span style={{ color: "var(--accent-green)" }}>LM</span> // PORTFOLIO
-          <span className="brand-badge">UX/UI</span>
+          Luis Monroy
         </a>
 
         <ul className="nav-menu">

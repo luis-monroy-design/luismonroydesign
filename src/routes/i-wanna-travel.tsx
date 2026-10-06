@@ -26,7 +26,7 @@ export const Route = createFileRoute("/i-wanna-travel")({
   component: () => (
     <CompanyPage
       company="I Wanna Travel"
-      galleryTag={{ en: "// HIGH FIDELITY & WIREFRAMES", es: "// ALTA FIDELIDAD Y WIREFRAMES" }}
+      galleryTag={{ en: "High fidelity & wireframes", es: "Alta fidelidad y wireframes" }}
       galleryTitle={{ en: "Designed screens", es: "Pantallas diseñadas" }}
       gallery={[
         {
