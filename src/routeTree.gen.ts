@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as IWannaTravelRouteImport } from './routes/i-wanna-travel'
-import { Route as LegalSplitRouteImport } from './routes/legal-split'
 import { Route as MicrositiosRouteImport } from './routes/micrositios'
 import { Route as RentekRouteImport } from './routes/rentek'
 import { Route as SeosEnergyRouteImport } from './routes/seos-energy'
@@ -25,11 +24,6 @@ const IndexRoute = IndexRouteImport.update({
 const IWannaTravelRoute = IWannaTravelRouteImport.update({
   id: '/i-wanna-travel',
   path: '/i-wanna-travel',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LegalSplitRoute = LegalSplitRouteImport.update({
-  id: '/legal-split',
-  path: '/legal-split',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MicrositiosRoute = MicrositiosRouteImport.update({
@@ -56,7 +50,6 @@ const UnalRoute = UnalRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/i-wanna-travel': typeof IWannaTravelRoute
-  '/legal-split': typeof LegalSplitRoute
   '/micrositios': typeof MicrositiosRoute
   '/rentek': typeof RentekRoute
   '/seos-energy': typeof SeosEnergyRoute
@@ -65,7 +58,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/i-wanna-travel': typeof IWannaTravelRoute
-  '/legal-split': typeof LegalSplitRoute
   '/micrositios': typeof MicrositiosRoute
   '/rentek': typeof RentekRoute
   '/seos-energy': typeof SeosEnergyRoute
@@ -75,7 +67,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/i-wanna-travel': typeof IWannaTravelRoute
-  '/legal-split': typeof LegalSplitRoute
   '/micrositios': typeof MicrositiosRoute
   '/rentek': typeof RentekRoute
   '/seos-energy': typeof SeosEnergyRoute
@@ -86,7 +77,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/i-wanna-travel'
-    | '/legal-split'
     | '/micrositios'
     | '/rentek'
     | '/seos-energy'
@@ -95,7 +85,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/i-wanna-travel'
-    | '/legal-split'
     | '/micrositios'
     | '/rentek'
     | '/seos-energy'
@@ -104,7 +93,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/i-wanna-travel'
-    | '/legal-split'
     | '/micrositios'
     | '/rentek'
     | '/seos-energy'
@@ -114,7 +102,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   IWannaTravelRoute: typeof IWannaTravelRoute
-  LegalSplitRoute: typeof LegalSplitRoute
   MicrositiosRoute: typeof MicrositiosRoute
   RentekRoute: typeof RentekRoute
   SeosEnergyRoute: typeof SeosEnergyRoute
@@ -135,13 +122,6 @@ declare module '@tanstack/react-router' {
       path: '/i-wanna-travel'
       fullPath: '/i-wanna-travel'
       preLoaderRoute: typeof IWannaTravelRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/legal-split': {
-      id: '/legal-split'
-      path: '/legal-split'
-      fullPath: '/legal-split'
-      preLoaderRoute: typeof LegalSplitRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/micrositios': {
@@ -178,7 +158,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   IWannaTravelRoute: IWannaTravelRoute,
-  LegalSplitRoute: LegalSplitRoute,
   MicrositiosRoute: MicrositiosRoute,
   RentekRoute: RentekRoute,
   SeosEnergyRoute: SeosEnergyRoute,
