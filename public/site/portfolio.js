@@ -24,10 +24,10 @@
 
         "exp.c1.role": "Product Designer",
         "exp.c1.period": "Sep 2023 – Jan 2026",
-        "exp.c1.desc": "End-to-end product design for residential solar energy financing across three products: SEOS Partners, SEOS Studio and the SEOS website.",
-        "exp.c1.p1": "SEOS Partners: native mobile app for fast solar project simulation",
-        "exp.c1.p2": "SEOS Studio: simulation, credit, collections, site visits & monitoring",
-        "exp.c1.p3": "SEOS website: design and implementation on Webflow",
+        "exp.c1.desc": "Design and improvement of a digital platform for solar energy systems financing.",
+        "exp.c1.p1": "Design Strategy & Product Launch",
+        "exp.c1.p2": "End-to-end digital product design",
+        "exp.c1.p3": "UX/UI design for Desktop & Mobile",
         "exp.c1.impact": "<strong>Key Impact:</strong> Reduced customer support tickets by 55% while maintaining operations with only 20% of the original Product/Tech team size.",
 
         "exp.c2.role": "UX/UI Designer",
@@ -38,20 +38,20 @@
         "exp.c2.p3": "Renting simulator redesign for desktop & mobile",
         "exp.c2.impact": "<strong>Key Impact:</strong> Increased lead capture by 30% compared to the previous simulator design.",
 
-        "exp.c3.role": "UX/UI Designer",
-        "exp.c3.period": "Apr 2026 – Jul 2026",
-        "exp.c3.desc": "User experience design for a web application distributing royalties to collaborators of multimedia content.",
+        "exp.c3.role": "Product Designer",
+        "exp.c3.period": "Aug 2026 – Present",
+        "exp.c3.desc": "Web product design for a smart home automation company.",
         "exp.c3.p1": "UI design & implementation using Lovable",
         "exp.c3.p2": "Vibe Coding & Frontend Development",
         "exp.c3.p3": "Feature enhancements via GCP (Google Cloud Platform)",
-        "exp.c3.impact": "<strong>Key Impact:</strong> Integrated the platform with YouTube API for enhanced data collection and optimized visibility of key metrics on the main dashboard.",
+        "exp.c3.impact": "<strong>Key Impact:</strong> Integrated the platform with YouTube to improve data capture and enhanced visibility of key data on the main dashboard.",
 
         "exp.c4.role": "UX/UI Designer",
         "exp.c4.period": "Feb 2026 – Apr 2026",
         "exp.c4.desc": "User experience design for high-traffic Colombian Government websites: Transmilenio and Unicolmayor.",
         "exp.c4.p1": "Mid and high-fidelity interactive prototyping",
         "exp.c4.p2": "Responsive Desktop & Mobile design architecture",
-        "exp.c4.p3": "Menu reduction to cut unnecessary scrolling on long-form content",
+        "exp.c4.p3": "Visibility improvements for long-form educational content",
         "exp.c4.impact": "<strong>Key Impact:</strong> Redesigned lateral menu systems for Transmilenio & Unicolmayor government portals, reducing user scrolling by 68%.",
 
         "exp.c5.role": "UX/UI Designer",
@@ -94,6 +94,10 @@
         "cases.tag": "// SELECTED CASE STUDIES",
         "cases.title": "Featured Projects",
         "cases.view": "View Case Study",
+        "cases.filterAll": "All",
+        "cases.filterMobile": "Mobile",
+        "cases.filterWeb": "Web",
+        "cases.filterDashboard": "Dashboard",
         "cases.p0": "Design of a new content rating and recommendation feature for the Mercado Play streaming platform.",
         "cases.p1": "Eco-friendly delivery initiative integration, reducing single-use plastics and tracking carbon emissions per order.",
         "cases.p2": "Content discovery interface redesign and personalized watch-party social experience for LATAM subscribers.",
@@ -105,6 +109,8 @@
         "contact.tag": "// GET IN TOUCH",
         "contact.heading": "Let's build digital products that make an impact.",
         "contact.cv": "Download CV",
+        "contact.copyEmail": "Copy email",
+        "contact.copied": "Copied",
         "soon.title": "Case study in progress",
         "soon.desc": "This item is currently being updated. Come back soon to see the full case study.",
         "soon.close": "Got it"
@@ -134,10 +140,10 @@
 
         "exp.c1.role": "Product Designer",
         "exp.c1.period": "Sep 2023 – Ene 2026",
-        "exp.c1.desc": "Diseño de producto end-to-end para financiamiento de energía solar residencial en tres productos: SEOS Partners, SEOS Studio y el sitio web SEOS.",
-        "exp.c1.p1": "SEOS Partners: app nativa mobile para simulación rápida de proyectos solares",
-        "exp.c1.p2": "SEOS Studio: simulación, crédito, cartera, visitas técnicas y monitoreo",
-        "exp.c1.p3": "Sitio Web SEOS: diseño e implementación en Webflow",
+        "exp.c1.desc": "Diseño y mejoramiento de plataforma digital para financiamiento de sistemas de energía solar.",
+        "exp.c1.p1": "Estrategia de Diseño y Lanzamiento de Producto",
+        "exp.c1.p2": "Diseño de productos digitales end-to-end",
+        "exp.c1.p3": "Diseño UX/UI para Desktop y Mobile",
         "exp.c1.impact": "<strong>Impacto Clave:</strong> Redujimos los tickets de soporte en un 55% en la plataforma, utilizando solo el 20% del equipo original de Product/Tech.",
 
         "exp.c2.role": "Diseñador UX/UI",
@@ -148,9 +154,9 @@
         "exp.c2.p3": "Rediseño del simulador de renting para desktop y mobile",
         "exp.c2.impact": "<strong>Impacto Clave:</strong> Aumentamos la captación de leads en un 30% en comparación con el simulador anterior.",
 
-        "exp.c3.role": "Diseñador UX/UI",
-        "exp.c3.period": "Abr 2026 – Jul 2026",
-        "exp.c3.desc": "Diseño de experiencia para aplicación web que distribuye regalías a colaboradores de una pieza multimedia.",
+        "exp.c3.role": "Product Designer",
+        "exp.c3.period": "Ago 2026 – Actualidad",
+        "exp.c3.desc": "Diseño de productos web para empresa de casas automatizadas (Smart Homes).",
         "exp.c3.p1": "Diseño e implementación UI con Lovable",
         "exp.c3.p2": "Vibe Coding & Desarrollo Frontend",
         "exp.c3.p3": "Mejora de funcionalidades a través de GCP (Google Cloud Platform)",
@@ -161,7 +167,7 @@
         "exp.c4.desc": "Diseño de experiencia de usuario para sitios web del Gobierno de Colombia: Transmilenio y Unicolmayor.",
         "exp.c4.p1": "Prototipado en media y alta fidelidad",
         "exp.c4.p2": "Diseño en versión Desktop y Mobile",
-        "exp.c4.p3": "Reducción de menús para disminuir el scroll innecesario en contenidos extensos",
+        "exp.c4.p3": "Mejoras de visibilidad para contenido educativo extenso",
         "exp.c4.impact": "<strong>Impacto Clave:</strong> Mejoré la visualización de los menús laterales en los sitios web de Transmilenio y Unicolmayor, reduciendo el scroll en un 68%.",
 
         "exp.c5.role": "Diseñador UX/UI",
@@ -204,6 +210,10 @@
         "cases.tag": "// CASOS DE ESTUDIO SELECCIONADOS",
         "cases.title": "Proyectos Destacados",
         "cases.view": "Ver Caso de Estudio",
+        "cases.filterAll": "Todos",
+        "cases.filterMobile": "Mobile",
+        "cases.filterWeb": "Web",
+        "cases.filterDashboard": "Dashboard",
         "cases.p0": "Diseño de nueva funcionalidad de calificación y recomendación de contenidos para la plataforma de streaming Mercado Play.",
         "cases.p1": "Integración de iniciativa eco-amigable para domicilios, reduciendo plásticos de un solo uso y rastreando emisiones de carbono por pedido.",
         "cases.p2": "Rediseño de la interfaz de descubrimiento de contenido y experiencia social de visualización para suscriptores en LATAM.",
@@ -215,6 +225,8 @@
         "contact.tag": "// CONTACTO",
         "contact.heading": "Construyamos productos digitales que generen impacto real.",
         "contact.cv": "Descargar CV",
+        "contact.copyEmail": "Copiar correo",
+        "contact.copied": "Copiado",
         "soon.title": "Caso de estudio en proceso",
         "soon.desc": "Este ítem está en proceso de actualización. Vuelve pronto para ver el caso de estudio completo.",
         "soon.close": "Entendido"
@@ -225,59 +237,184 @@
 
     function setLanguage(lang) {
       currentLang = lang;
-      
-      // Update toggle UI
-      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-      document.getElementById(`btn-${lang}`).classList.add('active');
+      document.querySelectorAll('.lang-btn').forEach((btn) => btn.classList.remove('active'));
+      const activeButton = document.getElementById(`btn-${lang}`);
+      if (activeButton) activeButton.classList.add('active');
 
-      // Translate all data-i18n elements
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-          el.innerHTML = translations[lang][key];
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.getAttribute('data-i18n');
+        if (key && translations[lang] && translations[lang][key]) {
+          element.innerHTML = translations[lang][key];
         }
       });
 
       const cvHref = lang === 'es'
         ? '/__l5e/assets-v1/eb079817-8ec9-4b63-9401-d8ffc739010e/CV_Luis-Monroy_ES_PD-2026.pdf'
         : '/__l5e/assets-v1/aa5e97cf-78c2-4613-82d0-0f4e62a4ef48/CV_Luis-Monroy_EN_PD-2026.pdf';
-      document.querySelectorAll('.cv-btn').forEach((btn) => { btn.href = cvHref; });
-      try { localStorage.setItem('lm-lang', lang); } catch (e) {}
-
+      document.querySelectorAll('.cv-btn').forEach((button) => { button.href = cvHref; });
+      try { localStorage.setItem('lm-lang', lang); } catch (error) {}
       document.documentElement.lang = lang;
     }
 
+    const englishButton = document.getElementById('btn-en');
+    const spanishButton = document.getElementById('btn-es');
+    if (englishButton) englishButton.addEventListener('click', () => setLanguage('en'));
+    if (spanishButton) spanishButton.addEventListener('click', () => setLanguage('es'));
 
-    document.getElementById('btn-en').addEventListener('click', () => setLanguage('en'));
-    document.getElementById('btn-es').addEventListener('click', () => setLanguage('es'));
-
-    // Initialize Lucide icons & language
     if (window.lucide) lucide.createIcons();
-    setLanguage((() => { try { return localStorage.getItem('lm-lang') === 'es' ? 'es' : 'en'; } catch (e) { return 'en'; } })());
+    setLanguage((() => {
+      try { return localStorage.getItem('lm-lang') === 'es' ? 'es' : 'en'; }
+      catch (error) { return 'en'; }
+    })());
 
-
-    // Clickable company cards
-    (function () {
+    (function initializePortfolioInteractions() {
       const modal = document.getElementById('soonModal');
-      const openModal = () => modal && modal.classList.add('open');
-      const closeModal = () => modal && modal.classList.remove('open');
-      const closeBtn = document.getElementById('soonClose');
-      if (closeBtn) closeBtn.addEventListener('click', closeModal);
-      if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+      const closeButton = document.getElementById('soonClose');
+      const openModal = () => {
+        if (!modal) return;
+        modal.classList.add('open');
+        closeButton?.focus();
+      };
+      const closeModal = () => modal?.classList.remove('open');
+
+      closeButton?.addEventListener('click', closeModal);
+      modal?.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeModal(); });
 
       document.querySelectorAll('.clickable-card').forEach((card) => {
-        card.addEventListener('click', () => {
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'link');
+        const activate = () => {
           const route = card.getAttribute('data-route');
           const url = card.getAttribute('data-link');
-          if (route) {
-            window.location.href = route;
-          } else if (url) {
-            window.open(url, '_blank', 'noopener,noreferrer');
-          } else {
-            openModal();
+          if (route) window.location.href = route;
+          else if (url) window.open(url, '_blank', 'noopener,noreferrer');
+          else openModal();
+        };
+        card.addEventListener('click', activate);
+        card.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            activate();
           }
         });
       });
 
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reducedMotion) {
+        document.documentElement.classList.add('motion-ready');
+        requestAnimationFrame(() => document.documentElement.classList.add('motion-started'));
+      }
+
+      const revealTargets = document.querySelectorAll('.section-header, .company-card, .case-card, .profile-card, .caps-card, .contact-wrapper > *');
+      revealTargets.forEach((target, index) => target.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 70}ms`));
+      if (reducedMotion || !('IntersectionObserver' in window)) {
+        revealTargets.forEach((target) => target.classList.add('is-visible'));
+      } else {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+        revealTargets.forEach((target) => revealObserver.observe(target));
+      }
+
+      const statNumbers = document.querySelectorAll('.stat-num');
+      const countStats = () => {
+        statNumbers.forEach((number) => {
+          if (number.dataset.counted === 'true') return;
+          number.dataset.counted = 'true';
+          const original = number.textContent?.trim() || '0';
+          const target = Number.parseInt(original.replace(/\D/g, ''), 10);
+          const prefix = original.startsWith('+') ? '+' : '';
+          if (reducedMotion || Number.isNaN(target)) return;
+          const start = performance.now();
+          const duration = 600;
+          const tick = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            number.textContent = `${prefix}${Math.round(target * (1 - Math.pow(1 - progress, 3)))}`;
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        });
+      };
+      const statsCard = document.querySelector('.hero-card');
+      if (statsCard && 'IntersectionObserver' in window) {
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            countStats();
+            observer.disconnect();
+          }
+        }, { threshold: 0.45 });
+        statsObserver.observe(statsCard);
+      } else countStats();
+
+      const navbar = document.querySelector('.navbar');
+      const progress = document.getElementById('scrollProgress');
+      const navLinks = Array.from(document.querySelectorAll('.nav-link[href^="#"]'));
+      const sections = navLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+      const updateScroll = () => {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const ratio = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+        progress?.style.setProperty('transform', `scaleX(${Math.min(Math.max(ratio, 0), 1)})`);
+        navbar?.classList.toggle('is-scrolled', window.scrollY > 24);
+        let activeId = '';
+        sections.forEach((section) => {
+          if (section.getBoundingClientRect().top <= 160) activeId = section.id;
+        });
+        navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`));
+      };
+      updateScroll();
+      window.addEventListener('scroll', updateScroll, { passive: true });
+
+      document.querySelectorAll('.filter-chip').forEach((chip) => {
+        chip.addEventListener('click', () => {
+          const filter = chip.dataset.filter || 'all';
+          document.querySelectorAll('.filter-chip').forEach((item) => {
+            const selected = item === chip;
+            item.classList.toggle('active', selected);
+            item.setAttribute('aria-pressed', String(selected));
+          });
+          document.querySelectorAll('.case-card').forEach((card) => {
+            const visible = filter === 'all' || card.dataset.category === filter;
+            card.classList.toggle('is-filtered', !visible);
+            card.setAttribute('aria-hidden', String(!visible));
+          });
+        });
+      });
+
+      if (window.matchMedia('(hover: hover)').matches && !reducedMotion) {
+        document.querySelectorAll('.case-card').forEach((card) => {
+          card.addEventListener('pointermove', (event) => {
+            const rect = card.getBoundingClientRect();
+            const rotateY = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
+            const rotateX = ((event.clientY - rect.top) / rect.height - 0.5) * -8;
+            card.style.setProperty('--tilt-x', `${rotateX.toFixed(2)}deg`);
+            card.style.setProperty('--tilt-y', `${rotateY.toFixed(2)}deg`);
+          });
+          card.addEventListener('pointerleave', () => {
+            card.style.setProperty('--tilt-x', '0deg');
+            card.style.setProperty('--tilt-y', '0deg');
+          });
+        });
+      }
+
+      const copyButton = document.getElementById('copyEmail');
+      const copyToast = document.getElementById('copyToast');
+      copyButton?.addEventListener('click', async () => {
+        const email = copyButton.dataset.email || '';
+        try { await navigator.clipboard.writeText(email); }
+        catch (error) {
+          const input = document.createElement('textarea');
+          input.value = email;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand('copy');
+          input.remove();
+        }
+        copyToast?.classList.add('show');
+        window.setTimeout(() => copyToast?.classList.remove('show'), 1800);
+      });
     })();
