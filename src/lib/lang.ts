@@ -6,8 +6,8 @@ const KEY = "lm-lang";
 const EVENT = "lm-langchange";
 
 export const CV_URLS: Record<Lang, string> = {
-  en: "/__l5e/assets-v1/aa5e97cf-78c2-4613-82d0-0f4e62a4ef48/CV_Luis-Monroy_EN_PD-2026.pdf",
-  es: "/__l5e/assets-v1/eb079817-8ec9-4b63-9401-d8ffc739010e/CV_Luis-Monroy_ES_PD-2026.pdf",
+  en: "/site/cv/CV_Luis-Monroy_EN_PD-2026.pdf",
+  es: "/site/cv/CV_Luis-Monroy_ES_PD-2026.pdf",
 };
 
 export function getLang(): Lang {

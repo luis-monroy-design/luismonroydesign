@@ -41,10 +41,11 @@
         "exp.c3.role": "Product Designer",
         "exp.c3.period": "Aug 2026 – Present",
         "exp.c3.desc": "Web product design for a smart home automation company.",
-        "exp.c3.p1": "UI design & implementation using Lovable",
-        "exp.c3.p2": "Vibe Coding & Frontend Development",
-        "exp.c3.p3": "Feature enhancements via GCP (Google Cloud Platform)",
-        "exp.c3.impact": "<strong>Key Impact:</strong> Integrated the platform with YouTube to improve data capture and enhanced visibility of key data on the main dashboard.",
+        "exp.c3.p1": "Design and implementation of complex platforms using Claude Code",
+        "exp.c3.p2": "Vibe Coding & Frontend Development with integrations via MCP",
+        "exp.c3.p3": "Management of sites, domains, emails, and databases using Supabase and Hostinger",
+        "exp.c3.p4": "SEO optimization for emerging websites",
+        "exp.c3.impact": "<strong>Key Impact:</strong> Ranked the Harmoni Systems website in search results for smart home solutions in the US.",
 
         "exp.c4.role": "UX/UI Designer",
         "exp.c4.period": "Feb 2026 – Apr 2026",
@@ -162,10 +163,11 @@
         "exp.c3.role": "Product Designer",
         "exp.c3.period": "Ago 2026 – Actualidad",
         "exp.c3.desc": "Diseño de productos web para empresa de casas automatizadas (Smart Homes).",
-        "exp.c3.p1": "Diseño e implementación UI con Lovable",
-        "exp.c3.p2": "Vibe Coding & Desarrollo Frontend",
-        "exp.c3.p3": "Mejora de funcionalidades a través de GCP (Google Cloud Platform)",
-        "exp.c3.impact": "<strong>Impacto Clave:</strong> Integré la plataforma con YouTube para mayor captación de data y mejoré la visibilidad de datos relevantes en el dashboard principal.",
+        "exp.c3.p1": "Diseño e implementación de plataformas complejas con Claude Code",
+        "exp.c3.p2": "Vibe Coding & Desarrollo Frontend con integraciones a través de MCP",
+        "exp.c3.p3": "Gestión de sitios, dominios, correos y bases de datos con Supabase y Hostinger",
+        "exp.c3.p4": "Optimización SEO para sitios web emergentes",
+        "exp.c3.impact": "<strong>Impacto Clave:</strong> Posicionamos el sitio web de Harmoni Systems en búsquedas sobre casas inteligentes en USA.",
 
         "exp.c4.role": "Diseñador UX/UI",
         "exp.c4.period": "Feb 2026 – Abr 2026",
@@ -259,8 +261,8 @@
       });
 
       const cvHref = lang === 'es'
-        ? '/__l5e/assets-v1/eb079817-8ec9-4b63-9401-d8ffc739010e/CV_Luis-Monroy_ES_PD-2026.pdf'
-        : '/__l5e/assets-v1/aa5e97cf-78c2-4613-82d0-0f4e62a4ef48/CV_Luis-Monroy_EN_PD-2026.pdf';
+        ? '/site/cv/CV_Luis-Monroy_ES_PD-2026.pdf'
+        : '/site/cv/CV_Luis-Monroy_EN_PD-2026.pdf';
       document.querySelectorAll('.cv-btn').forEach((button) => { button.href = cvHref; });
       try { localStorage.setItem('lm-lang', lang); } catch (error) {}
       document.documentElement.lang = lang;
