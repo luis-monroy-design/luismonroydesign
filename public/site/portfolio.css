@@ -946,3 +946,161 @@
     @media (max-width: 640px) {
       .nav-cv-btn { display: none; }
     }
+
+/* 2026 interaction and accessibility polish */
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 2px;
+  z-index: 120;
+  background: var(--accent-green);
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+header.navbar { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+header.navbar.is-scrolled { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(7, 8, 10, 0.94); }
+
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 3px;
+}
+
+:where(.btn-primary, .btn-secondary, .contact-item, .filter-chip, .soon-close, .lang-btn) { min-height: 44px; }
+:where(.btn-primary, .btn-secondary):active { transform: scale(.97); }
+
+.logo-item-text {
+  min-width: 220px;
+  min-height: 86px;
+  justify-content: center;
+  color: var(--text-main);
+  font-family: var(--font-display);
+}
+.logo-img { filter: grayscale(1); opacity: .76; }
+
+.company-timeline {
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding-left: 44px;
+  position: relative;
+}
+.company-timeline::before {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 20px;
+  bottom: 20px;
+  width: 1px;
+  background: var(--border-accent);
+}
+.company-card { --card-y: 0px; transform: translateY(var(--card-y)); }
+.company-card .company-header::before {
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 42px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  border: 2px solid var(--accent-green);
+  box-shadow: 0 0 0 5px var(--bg-dark);
+}
+.company-card:first-child .company-header::before { background: var(--accent-green); }
+.company-cover-text {
+  min-height: 220px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(30px, 5vw, 58px);
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(0,245,160,.1), rgba(59,130,246,.06));
+}
+
+.case-filters { display: flex; flex-wrap: wrap; gap: 10px; margin: -24px 0 32px; }
+.filter-chip {
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 8px 18px;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  font: 600 12px var(--font-mono);
+  cursor: pointer;
+}
+.filter-chip.active { color: var(--bg-dark); background: var(--accent-green); border-color: var(--accent-green); }
+.case-card { --tilt-x: 0deg; --tilt-y: 0deg; transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)); }
+.case-card.is-filtered { display: none; }
+
+.copy-email { width: 100%; cursor: pointer; text-align: left; }
+.copy-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 10000;
+  padding: 10px 18px;
+  border: 1px solid var(--border-accent);
+  border-radius: 8px;
+  background: var(--bg-card-hover);
+  color: var(--accent-green);
+  font: 600 13px var(--font-mono);
+  opacity: 0;
+  transform: translate(-50%, 12px);
+  pointer-events: none;
+}
+.copy-toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+@media (hover: hover) {
+  .btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); }
+  .company-card:hover { --card-y: -4px; }
+  .company-card:hover::before, .company-card:hover::after { filter: drop-shadow(0 0 5px var(--accent-green)); }
+  .case-card:hover { transform: perspective(900px) translateY(-4px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)); }
+  .case-card:hover .case-cover-img { transform: scale(1.04); }
+  .logo-item:hover .logo-img { filter: grayscale(0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :where(.btn-primary, .btn-secondary, .company-card, .case-card, .case-cover-img, .logo-img, .copy-toast, .filter-chip) {
+    transition: transform 220ms cubic-bezier(0.23,1,0.32,1), opacity 220ms cubic-bezier(0.23,1,0.32,1);
+  }
+  .motion-ready .hero > div:first-child > *, .motion-ready .hero-card { opacity: 0; transform: translateY(16px); }
+  .motion-started .hero > div:first-child > *, .motion-started .hero-card {
+    animation: portfolio-rise 560ms cubic-bezier(0.23,1,0.32,1) forwards;
+  }
+  .motion-started .hero > div:first-child > *:nth-child(2) { animation-delay: 70ms; }
+  .motion-started .hero > div:first-child > *:nth-child(3) { animation-delay: 140ms; }
+  .motion-started .hero > div:first-child > *:nth-child(4) { animation-delay: 210ms; }
+  .motion-started .hero > div:first-child > *:nth-child(5) { animation-delay: 280ms; }
+  .motion-started .hero-card { animation-delay: 180ms; }
+  .section-header, .company-card, .case-card, .profile-card, .caps-card, .contact-wrapper > * {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: transform 520ms cubic-bezier(0.23,1,0.32,1) var(--reveal-delay, 0ms), opacity 520ms cubic-bezier(0.23,1,0.32,1) var(--reveal-delay, 0ms);
+  }
+  :where(.section-header, .company-card, .case-card, .profile-card, .caps-card, .contact-wrapper > *).is-visible { opacity: 1; transform: translateY(0); }
+  .company-card:first-child .company-header::before { animation: current-dot 1.8s cubic-bezier(0.23,1,0.32,1) infinite; }
+  @keyframes portfolio-rise { to { opacity: 1; transform: translateY(0); } }
+  @keyframes current-dot { 50% { opacity: .45; transform: scale(.78); } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .pulse-dot, .marquee-track, .company-card:first-child .company-header::before { animation: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}
+
+@media (max-width: 640px) {
+  .nav-container { padding-inline: 16px; }
+  .brand-badge { display: none; }
+  .company-timeline { padding-left: 30px; }
+  .company-timeline::before { left: 8px; }
+  .company-card { padding: 20px; }
+  .company-card .company-header::before { left: -27px; }
+  .company-cover-text { min-height: 150px; }
+  section { padding-inline: 16px; }
+  .case-filters { margin-top: -20px; }
+  .filter-chip { flex: 1 1 calc(50% - 5px); }
+  .case-card { padding: 20px; }
+  .case-footer { align-items: flex-start; gap: 12px; flex-direction: column; }
+  .contact-item { overflow-wrap: anywhere; }
+}
