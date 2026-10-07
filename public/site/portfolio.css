@@ -746,3 +746,181 @@ main .company-header { margin-bottom: 16px; }
   .contact-item { overflow-wrap: anywhere; }
   .company-header { flex-direction: column; align-items: flex-start; gap: 4px; }
 }
+
+/* ==========================================================================
+   Scroll-driven stage (enabled by /site/stage.js; the page works without it)
+   ========================================================================== */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* The WebGL world is the page background; content floats above it */
+.stage-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1400ms var(--ease);
+}
+.stage-canvas.is-ready { opacity: 1; }
+html.has-stage body,
+html.has-stage footer { background: transparent; }
+html.has-stage .marquee-banner { background: transparent; }
+
+/* Tone follows the chapter while scrolling (set by the stage) */
+html[data-tone="dark"] { --logo-filter: grayscale(1) opacity(0.72); --shadow-hover: 0 24px 60px rgba(0, 0, 0, 0.5); }
+html[data-tone="light"] { --logo-filter: invert(1) grayscale(1) opacity(0.62); }
+html.has-motion .logo-img { transition: none; }
+
+/* Navigation: dim what you are not pointing at */
+.nav-link { transition: color 200ms ease, opacity 300ms ease; }
+@media (hover: hover) {
+  .nav-menu:has(.nav-link:hover) .nav-link:not(:hover) { opacity: 0.35; }
+}
+
+/* Hero: layers answer to the mouse (individual transform props avoid the entrance animation) */
+html.has-motion .hero-title,
+html.has-motion .hero-subtitle-tag,
+html.has-motion .hero-subtitle,
+html.has-motion .status-pill,
+html.has-motion .hero-actions,
+html.has-motion .hero-card { will-change: translate; }
+
+/* Experience: the row near the middle of the screen is in focus */
+@media (min-width: 900px) {
+  html.has-motion .company-timeline > .company-card > * { opacity: var(--focus, 1); }
+  html.has-motion .company-timeline > .company-card > .company-cover-container { translate: 0 var(--py, 0px); }
+}
+
+/* Words light up as you read (about + contact statements) */
+.w { opacity: 0.2; transition: none; }
+html:not(.has-motion) .w { opacity: 1; }
+
+/* Chapter ruler (left edge) */
+.chapter-ruler {
+  position: fixed;
+  left: 26px;
+  top: 50%;
+  z-index: 60;
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  transform: translateY(-50%);
+}
+@media (min-width: 1280px) { html.has-stage .chapter-ruler { display: flex; } }
+.chapter-ruler .tick {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 28px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text-3);
+  cursor: pointer;
+}
+.chapter-ruler .tick i {
+  display: block;
+  width: 14px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
+  transition: width 500ms var(--ease), opacity 300ms ease;
+}
+.chapter-ruler .tick span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 400ms var(--ease), transform 400ms var(--ease);
+  white-space: nowrap;
+}
+.chapter-ruler .tick.is-active { color: var(--text); }
+.chapter-ruler .tick.is-active i { width: 30px; opacity: 1; }
+.chapter-ruler .tick.is-active span,
+.chapter-ruler .tick:hover span { opacity: 1; transform: none; }
+
+/* ----- Selected work: pinned 3D carousel driven by vertical scroll ----- */
+html.stage-carousel #cases { max-width: none; padding: 0 !important; margin: 0; }
+.cases-pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  perspective: 1700px;
+  perspective-origin: 50% 46%;
+}
+.cases-head {
+  position: absolute;
+  inset: 84px 0 auto 0;
+  z-index: 5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.cases-head .section-header { margin: 0; }
+.cases-head .section-title { font-size: clamp(30px, 3.4vw, 46px); max-width: none; }
+.cases-head .case-filters { margin: 0 0 4px; }
+
+html.stage-carousel .case-studies-grid {
+  position: absolute;
+  inset: 0;
+  display: block;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+html.stage-carousel .case-card {
+  position: absolute;
+  left: 50%;
+  top: 57%;
+  width: var(--card-w, 720px);
+  margin: 0;
+  opacity: var(--o, 1) !important;
+  transform: translate(-50%, -50%) var(--t, none) !important;
+  transition: none !important;
+  will-change: transform, opacity;
+  cursor: pointer;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.22);
+  backface-visibility: hidden;
+}
+html.stage-carousel .case-card.is-filtered { display: none; }
+html.stage-carousel .case-card.is-active { cursor: default; }
+html.stage-carousel .case-card:not(.is-active) a { pointer-events: none; }
+html.stage-carousel .case-card > div:nth-child(2),
+html.stage-carousel .case-card .case-footer { opacity: var(--ti, 1); }
+html.stage-carousel .case-card .case-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+html.stage-carousel .case-cover-img { transition: none; }
+
+.cases-counter {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-2);
+}
+.cases-counter .cc-bar { position: relative; width: 120px; height: 1px; background: var(--line); overflow: hidden; }
+.cases-counter .cc-bar i { position: absolute; inset: 0; background: var(--text); transform-origin: left; transform: scaleX(0); }
+
+@media (hover: hover) {
+  html.stage-carousel .case-card:hover { box-shadow: 0 30px 90px rgba(0, 0, 0, 0.22); }
+}

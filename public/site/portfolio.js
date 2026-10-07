@@ -266,6 +266,7 @@
       document.querySelectorAll('.cv-btn').forEach((button) => { button.href = cvHref; });
       try { localStorage.setItem('lm-lang', lang); } catch (error) {}
       document.documentElement.lang = lang;
+      window.dispatchEvent(new CustomEvent("lm:lang", { detail: lang }));
     }
 
     const englishButton = document.getElementById('btn-en');

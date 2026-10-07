@@ -30,12 +30,13 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function loadScript(src: string) {
+function loadScript(src: string, type?: string) {
   return new Promise<void>((resolve, reject) => {
     const existing = document.querySelector<HTMLScriptElement>(`script[data-portfolio="${src}"]`);
     if (existing) return resolve();
     const el = document.createElement("script");
     el.src = src;
+    if (type) el.type = type;
     el.dataset["portfolio"] = src;
     el.onload = () => resolve();
     el.onerror = () => reject(new Error(`Failed to load ${src}`));
@@ -52,6 +53,9 @@ function Index() {
         await loadScript("https://unpkg.com/lucide@latest").catch(() => undefined); // icons are decorative
         if (cancelled) return;
         await loadScript("/site/portfolio.js");
+        if (cancelled) return;
+        // Scroll-driven 3D stage: optional enhancement, the page works without it.
+        await loadScript("/site/stage.js", "module").catch(() => undefined);
       } catch (err) {
         console.error(err);
       }
