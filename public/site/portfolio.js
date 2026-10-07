@@ -48,7 +48,7 @@
         "exp.c3.impact": "<strong>Key Impact:</strong> Ranked the Harmoni Systems website in search results for smart home solutions in the US.",
 
         "exp.c4.role": "UX/UI Designer",
-        "exp.c4.period": "Feb 2026 – Apr 2026",
+        "exp.c4.period": "Feb 2026 – Jul 2026",
         "exp.c4.desc": "User experience design for high-traffic Colombian Government websites: Transmilenio and Unicolmayor.",
         "exp.c4.p1": "Mid and high-fidelity interactive prototyping",
         "exp.c4.p2": "Responsive Desktop & Mobile design architecture",
@@ -170,7 +170,7 @@
         "exp.c3.impact": "<strong>Impacto Clave:</strong> Posicionamos el sitio web de Harmoni Systems en búsquedas sobre casas inteligentes en USA.",
 
         "exp.c4.role": "Diseñador UX/UI",
-        "exp.c4.period": "Feb 2026 – Abr 2026",
+        "exp.c4.period": "Feb 2026 – Jul 2026",
         "exp.c4.desc": "Diseño de experiencia de usuario para sitios web del Gobierno de Colombia: Transmilenio y Unicolmayor.",
         "exp.c4.p1": "Prototipado en media y alta fidelidad",
         "exp.c4.p2": "Diseño en versión Desktop y Mobile",

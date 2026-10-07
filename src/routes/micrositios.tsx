@@ -45,7 +45,7 @@ export const Route = createFileRoute("/micrositios")({
       ]}
       en={{
         role: "UX/UI Designer",
-        period: "Feb 2026 – Apr 2026",
+        period: "Feb 2026 – Jul 2026",
         intro:
           "User experience design for high-traffic Colombian government websites — Transmilenio and Universidad Colegio Mayor de Cundinamarca (Unicolmayor) — where large volumes of institutional content must stay readable and easy to navigate.",
         tags: ["Gov Web Design", "Information Architecture", "Menu Reduction", "Mobile & Desktop"],
@@ -78,7 +78,7 @@ export const Route = createFileRoute("/micrositios")({
       }}
       es={{
         role: "Diseñador UX/UI",
-        period: "Feb 2026 – Abr 2026",
+        period: "Feb 2026 – Jul 2026",
         intro:
           "Diseño de experiencia de usuario para sitios web del Gobierno de Colombia con alto tráfico — Transmilenio y la Universidad Colegio Mayor de Cundinamarca (Unicolmayor) — donde grandes volúmenes de contenido institucional deben mantenerse legibles y fáciles de navegar.",
         tags: [
