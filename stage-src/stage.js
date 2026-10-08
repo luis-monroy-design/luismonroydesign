@@ -3,8 +3,8 @@
 
    - One fixed WebGL world: a soft light field plus a set of thin, minimal
      boxes that organise themselves into different wireframes and screens
-     (desktop page, bento grid, phone, components, form) as you scroll.
-   - Chapters flip the page palette between light and dark while you scroll.
+     (desktop page, code editor, bento grid, phone, components, form) as you scroll.
+   - The palette machinery can flip chapters between light and dark; today every chapter is dark.
    - "Selected work" becomes a pinned 3D carousel driven by vertical scroll.
    - The mouse moves everything in layers (object, light field, text, cards),
      always smoothed (lerp / damping) so nothing ever snaps.
@@ -67,10 +67,11 @@ const mixColor = (a, b, k) => {
 /* ---------- Chapters ---------- */
 const CHAPTERS = [
   { key: "hero", sel: ".hero", dark: 1, en: "Top", es: "Inicio" },
-  { key: "experience", sel: "#experience", dark: 0, en: "Experience", es: "Experiencia" },
+  { key: "experience", sel: "#experience", dark: 1, en: "Experience", es: "Experiencia" },
+  { key: "builder", sel: "#builder", dark: 1, en: "Builder", es: "Builder" },
   { key: "cases", sel: "#cases", dark: 1, en: "Work", es: "Proyectos" },
-  { key: "profile", sel: "#profile", dark: 0, en: "About", es: "Perfil" },
-  { key: "capabilities", sel: "#capabilities", dark: 0, en: "Skills", es: "Habilidades" },
+  { key: "profile", sel: "#profile", dark: 1, en: "About", es: "Perfil" },
+  { key: "capabilities", sel: "#capabilities", dark: 1, en: "Skills", es: "Habilidades" },
   { key: "contact", sel: "#contact", dark: 1, en: "Contact", es: "Contacto" },
 ];
 
@@ -100,6 +101,27 @@ const FORMS = [
       [-5, 2.9, 4.6, 3.2, 0.3, OUT],
       [0, 2.9, 4.6, 3.2, 0.3, OUT],
       [5, 2.9, 4.6, 3.2, 0.3, OUT],
+    ],
+  },
+  // builder: a code editor with a live preview and a terminal
+  {
+    w: 16, h: 10, fitW: 0.56, fitH: 0.6, alpha: 0.8, rx: 0.06, ry: 0.2,
+    boxes: [
+      [0, 0, 16, 10, 0.5, OUT, -0.1],
+      [0, -4.35, 15.2, 0.5, 0.25, OUT],
+      [-6.2, 0.4, 2.8, 8.2, 0.3, OUT],
+      [-1.9, -3.2, 4.6, 0.24, 0.12, BAR],
+      [-2.6, -2.5, 3.2, 0.24, 0.12, BAR],
+      [-1.6, -1.8, 5.2, 0.24, 0.12, BAR],
+      [-2.2, -1.1, 4, 0.24, 0.12, BAR],
+      [-2.9, -0.4, 2.6, 0.24, 0.12, BAR],
+      [-1.8, 0.3, 4.8, 0.24, 0.12, BAR],
+      [0.9, 0.3, 0.14, 0.42, 0.07, ACC],
+      [4.3, -0.4, 5.8, 6.6, 0.35, OUT],
+      [4.3, -2.6, 4, 0.5, 0.25, BAR],
+      [4.3, 0.3, 4.4, 2.4, 0.3, OUT],
+      [1.4, 3.9, 12, 1.4, 0.3, OUT],
+      [-1.6, 3.9, 5.4, 0.24, 0.12, BAR],
     ],
   },
   // work: a bento wall laid back behind the carousel
@@ -178,8 +200,8 @@ const FORMS = [
     ],
   },
 ];
-// Base opacity per kind: [stroke, fill, accent mix]. Kept low so text always reads first.
-const KIND = [[0.22, 0.018, 0], [0, 0.085, 0], [0.5, 0.12, 1]];
+// Base opacity per kind: [stroke, fill, accent mix]. Kept very low so text always reads first.
+const KIND = [[0.1, 0.008, 0], [0, 0.04, 0], [0.24, 0.05, 1]];
 
 /* ======================================================================== */
 function boot() {
@@ -496,13 +518,11 @@ function createStage() {
   const hidden = (o) => ({ ...o, w: o.w * 0.25, h: o.h * 0.25, r: o.r * 0.25, al: 0 });
 
   const rot = { x: 0, y: 0 };
-  let tone = 0;
 
   return {
     canvas,
     resize,
     setTone(k) {
-      tone = k;
       // The shaders write raw sRGB values, so feed them the same numbers the CSS palette uses.
       bgMat.uniforms.uBg.value.setRGB(lerp(251, 8, k) / 255, lerp(251, 8, k) / 255, lerp(253, 10, k) / 255);
       bgMat.uniforms.uDark.value = k;
@@ -513,7 +533,7 @@ function createStage() {
       const t = state.t;
       const fa = f, fb = Math.min(f + 1, FORMS.length - 1);
       const A = FORMS[fa], B = FORMS[fb];
-      const gain = (view.phone ? 0.9 : 1) * lerp(1, 1.15, tone);
+      const gain = view.phone ? 0.9 : 1;
 
       for (let i = 0; i < BOXES; i++) {
         const bx = boxes[i];

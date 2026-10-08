@@ -1,6 +1,7 @@
     const translations = {
       en: {
         "nav.experience": "Experience",
+        "nav.builder": "Builder",
         "nav.profile": "Profile",
         "nav.capabilities": "Capabilities",
         "nav.cases": "Case Studies",
@@ -71,6 +72,21 @@
         "exp.c6.p3": "Visual storytelling and brand asset design for travel experiences",
         "exp.c6.impact": "<strong>Key Impact:</strong> Increased direct booking conversions by 28% and reduced checkout cart abandonment rate.",
 
+        "builder.tag": "Builder",
+        "builder.title": "I design it. I also build it.",
+        "builder.lead": "Beyond the mockup: I use AI-assisted development (vibe coding) to turn designs into live products, from the interface to the data and the deploy, so ideas get tested with real users in days, not months.",
+        "builder.c1.title": "Websites in production",
+        "builder.c1.desc": "Fast, bilingual sites with scroll-driven and 3D interactions and technical SEO, designed, built and published by me.",
+        "builder.c2.title": "Internal tools and apps",
+        "builder.c2.desc": "Quote calculators, admin panels with login and user roles, e-signature contracts and commission tracking, connected to a real database.",
+        "builder.c2.proof": "Next.js · Supabase · Auth and roles",
+        "builder.c3.title": "From prompt to deploy",
+        "builder.c3.desc": "Claude Code, Lovable and Figma MCP to go from idea to a working product; GitHub, Vercel and Hostinger to ship and keep iterating.",
+        "builder.c3.proof": "This portfolio: TanStack Start and Three.js, built with Claude Code",
+        "builder.flow": "How I ship",
+        "builder.s1": "Research",
+        "builder.s6": "Live",
+
         "profile.tag": "About",
         "profile.title": "Strategic Design & Execution",
         "profile.subtitle": "Product Designer & UX/UI Designer",
@@ -123,6 +139,7 @@
       },
       es: {
         "nav.experience": "Experiencia",
+        "nav.builder": "Builder",
         "nav.profile": "Perfil",
         "nav.capabilities": "Capacidades",
         "nav.cases": "Casos de Estudio",
@@ -192,6 +209,21 @@
         "exp.c6.p2": "Optimización del embudo de reserva y pago digital",
         "exp.c6.p3": "Diseño visual y narrativo de experiencias de viaje",
         "exp.c6.impact": "<strong>Impacto Clave:</strong> Aumentó la conversión de reservas directas en un 28% y redujo la tasa de abandono del proceso de compra.",
+
+        "builder.tag": "Builder",
+        "builder.title": "Lo diseño. Y también lo construyo.",
+        "builder.lead": "Más allá del mockup: uso desarrollo asistido por IA (vibe coding) para convertir diseños en productos reales, desde la interfaz hasta los datos y la publicación, y así probar ideas con usuarios en días, no en meses.",
+        "builder.c1.title": "Sitios web en producción",
+        "builder.c1.desc": "Sitios rápidos y bilingües con interacciones de scroll y 3D y SEO técnico, diseñados, construidos y publicados por mí.",
+        "builder.c2.title": "Herramientas internas y apps",
+        "builder.c2.desc": "Cotizadores, paneles de administración con inicio de sesión y roles, contratos con firma electrónica y seguimiento de comisiones, conectados a una base de datos real.",
+        "builder.c2.proof": "Next.js · Supabase · Inicio de sesión y roles",
+        "builder.c3.title": "Del prompt a producción",
+        "builder.c3.desc": "Claude Code, Lovable y Figma MCP para pasar de la idea a un producto funcionando; GitHub, Vercel y Hostinger para publicar y seguir iterando.",
+        "builder.c3.proof": "Este portafolio: TanStack Start y Three.js, construido con Claude Code",
+        "builder.flow": "Cómo lo publico",
+        "builder.s1": "Investigación",
+        "builder.s6": "En vivo",
 
         "profile.tag": "Perfil",
         "profile.title": "Diseño Estratégico y Ejecución",
@@ -319,7 +351,7 @@
         requestAnimationFrame(() => document.documentElement.classList.add('motion-started'));
       }
 
-      const revealTargets = document.querySelectorAll('.section-header, .company-card, .case-card, .profile-card, .caps-card, .contact-wrapper > *');
+      const revealTargets = document.querySelectorAll('.section-header, .company-card, .case-card, .profile-card, .caps-card, .builder-card, .builder-flow, .contact-wrapper > *');
       revealTargets.forEach((target, index) => target.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 70}ms`));
       if (reducedMotion || !('IntersectionObserver' in window)) {
         revealTargets.forEach((target) => target.classList.add('is-visible'));

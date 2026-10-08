@@ -3,6 +3,7 @@ import { CV_URLS, useLang } from "../lib/lang";
 const labels = {
   en: {
     experience: "Experience",
+    builder: "Builder",
     cases: "Case Studies",
     profile: "Profile",
     capabilities: "Capabilities",
@@ -11,6 +12,7 @@ const labels = {
   },
   es: {
     experience: "Experiencia",
+    builder: "Builder",
     cases: "Casos de Estudio",
     profile: "Perfil",
     capabilities: "Capacidades",
@@ -34,6 +36,11 @@ export function SiteNavbar() {
           <li>
             <a href="/#experience" className="nav-link">
               {t.experience}
+            </a>
+          </li>
+          <li>
+            <a href="/#builder" className="nav-link">
+              {t.builder}
             </a>
           </li>
           <li>

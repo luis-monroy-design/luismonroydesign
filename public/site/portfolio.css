@@ -1,33 +1,33 @@
 /* ==========================================================================
    Luis Monroy — portfolio
-   Minimal, Apple-inspired system: light canvas, one accent, system type,
-   generous space, quiet motion. Dark mode follows the operating system.
+   Minimal, Apple-inspired system: dark canvas, one accent, system type,
+   generous space, quiet motion. The whole site is dark.
    ========================================================================== */
 
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
 
   /* Surfaces */
-  --bg: #fbfbfd;
-  --surface: #ffffff;
-  --tile: #f5f5f7;
-  --tile-hover: #efeff2;
-  --nav-bg: rgba(251, 251, 253, 0.72);
+  --bg: #08080a;
+  --surface: #1e1e21;
+  --tile: #161619;
+  --tile-hover: #1e1e21;
+  --nav-bg: rgba(8, 8, 10, 0.72);
 
   /* Text */
-  --text: #1d1d1f;
-  --text-2: #6e6e73;
+  --text: #f5f5f7;
+  --text-2: #a1a1a6;
   --text-3: #86868b;
 
   /* Lines and accent */
-  --line: rgba(0, 0, 0, 0.1);
-  --accent: #0071e3;
-  --accent-hover: #0077ed;
-  --accent-on: #ffffff;
-  --online: #30b350;
-  --seg-active: #ffffff;
-  --shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.08);
-  --logo-filter: invert(1) grayscale(1) opacity(0.62);
+  --line: rgba(255, 255, 255, 0.14);
+  --accent: #2997ff;
+  --accent-hover: #4aa8ff;
+  --accent-on: #000000;
+  --online: #30d158;
+  --seg-active: #3a3a3c;
+  --shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.5);
+  --logo-filter: grayscale(1) opacity(0.7);
 
   /* Type */
   --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Geist", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -46,27 +46,6 @@
   --bg-card: var(--tile);
   --bg-dark: var(--bg);
   --font-mono: var(--font-body);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #000000;
-    --surface: #1c1c1e;
-    --tile: #141416;
-    --tile-hover: #1c1c1e;
-    --nav-bg: rgba(0, 0, 0, 0.72);
-    --text: #f5f5f7;
-    --text-2: #a1a1a6;
-    --text-3: #86868b;
-    --line: rgba(255, 255, 255, 0.14);
-    --accent: #2997ff;
-    --accent-hover: #4aa8ff;
-    --accent-on: #000000;
-    --online: #30d158;
-    --seg-active: #3a3a3c;
-    --shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.5);
-    --logo-filter: grayscale(1) opacity(0.7);
-  }
 }
 
 * {
@@ -550,6 +529,21 @@ section {
 .tool-group:last-child { margin-bottom: 0; }
 .tool-group-name { margin-bottom: 10px; font-size: 13px; font-weight: 600; color: var(--text-3); }
 
+/* ---------- Builder ---------- */
+.builder-lead { max-width: 640px; margin-top: 20px; font-size: 19px; line-height: 1.55; letter-spacing: -0.012em; color: var(--text-2); }
+.builder-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.builder-card { display: flex; flex-direction: column; gap: 12px; padding: 32px; border-radius: var(--radius-lg); background: var(--tile); }
+.builder-num { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--accent); }
+.builder-card h3 { font-family: var(--font-display); font-size: 22px; font-weight: 600; letter-spacing: -0.025em; }
+.builder-card p { font-size: 16px; line-height: 1.5; letter-spacing: -0.01em; color: var(--text-2); }
+.builder-proof { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.45; color: var(--text-3); }
+.builder-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 40px; }
+.builder-flow-label { font-size: 14px; font-weight: 600; color: var(--text-3); }
+.builder-flow ol { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; list-style: none; }
+.builder-flow li { display: flex; align-items: center; gap: 10px; font-size: 15px; letter-spacing: -0.01em; color: var(--text); }
+.builder-flow li + li::before { content: ""; width: 20px; height: 1px; background: var(--text-3); opacity: 0.6; }
+.builder-flow li:last-child { font-weight: 600; color: var(--accent); }
+
 /* ---------- Contact ---------- */
 footer { margin-top: 48px; background: var(--tile); padding: 112px 24px 32px; }
 .contact-wrapper { max-width: 1120px; margin: 0 auto 88px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: start; }
@@ -697,15 +691,19 @@ main .company-header { margin-bottom: 16px; }
   .case-card,
   .profile-card,
   .caps-card,
+  .builder-card,
+  .builder-flow,
   .contact-wrapper > * {
     opacity: 0;
     transform: translateY(16px);
     transition: opacity 800ms var(--ease) var(--reveal-delay, 0ms), transform 800ms var(--ease) var(--reveal-delay, 0ms);
   }
-  :where(.section-header, .company-card, .case-card, .profile-card, .caps-card, .contact-wrapper > *).is-visible {
+  :where(.section-header, .company-card, .case-card, .profile-card, .caps-card, .builder-card, .builder-flow, .contact-wrapper > *).is-visible {
     opacity: 1;
     transform: none;
   }
+  /* inner case pages (<main>) don't run the reveal observer: show their content right away */
+  main :is(.section-header, .company-card, .case-card, .profile-card, .caps-card) { opacity: 1; transform: none; }
   /* once revealed, cards use their own (faster) hover transitions */
   .case-card.is-visible { transition: transform 500ms var(--ease), box-shadow 500ms var(--ease), opacity 800ms var(--ease); }
 
@@ -727,6 +725,7 @@ main .company-header { margin-bottom: 16px; }
   .company-cover-container { width: 100%; height: 96px; }
   .projects-subgrid { grid-template-columns: 1fr; }
   .profile-grid, .caps-grid, .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
+  .builder-grid { grid-template-columns: 1fr; }
   .case-studies-grid { grid-template-columns: 1fr; }
 }
 
@@ -739,7 +738,7 @@ main .company-header { margin-bottom: 16px; }
   .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stat-box:nth-child(3) { border-left: 0; }
   .stat-box:nth-child(n + 3) { border-top: 1px solid var(--line); }
-  .caps-card { padding: 24px; }
+  .caps-card, .builder-card { padding: 24px; }
   .case-filters { display: flex; border-radius: 22px; }
   .filter-chip { flex: 1 1 calc(50% - 4px); }
   footer { padding: 72px 20px 28px; }
@@ -769,8 +768,9 @@ html.lenis, html.lenis body { height: auto; }
 html.has-stage body,
 html.has-stage footer { background: transparent; }
 html.has-stage .marquee-banner { background: transparent; }
-/* The wireframes pass behind the skills cards: frosted so they show through, blurred */
-html.has-stage .caps-card {
+/* The wireframes pass behind the cards: frosted so they show through, blurred */
+html.has-stage .caps-card,
+html.has-stage .builder-card {
   background: color-mix(in srgb, var(--tile) 42%, transparent);
   -webkit-backdrop-filter: saturate(150%) blur(12px);
   backdrop-filter: saturate(150%) blur(12px);
