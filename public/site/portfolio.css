@@ -769,6 +769,12 @@ html.lenis, html.lenis body { height: auto; }
 html.has-stage body,
 html.has-stage footer { background: transparent; }
 html.has-stage .marquee-banner { background: transparent; }
+/* The glass object passes behind the skills cards: frosted so it shows through, blurred */
+html.has-stage .caps-card {
+  background: color-mix(in srgb, var(--tile) 42%, transparent);
+  -webkit-backdrop-filter: saturate(150%) blur(12px);
+  backdrop-filter: saturate(150%) blur(12px);
+}
 
 /* Tone follows the chapter while scrolling (set by the stage) */
 html[data-tone="dark"] { --logo-filter: grayscale(1) opacity(0.72); --shadow-hover: 0 24px 60px rgba(0, 0, 0, 0.5); }

@@ -70,7 +70,7 @@ const mixColor = (a, b, k) => {
 
 /* ---------- Chapters ---------- */
 const CHAPTERS = [
-  { key: "hero", sel: ".hero", dark: 0, en: "Top", es: "Inicio" },
+  { key: "hero", sel: ".hero", dark: 1, en: "Top", es: "Inicio" },
   { key: "experience", sel: "#experience", dark: 0, en: "Experience", es: "Experiencia" },
   { key: "cases", sel: "#cases", dark: 1, en: "Work", es: "Proyectos" },
   { key: "profile", sel: "#profile", dark: 0, en: "About", es: "Perfil" },
@@ -78,14 +78,15 @@ const CHAPTERS = [
   { key: "contact", sel: "#contact", dark: 1, en: "Contact", es: "Contacto" },
 ];
 
-// Where the glass object lives in each chapter (x in "screens" of 3.4 units, y, scale)
+// Where the glass object lives in each chapter. It always stays centred
+// horizontally (x = 0); only height (y), size (s) and spin change.
 const KEYS = [
-  { x: 0.0, y: 0.0, s: 1.3, spin: 0.14 }, // hero: centered on screen
-  { x: 1.04, y: -0.1, s: 0.85, spin: 0.1 }, // experience: peeks from the right edge
-  { x: 0.0, y: 0.0, s: 1.9, spin: 0.07 }, // work: big, behind the carousel
-  { x: 1.04, y: 0.1, s: 0.85, spin: 0.1 }, // about
-  { x: 1.04, y: -0.05, s: 0.8, spin: 0.1 }, // skills
-  { x: 0.25, y: -0.42, s: 0.95, spin: 0.12 }, // contact: floats above the heading
+  { x: 0, y: 0.0, s: 1.3, spin: 0.14 }, // hero: centered on screen
+  { x: 0, y: 0.04, s: 0.72, spin: 0.1 }, // experience: small, behind the rows
+  { x: 0, y: 0.0, s: 1.9, spin: 0.07 }, // work: big, behind the carousel
+  { x: 0, y: -0.02, s: 0.95, spin: 0.1 }, // about
+  { x: 0, y: 0.06, s: 0.78, spin: 0.1 }, // skills
+  { x: 0, y: -0.42, s: 0.95, spin: 0.12 }, // contact: floats above the heading
 ];
 
 /* ======================================================================== */
@@ -165,6 +166,14 @@ function boot() {
   let tick = 0;
 
   measure();
+  // Start in the tone of the chapter on screen (the hero is dark) instead of fading in from light.
+  {
+    const mid = scrollY + innerHeight * 0.5;
+    let i0 = 0;
+    for (let i = 0; i < metrics.length; i++) if (mid >= metrics[i].top) i0 = i;
+    state.dark = metrics[i0] ? metrics[i0].dark : 0;
+    applyPalette(state.dark);
+  }
   new ResizeObserver(() => { measure(); carousel && carousel.layout(); gl && gl.resize(); }).observe(document.body);
   addEventListener("load", () => { measure(); carousel && carousel.layout(); });
   addEventListener("resize", () => { measure(); carousel && carousel.layout(); gl && gl.resize(); });
