@@ -2,6 +2,8 @@
       en: {
         "nav.experience": "Experience",
         "nav.builder": "Builder",
+        "intro.pause": "Pause",
+        "intro.play": "Play",
         "nav.profile": "Profile",
         "nav.capabilities": "Capabilities",
         "nav.cases": "Case Studies",
@@ -140,6 +142,8 @@
       es: {
         "nav.experience": "Experiencia",
         "nav.builder": "Builder",
+        "intro.pause": "Pausar",
+        "intro.play": "Reproducir",
         "nav.profile": "Perfil",
         "nav.capabilities": "Capacidades",
         "nav.cases": "Casos de Estudio",
@@ -447,4 +451,34 @@
         copyToast?.classList.add('show');
         window.setTimeout(() => copyToast?.classList.remove('show'), 1800);
       });
-    })();
+    
+      // Intro video: autoplays muted; pause button; respects reduced motion; stops off-screen
+      const introVideo = document.getElementById('introVideo');
+      const introToggle = document.getElementById('introToggle');
+      if (introVideo && introToggle) {
+        let userPaused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const label = introToggle.querySelector('.intro-toggle-label');
+        const syncToggle = () => {
+          const paused = introVideo.paused;
+          const dict = translations[currentLang] || translations.en;
+          introToggle.classList.toggle('is-paused', paused);
+          label.textContent = paused ? dict['intro.play'] : dict['intro.pause'];
+          introToggle.setAttribute('aria-pressed', String(paused));
+        };
+        if (userPaused) { introVideo.removeAttribute('autoplay'); introVideo.pause(); }
+        introToggle.addEventListener('click', () => {
+          if (introVideo.paused) { userPaused = false; introVideo.play().catch(() => {}); }
+          else { userPaused = true; introVideo.pause(); }
+        });
+        introVideo.addEventListener('play', syncToggle);
+        introVideo.addEventListener('pause', syncToggle);
+        window.addEventListener('lm:lang', syncToggle);
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(([entry]) => {
+            if (!entry.isIntersecting) introVideo.pause();
+            else if (!userPaused) introVideo.play().catch(() => {});
+          }, { threshold: 0.2 }).observe(introVideo);
+        }
+        syncToggle();
+      }
+})();

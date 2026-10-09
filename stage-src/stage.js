@@ -338,12 +338,13 @@ function boot() {
   }
 
   function updateHero(sy, dt) {
+    const heroTop = metrics[0] ? metrics[0].top : 0;
     if (heroWrap) {
-      const p = clamp(sy / (innerHeight * 0.9), 0, 1);
+      const p = clamp((sy - heroTop) / (innerHeight * 0.9), 0, 1);
       heroWrap.style.transform = `translate3d(0,${(-p * 70).toFixed(1)}px,0)`;
       heroWrap.style.opacity = String(1 - p * 1.1);
     }
-    if (!finePointer || sy > innerHeight) return;
+    if (!finePointer || Math.abs(sy - heroTop) > innerHeight) return;
     for (const [el, depth] of heroParts) {
       el.style.translate = `${(mouse.x * 14 * depth).toFixed(2)}px ${(mouse.y * 9 * depth).toFixed(2)}px`;
     }
