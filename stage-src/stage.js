@@ -263,7 +263,7 @@ function boot() {
   const heroWrap = $(".hero > div:first-child");
   const heroParts = [
     [$(".status-pill"), 0.5], [$(".hero-title"), 1.0], [$(".hero-subtitle-tag"), 0.7],
-    [$(".hero-subtitle"), 0.4], [$(".hero-actions"), 0.3], [$(".hero-card"), -0.25],
+    [$(".hero-subtitle"), 0.4], [$(".hero-intro-btn"), 0.35], [$(".hero-actions"), 0.3], [$(".hero-card"), -0.25],
   ].filter(([el]) => el);
   const rows = wide ? $$(".company-timeline > .company-card") : [];
   const wordTargets = $$(".profile-text, .contact-heading");

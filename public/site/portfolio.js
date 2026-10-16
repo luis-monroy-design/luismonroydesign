@@ -2,8 +2,8 @@
       en: {
         "nav.experience": "Experience",
         "nav.builder": "Builder",
-        "intro.pause": "Pause",
-        "intro.play": "Play",
+        "intro.cta": "Watch intro",
+        "intro.close": "Close",
         "nav.profile": "Profile",
         "nav.capabilities": "Capabilities",
         "nav.cases": "Case Studies",
@@ -114,6 +114,8 @@
         "cases.title": "Featured Projects",
         "cases.view": "View Case Study",
         "cases.visit": "Visit Website",
+        "cases.w0": "Website for a smart home and automation company: as you scroll, the camera flies through ten 3D models of its systems. In development, not yet in production.",
+        "cases.preview": "View Preview",
         "cases.w1": "Corporate website for a branding and web development agency: scroll-driven scenes, Spanish and English versions, and SEO.",
         "cases.w2": "Website for a waterproofing company: a 3D roof that gets sealed as you scroll, plus a quote calculator and client login.",
         "cases.w3": "Concept website for a fictional construction brand: a 3D building site that is built floor by floor as you scroll.",
@@ -142,8 +144,8 @@
       es: {
         "nav.experience": "Experiencia",
         "nav.builder": "Builder",
-        "intro.pause": "Pausar",
-        "intro.play": "Reproducir",
+        "intro.cta": "Ver intro",
+        "intro.close": "Cerrar",
         "nav.profile": "Perfil",
         "nav.capabilities": "Capacidades",
         "nav.cases": "Casos de Estudio",
@@ -254,6 +256,8 @@
         "cases.title": "Proyectos Destacados",
         "cases.view": "Ver Caso de Estudio",
         "cases.visit": "Visitar Sitio Web",
+        "cases.w0": "Sitio web para una empresa de domótica y automatización: al hacer scroll, la cámara recorre diez maquetas 3D de sus sistemas. En desarrollo, aún no está en producción.",
+        "cases.preview": "Ver avance",
         "cases.w1": "Sitio web corporativo de una agencia de branding y desarrollo web: escenas que avanzan con el scroll, versiones en español e inglés y SEO.",
         "cases.w2": "Sitio web de una empresa de impermeabilización: una cubierta 3D que se impermeabiliza mientras haces scroll, con cotizador y acceso de clientes.",
         "cases.w3": "Sitio web conceptual de una constructora ficticia: una obra 3D que se construye piso a piso mientras haces scroll.",
@@ -452,33 +456,36 @@
         window.setTimeout(() => copyToast?.classList.remove('show'), 1800);
       });
     
-      // Intro video: autoplays muted; pause button; respects reduced motion; stops off-screen
+      // Intro video popup: opens from the "Watch intro" pill; the video only downloads on first open
+      const introOpen = document.getElementById('introOpen');
+      const introDialog = document.getElementById('introDialog');
       const introVideo = document.getElementById('introVideo');
-      const introToggle = document.getElementById('introToggle');
-      if (introVideo && introToggle) {
-        let userPaused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const label = introToggle.querySelector('.intro-toggle-label');
-        const syncToggle = () => {
-          const paused = introVideo.paused;
+      const introClose = document.getElementById('introClose');
+      if (introOpen && introDialog && introVideo && typeof introDialog.showModal === 'function') {
+        const syncClose = () => {
           const dict = translations[currentLang] || translations.en;
-          introToggle.classList.toggle('is-paused', paused);
-          label.textContent = paused ? dict['intro.play'] : dict['intro.pause'];
-          introToggle.setAttribute('aria-pressed', String(paused));
+          introClose.setAttribute('aria-label', dict['intro.close']);
         };
-        if (userPaused) { introVideo.removeAttribute('autoplay'); introVideo.pause(); }
-        introToggle.addEventListener('click', () => {
-          if (introVideo.paused) { userPaused = false; introVideo.play().catch(() => {}); }
-          else { userPaused = true; introVideo.pause(); }
+        introOpen.addEventListener('click', () => {
+          if (!introVideo.src) {
+            introVideo.src = window.matchMedia('(max-width: 900px)').matches
+              ? '/site/video/intro-720p.mp4'
+              : '/site/video/intro-1080p.mp4';
+          }
+          introDialog.showModal();
+          window.__lenis?.stop();
+          introVideo.play().catch(() => {});
         });
-        introVideo.addEventListener('play', syncToggle);
-        introVideo.addEventListener('pause', syncToggle);
-        window.addEventListener('lm:lang', syncToggle);
-        if ('IntersectionObserver' in window) {
-          new IntersectionObserver(([entry]) => {
-            if (!entry.isIntersecting) introVideo.pause();
-            else if (!userPaused) introVideo.play().catch(() => {});
-          }, { threshold: 0.2 }).observe(introVideo);
-        }
-        syncToggle();
+        introClose.addEventListener('click', () => introDialog.close());
+        introDialog.addEventListener('click', (event) => { if (event.target === introDialog) introDialog.close(); });
+        introDialog.addEventListener('close', () => {
+          introVideo.pause();
+          window.__lenis?.start();
+          introOpen.focus();
+        });
+        window.addEventListener('lm:lang', syncClose);
+        syncClose();
+      } else if (introOpen) {
+        introOpen.hidden = true;
       }
 })();
