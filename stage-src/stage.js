@@ -67,9 +67,9 @@ const mixColor = (a, b, k) => {
 /* ---------- Chapters ---------- */
 const CHAPTERS = [
   { key: "hero", sel: ".hero", dark: 1, en: "Top", es: "Inicio" },
-  { key: "experience", sel: "#experience", dark: 1, en: "Experience", es: "Experiencia" },
-  { key: "builder", sel: "#builder", dark: 1, en: "Builder", es: "Builder" },
   { key: "cases", sel: "#cases", dark: 1, en: "Work", es: "Proyectos" },
+  { key: "builder", sel: "#builder", dark: 1, en: "Builder", es: "Builder" },
+  { key: "experience", sel: "#experience", dark: 1, en: "Experience", es: "Experiencia" },
   { key: "profile", sel: "#profile", dark: 1, en: "About", es: "Perfil" },
   { key: "capabilities", sel: "#capabilities", dark: 1, en: "Skills", es: "Habilidades" },
   { key: "contact", sel: "#contact", dark: 1, en: "Contact", es: "Contacto" },
@@ -84,23 +84,22 @@ const BOXES = 16;
 const FORMS = [
   // hero: loose pieces floating around the title, not yet organised
   { scatter: true, alpha: 1, rx: 0, ry: 0 },
-  // experience: a desktop page
+  // work: a bento wall laid back behind the carousel
   {
-    w: 16, h: 10, fitW: 0.52, fitH: 0.6, alpha: 0.72, rx: 0.08, ry: -0.22,
+    w: 24, h: 14, fitW: 1.02, fitH: 0.95, z: -1.4, alpha: 0.75, rx: -0.42, ry: 0,
     boxes: [
-      [0, 0, 16, 10, 0.5, OUT, -0.1],
-      [0, -4.25, 15.2, 0.7, 0.35, OUT],
-      [-6.3, -4.25, 1.6, 0.26, 0.13, BAR],
-      [4.5, -4.25, 1, 0.18, 0.09, BAR],
-      [5.8, -4.25, 1, 0.18, 0.09, BAR],
-      [6.95, -4.25, 0.9, 0.4, 0.2, ACC],
-      [0, -2.5, 9, 0.8, 0.2, BAR],
-      [0, -1.4, 6.5, 0.26, 0.13, BAR],
-      [0, -0.9, 5, 0.26, 0.13, BAR],
-      [0, 0.1, 2.2, 0.65, 0.33, ACC],
-      [-5, 2.9, 4.6, 3.2, 0.3, OUT],
-      [0, 2.9, 4.6, 3.2, 0.3, OUT],
-      [5, 2.9, 4.6, 3.2, 0.3, OUT],
+      [-6, -4.6, 11.6, 4.2, 0.4, OUT],
+      [3, -4.6, 5.6, 4.2, 0.4, OUT],
+      [9, -2.3, 5.6, 8.8, 0.4, OUT],
+      [-9, 0, 5.6, 4.2, 0.4, OUT],
+      [-3, 0, 5.6, 4.2, 0.4, OUT],
+      [3, 0, 5.6, 4.2, 0.4, OUT],
+      [-9, 4.6, 5.6, 4.2, 0.4, OUT],
+      [0, 4.6, 11.6, 4.2, 0.4, OUT],
+      [9, 4.6, 5.6, 4.2, 0.4, OUT],
+      [-8.6, -5.6, 4.4, 0.3, 0.15, BAR],
+      [-9.4, -4.9, 2.8, 0.24, 0.12, BAR],
+      [-9.9, -3.6, 1.6, 0.5, 0.25, ACC],
     ],
   },
   // builder: a code editor with a live preview and a terminal
@@ -124,22 +123,23 @@ const FORMS = [
       [-1.6, 3.9, 5.4, 0.24, 0.12, BAR],
     ],
   },
-  // work: a bento wall laid back behind the carousel
+  // experience: a desktop page
   {
-    w: 24, h: 14, fitW: 1.02, fitH: 0.95, z: -1.4, alpha: 0.75, rx: -0.42, ry: 0,
+    w: 16, h: 10, fitW: 0.52, fitH: 0.6, alpha: 0.72, rx: 0.08, ry: -0.22,
     boxes: [
-      [-6, -4.6, 11.6, 4.2, 0.4, OUT],
-      [3, -4.6, 5.6, 4.2, 0.4, OUT],
-      [9, -2.3, 5.6, 8.8, 0.4, OUT],
-      [-9, 0, 5.6, 4.2, 0.4, OUT],
-      [-3, 0, 5.6, 4.2, 0.4, OUT],
-      [3, 0, 5.6, 4.2, 0.4, OUT],
-      [-9, 4.6, 5.6, 4.2, 0.4, OUT],
-      [0, 4.6, 11.6, 4.2, 0.4, OUT],
-      [9, 4.6, 5.6, 4.2, 0.4, OUT],
-      [-8.6, -5.6, 4.4, 0.3, 0.15, BAR],
-      [-9.4, -4.9, 2.8, 0.24, 0.12, BAR],
-      [-9.9, -3.6, 1.6, 0.5, 0.25, ACC],
+      [0, 0, 16, 10, 0.5, OUT, -0.1],
+      [0, -4.25, 15.2, 0.7, 0.35, OUT],
+      [-6.3, -4.25, 1.6, 0.26, 0.13, BAR],
+      [4.5, -4.25, 1, 0.18, 0.09, BAR],
+      [5.8, -4.25, 1, 0.18, 0.09, BAR],
+      [6.95, -4.25, 0.9, 0.4, 0.2, ACC],
+      [0, -2.5, 9, 0.8, 0.2, BAR],
+      [0, -1.4, 6.5, 0.26, 0.13, BAR],
+      [0, -0.9, 5, 0.26, 0.13, BAR],
+      [0, 0.1, 2.2, 0.65, 0.33, ACC],
+      [-5, 2.9, 4.6, 3.2, 0.3, OUT],
+      [0, 2.9, 4.6, 3.2, 0.3, OUT],
+      [5, 2.9, 4.6, 3.2, 0.3, OUT],
     ],
   },
   // about: a phone with a profile screen

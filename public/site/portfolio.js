@@ -12,7 +12,7 @@
         "hero.status": "Available for new opportunities — Bogotá, CO (Remote)",
         "hero.role": "Product Designer & UX/UI Designer",
         "hero.subtitle": "Digital Product & UX/UI Designer with 4+ years of experience blending user research, interface prototyping, data-driven iterations, and modern tech workflows (Vibe Coding + AI) to scale digital products.",
-        "hero.btnExplore": "Explore Experience",
+        "hero.btnExplore": "Explore Projects",
         "hero.btnContact": "Get In Touch",
         "hero.marqueeTag": "Teams and companies I've worked with",
 
@@ -154,7 +154,7 @@
         "hero.status": "Disponible para nuevas oportunidades — Bogotá, CO (Remoto)",
         "hero.role": "Diseñador de Producto y UX/UI",
         "hero.subtitle": "Diseñador de Productos Digitales y UX/UI con +4 años de experiencia combinando investigación de usuarios, prototipado de interfaces, iteraciones basadas en datos y flujos modernos (Vibe Coding + IA) para escalar productos.",
-        "hero.btnExplore": "Explorar Experiencia",
+        "hero.btnExplore": "Ver Proyectos",
         "hero.btnContact": "Contactar",
         "hero.marqueeTag": "Equipos y empresas con las que he trabajado",
 

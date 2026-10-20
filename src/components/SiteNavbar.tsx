@@ -34,8 +34,8 @@ export function SiteNavbar() {
 
         <ul className="nav-menu">
           <li>
-            <a href="/#experience" className="nav-link">
-              {t.experience}
+            <a href="/#cases" className="nav-link">
+              {t.cases}
             </a>
           </li>
           <li>
@@ -44,8 +44,8 @@ export function SiteNavbar() {
             </a>
           </li>
           <li>
-            <a href="/#cases" className="nav-link">
-              {t.cases}
+            <a href="/#experience" className="nav-link">
+              {t.experience}
             </a>
           </li>
           <li>

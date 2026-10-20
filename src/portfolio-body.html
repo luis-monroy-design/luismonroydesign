@@ -6,9 +6,9 @@
       <a href="#" class="brand-logo">Luis Monroy</a>
 
       <ul class="nav-menu">
-        <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
-        <li><a href="#builder" class="nav-link" data-i18n="nav.builder">Builder</a></li>
         <li><a href="#cases" class="nav-link" data-i18n="nav.cases">Case Studies</a></li>
+        <li><a href="#builder" class="nav-link" data-i18n="nav.builder">Builder</a></li>
+        <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
         <li><a href="#profile" class="nav-link" data-i18n="nav.profile">Profile</a></li>
         <li><a href="#capabilities" class="nav-link" data-i18n="nav.capabilities">Capabilities</a></li>
         <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
@@ -52,9 +52,9 @@
       </button>
 
       <div class="hero-actions">
-        <a href="#experience" class="btn-primary">
-          <i data-lucide="briefcase"></i>
-          <span data-i18n="hero.btnExplore">Explore Experience</span>
+        <a href="#cases" class="btn-primary">
+          <i data-lucide="layout-grid"></i>
+          <span data-i18n="hero.btnExplore">Explore Projects</span>
         </a>
         <a href="#contact" class="btn-secondary">
           <i data-lucide="mail"></i>
@@ -118,6 +118,321 @@
         <div class="logo-item" aria-hidden="true"><img src="/__l5e/assets-v1/c89417ae-8166-4831-bea8-8740bc208dae/Logo_IWT.svg" alt="" class="logo-img" loading="lazy"></div>      </div>
     </div>
   </div>
+
+  <!-- Selected work (first, before the work experience) -->
+  <section id="cases">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="cases.tag">Selected work</span>
+      <h2 class="section-title" data-i18n="cases.title">Featured Projects</h2>
+    </div>
+
+    <div class="case-filters" role="group" aria-label="Filter case studies">
+      <button type="button" class="filter-chip active" data-filter="all" data-i18n="cases.filterAll" aria-pressed="true">All</button>
+      <button type="button" class="filter-chip" data-filter="mobile" data-i18n="cases.filterMobile" aria-pressed="false">Mobile</button>
+      <button type="button" class="filter-chip" data-filter="web" data-i18n="cases.filterWeb" aria-pressed="false">Web</button>
+      <button type="button" class="filter-chip" data-filter="dashboard" data-i18n="cases.filterDashboard" aria-pressed="false">Dashboard</button>
+    </div>
+
+    <div class="case-studies-grid">
+
+      <!-- Website in development: Harmoni Systems -->
+      <div class="case-card tech-bracket" data-category="web">
+        <div class="case-cover-container">
+          <img src="/site/img/harmoni-systems.jpg" alt="Harmoni Systems website cover" class="case-cover-img" loading="lazy">
+        </div>
+        <div>
+          <div class="case-card-header">
+            <span class="case-badge">Smart Home · In Development</span>
+            <i data-lucide="globe" style="color:var(--text-dim); width:18px;"></i>
+          </div>
+          <h3 class="case-title">Harmoni Systems</h3>
+          <p class="case-desc" data-i18n="cases.w0">
+            Website for a smart home and automation company: as you scroll, the camera flies through ten 3D models of its systems. In development, not yet in production.
+          </p>
+        </div>
+        <div class="case-footer">
+          <span class="tech-tag">3D Scroll · Three.js</span>
+          <a href="https://belveragency.com/harmonisystems/" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.preview">View Preview</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
+        </div>
+      </div>
+
+      <!-- Live website: Belver Agency -->
+      <div class="case-card tech-bracket" data-category="web">
+        <div class="case-cover-container">
+          <img src="/site/img/belver-agency.jpg" alt="Belver Agency website cover" class="case-cover-img" loading="lazy">
+        </div>
+        <div>
+          <div class="case-card-header">
+            <span class="case-badge">Agency · Live Website</span>
+            <i data-lucide="globe" style="color:var(--text-dim); width:18px;"></i>
+          </div>
+          <h3 class="case-title">Belver Agency</h3>
+          <p class="case-desc" data-i18n="cases.w1">
+            Corporate website for a branding and web development agency: scroll-driven scenes, Spanish and English versions, and SEO.
+          </p>
+        </div>
+        <div class="case-footer">
+          <span class="tech-tag">Web Design · SEO</span>
+          <a href="https://belveragency.com/" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.visit">Visit Website</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
+        </div>
+      </div>
+
+      <!-- Live website: F6 Construcciones -->
+      <div class="case-card tech-bracket" data-category="web">
+        <div class="case-cover-container">
+          <img src="/site/img/f6-construcciones.jpg" alt="F6 Construcciones website cover" class="case-cover-img" loading="lazy">
+        </div>
+        <div>
+          <div class="case-card-header">
+            <span class="case-badge">Construction · Live Website</span>
+            <i data-lucide="globe" style="color:var(--text-dim); width:18px;"></i>
+          </div>
+          <h3 class="case-title">F6 Construcciones</h3>
+          <p class="case-desc" data-i18n="cases.w2">
+            Website for a waterproofing company: a 3D roof that gets sealed as you scroll, plus a quote calculator and client login.
+          </p>
+        </div>
+        <div class="case-footer">
+          <span class="tech-tag">3D Scroll · Quote Tool</span>
+          <a href="https://f6construcciones.com/" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.visit">Visit Website</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
+        </div>
+      </div>
+
+      <!-- Concept website: HacerK -->
+      <div class="case-card tech-bracket" data-category="web">
+        <div class="case-cover-container">
+          <img src="/site/img/hacerk.jpg" alt="HacerK website cover" class="case-cover-img" loading="lazy">
+        </div>
+        <div>
+          <div class="case-card-header">
+            <span class="case-badge">Construction · Concept</span>
+            <i data-lucide="globe" style="color:var(--text-dim); width:18px;"></i>
+          </div>
+          <h3 class="case-title">HacerK</h3>
+          <p class="case-desc" data-i18n="cases.w3">
+            Concept website for a fictional construction brand: a 3D building site that is built floor by floor as you scroll.
+          </p>
+        </div>
+        <div class="case-footer">
+          <span class="tech-tag">3D Scroll · Concept</span>
+          <a href="https://belveragency.com/hacerk/" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.visit">Visit Website</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
+        </div>
+      </div>
+
+      <!-- Live website: CLIQ Influence -->
+      <div class="case-card tech-bracket" data-category="web">
+        <div class="case-cover-container">
+          <img src="/site/img/cliq-influence.jpg" alt="CLIQ Influence website cover" class="case-cover-img" loading="lazy">
+        </div>
+        <div>
+          <div class="case-card-header">
+            <span class="case-badge">Influencer Marketing · Live Website</span>
+            <i data-lucide="globe" style="color:var(--text-dim); width:18px;"></i>
+          </div>
+          <h3 class="case-title">CLIQ Influence</h3>
+          <p class="case-desc" data-i18n="cases.w4">
+            Website for an influencer marketing and UGC agency, with separate paths for brands and creators, a language switch and SEO.
+          </p>
+        </div>
+        <div class="case-footer">
+          <span class="tech-tag">Web Design · SEO</span>
+          <a href="https://cliqinfluence.com/" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.visit">Visit Website</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
+        </div>
+      </div>
+
+      <!-- Project 0: Meli Play -->
+      <div class="case-card tech-bracket" data-category="web">
+        <div class="case-cover-container">
+          <img src="/site/img/cover-meli-play.jpg" alt="Meli Play Cover" class="case-cover-img">
+        </div>
+        <div>
+          <div class="case-card-header">
+            <span class="case-badge">Streaming · UX Challenge</span>
+            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
+          </div>
+          <h3 class="case-title">Meli Play - UX Challenge</h3>
+          <p class="case-desc" data-i18n="cases.p0">
+            Design of a new content rating and recommendation feature for the Mercado Play streaming platform.
+          </p>
+        </div>
+        <div class="case-footer">
+          <span class="tech-tag">UX/UI · Figma</span>
+          <a href="https://www.behance.net/gallery/254209087/Mercado-Play-UXUI-Design" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
+        </div>
+      </div>
+
+      <!-- Project 1: RappiEco -->
+      <div class="case-card tech-bracket" data-category="mobile">
+        <div class="case-cover-container">
+          <img src="/site/img/cover-rappi-eco.jpg" alt="RappiEco Cover" class="case-cover-img">
+        </div>
+        <div>
+          <div class="case-card-header">
+            <span class="case-badge">Mobile App · Sustainability</span>
+            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
+          </div>
+          <h3 class="case-title">RappiEco</h3>
+          <p class="case-desc" data-i18n="cases.p1">
+            Eco-friendly delivery initiative integration, reducing single-use plastics and tracking carbon emissions per order.
+          </p>
+        </div>
+        <div class="case-footer">
+          <span class="tech-tag">UX Research · Figma</span>
+          <a href="https://www.behance.net/gallery/177661549/UXUI-ECO-Rappi" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
+        </div>
+      </div>
+
+      <!-- Project 2: HBO Max -->
+      <div class="case-card tech-bracket" data-category="web">
+        <div class="case-cover-container">
+          <img src="/site/img/cover-hbo-max.jpg" alt="HBO Max Cover" class="case-cover-img">
+        </div>
+        <div>
+          <div class="case-card-header">
+            <span class="case-badge">Streaming · Entertainment</span>
+            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
+          </div>
+          <h3 class="case-title">HBO Max</h3>
+          <p class="case-desc" data-i18n="cases.p2">
+            Content discovery interface redesign and personalized watch-party social experience for LATAM subscribers.
+          </p>
+        </div>
+        <div class="case-footer">
+          <span class="tech-tag">UI/UX · Prototyping</span>
+          <a href="https://www.behance.net/gallery/178194807/UXUI-HBO-MAX-CASE-STUDY" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
+        </div>
+      </div>
+
+      <!-- Project 3: Fanbase -->
+      <div class="case-card tech-bracket" data-category="web">
+        <div class="case-cover-container">
+          <img src="/site/img/cover-fanbase.jpg" alt="Fanbase Cover" class="case-cover-img">
+        </div>
+        <div>
+          <div class="case-card-header">
+            <span class="case-badge">Creator Economy · Web3</span>
+            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
+          </div>
+          <h3 class="case-title">Fanbase</h3>
+          <p class="case-desc" data-i18n="cases.p3">
+            Digital platform for music artist monetization, fan subscriptions, and exclusive drop management.
+          </p>
+        </div>
+        <div class="case-footer">
+          <span class="tech-tag">Product Design · Webflow</span>
+          <a href="https://www.behance.net/gallery/200367583/FanBase-Product-Design-(MVP)" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
+        </div>
+      </div>
+
+      <!-- Project 4: Gannar -->
+      <div class="case-card tech-bracket" data-category="mobile">
+        <div class="case-cover-container">
+          <img src="/site/img/cover-gannar.jpg" alt="Gannar Cover" class="case-cover-img">
+        </div>
+        <div>
+          <div class="case-card-header">
+            <span class="case-badge">Fintech · Investment</span>
+            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
+          </div>
+          <h3 class="case-title">Gannar</h3>
+          <p class="case-desc" data-i18n="cases.p4">
+            Automated micro-investment and savings application UI designed for millennial & Gen-Z users.
+          </p>
+        </div>
+        <div class="case-footer">
+          <span class="tech-tag">Mobile UI · Design System</span>
+          <a href="https://www.behance.net/gallery/202417835/Gannar-App-UXUI-Design" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
+        </div>
+      </div>
+
+      <!-- Project 5: Eatin -->
+      <div class="case-card tech-bracket" data-category="dashboard">
+        <div class="case-cover-container">
+          <img src="/site/img/cover-eatin.jpg" alt="Eatin Cover" class="case-cover-img">
+        </div>
+        <div>
+          <div class="case-card-header">
+            <span class="case-badge">Foodtech · B2B Dashboard</span>
+            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
+          </div>
+          <h3 class="case-title">Eatin</h3>
+          <p class="case-desc" data-i18n="cases.p5">
+            Cloud kitchen operations management dashboard, streamlining kitchen tickets and supplier ordering.
+          </p>
+        </div>
+        <div class="case-footer">
+          <span class="tech-tag">Dashboard UX · Data Viz</span>
+          <a href="https://www.behance.net/gallery/179760849/Product-Design-UXUI-eatin" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
+        </div>
+      </div>
+
+      <!-- Project 6: Colegio Virtual Nacional -->
+      <div class="case-card tech-bracket" data-category="web">
+        <div class="case-cover-container">
+          <img src="/site/img/cover-colegio-virtual.jpg" alt="Colegio Virtual Nacional Cover" class="case-cover-img">
+        </div>
+        <div>
+          <div class="case-card-header">
+            <span class="case-badge">EdTech · E-Learning</span>
+            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
+          </div>
+          <h3 class="case-title">Colegio Virtual Nacional</h3>
+          <p class="case-desc" data-i18n="cases.p6">
+            E-learning portal redesign focusing on gamified student engagement, parent tracking, and accessible UI.
+          </p>
+        </div>
+        <div class="case-footer">
+          <span class="tech-tag">LMS UX · Web App</span>
+          <a href="https://www.behance.net/gallery/181362791/UXUI-Rediseno-Web-Colegio-Virtual-Nacional" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+
+  <!-- Builder: design and build with AI -->
+  <section id="builder">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="builder.tag">Builder</span>
+      <h2 class="section-title" data-i18n="builder.title">I design it. I also build it.</h2>
+      <p class="builder-lead" data-i18n="builder.lead">Beyond the mockup: I use AI-assisted development (vibe coding) to turn designs into live products, from the interface to the data and the deploy, so ideas get tested with real users in days, not months.</p>
+    </div>
+
+    <div class="builder-grid">
+      <article class="builder-card">
+        <span class="builder-num">01</span>
+        <h3 data-i18n="builder.c1.title">Websites in production</h3>
+        <p data-i18n="builder.c1.desc">Fast, bilingual sites with scroll-driven and 3D interactions and technical SEO, designed, built and published by me.</p>
+        <div class="builder-proof">Harmoni Systems · Belver Agency · F6 Construcciones · HacerK · CLIQ Influence</div>
+      </article>
+      <article class="builder-card">
+        <span class="builder-num">02</span>
+        <h3 data-i18n="builder.c2.title">Internal tools and apps</h3>
+        <p data-i18n="builder.c2.desc">Quote calculators, admin panels with login and user roles, e-signature contracts and commission tracking, connected to a real database.</p>
+        <div class="builder-proof" data-i18n="builder.c2.proof">Next.js · Supabase · Auth and roles</div>
+      </article>
+      <article class="builder-card">
+        <span class="builder-num">03</span>
+        <h3 data-i18n="builder.c3.title">From prompt to deploy</h3>
+        <p data-i18n="builder.c3.desc">Claude Code, Lovable and Figma MCP to go from idea to a working product; GitHub, Vercel and Hostinger to ship and keep iterating.</p>
+        <div class="builder-proof" data-i18n="builder.c3.proof">This portfolio: TanStack Start and Three.js, built with Claude Code</div>
+      </article>
+    </div>
+
+    <div class="builder-flow">
+      <span class="builder-flow-label" data-i18n="builder.flow">How I ship</span>
+      <ol>
+        <li data-i18n="builder.s1">Research</li>
+        <li>Figma</li>
+        <li>Claude Code</li>
+        <li>Supabase</li>
+        <li>GitHub</li>
+        <li data-i18n="builder.s6">Live</li>
+      </ol>
+    </div>
+  </section>
 
   <!-- Experience Section (Grouped by Company - Reordered & 6 Companies Balanced Grid) -->
   <section id="experience">
@@ -424,321 +739,6 @@
 
     </div>
   </section>
-
-  <!-- Builder: design and build with AI -->
-  <section id="builder">
-    <div class="section-header">
-      <span class="section-tag" data-i18n="builder.tag">Builder</span>
-      <h2 class="section-title" data-i18n="builder.title">I design it. I also build it.</h2>
-      <p class="builder-lead" data-i18n="builder.lead">Beyond the mockup: I use AI-assisted development (vibe coding) to turn designs into live products, from the interface to the data and the deploy, so ideas get tested with real users in days, not months.</p>
-    </div>
-
-    <div class="builder-grid">
-      <article class="builder-card">
-        <span class="builder-num">01</span>
-        <h3 data-i18n="builder.c1.title">Websites in production</h3>
-        <p data-i18n="builder.c1.desc">Fast, bilingual sites with scroll-driven and 3D interactions and technical SEO, designed, built and published by me.</p>
-        <div class="builder-proof">Harmoni Systems · Belver Agency · F6 Construcciones · HacerK · CLIQ Influence</div>
-      </article>
-      <article class="builder-card">
-        <span class="builder-num">02</span>
-        <h3 data-i18n="builder.c2.title">Internal tools and apps</h3>
-        <p data-i18n="builder.c2.desc">Quote calculators, admin panels with login and user roles, e-signature contracts and commission tracking, connected to a real database.</p>
-        <div class="builder-proof" data-i18n="builder.c2.proof">Next.js · Supabase · Auth and roles</div>
-      </article>
-      <article class="builder-card">
-        <span class="builder-num">03</span>
-        <h3 data-i18n="builder.c3.title">From prompt to deploy</h3>
-        <p data-i18n="builder.c3.desc">Claude Code, Lovable and Figma MCP to go from idea to a working product; GitHub, Vercel and Hostinger to ship and keep iterating.</p>
-        <div class="builder-proof" data-i18n="builder.c3.proof">This portfolio: TanStack Start and Three.js, built with Claude Code</div>
-      </article>
-    </div>
-
-    <div class="builder-flow">
-      <span class="builder-flow-label" data-i18n="builder.flow">How I ship</span>
-      <ol>
-        <li data-i18n="builder.s1">Research</li>
-        <li>Figma</li>
-        <li>Claude Code</li>
-        <li>Supabase</li>
-        <li>GitHub</li>
-        <li data-i18n="builder.s6">Live</li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- NEW SECTION: Case Studies with Covers -->
-  <section id="cases">
-    <div class="section-header">
-      <span class="section-tag" data-i18n="cases.tag">Selected work</span>
-      <h2 class="section-title" data-i18n="cases.title">Featured Projects</h2>
-    </div>
-
-    <div class="case-filters" role="group" aria-label="Filter case studies">
-      <button type="button" class="filter-chip active" data-filter="all" data-i18n="cases.filterAll" aria-pressed="true">All</button>
-      <button type="button" class="filter-chip" data-filter="mobile" data-i18n="cases.filterMobile" aria-pressed="false">Mobile</button>
-      <button type="button" class="filter-chip" data-filter="web" data-i18n="cases.filterWeb" aria-pressed="false">Web</button>
-      <button type="button" class="filter-chip" data-filter="dashboard" data-i18n="cases.filterDashboard" aria-pressed="false">Dashboard</button>
-    </div>
-
-    <div class="case-studies-grid">
-
-      <!-- Website in development: Harmoni Systems -->
-      <div class="case-card tech-bracket" data-category="web">
-        <div class="case-cover-container">
-          <img src="/site/img/harmoni-systems.jpg" alt="Harmoni Systems website cover" class="case-cover-img" loading="lazy">
-        </div>
-        <div>
-          <div class="case-card-header">
-            <span class="case-badge">Smart Home · In Development</span>
-            <i data-lucide="globe" style="color:var(--text-dim); width:18px;"></i>
-          </div>
-          <h3 class="case-title">Harmoni Systems</h3>
-          <p class="case-desc" data-i18n="cases.w0">
-            Website for a smart home and automation company: as you scroll, the camera flies through ten 3D models of its systems. In development, not yet in production.
-          </p>
-        </div>
-        <div class="case-footer">
-          <span class="tech-tag">3D Scroll · Three.js</span>
-          <a href="https://belveragency.com/harmonisystems/" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.preview">View Preview</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
-        </div>
-      </div>
-
-      <!-- Live website: Belver Agency -->
-      <div class="case-card tech-bracket" data-category="web">
-        <div class="case-cover-container">
-          <img src="/site/img/belver-agency.jpg" alt="Belver Agency website cover" class="case-cover-img" loading="lazy">
-        </div>
-        <div>
-          <div class="case-card-header">
-            <span class="case-badge">Agency · Live Website</span>
-            <i data-lucide="globe" style="color:var(--text-dim); width:18px;"></i>
-          </div>
-          <h3 class="case-title">Belver Agency</h3>
-          <p class="case-desc" data-i18n="cases.w1">
-            Corporate website for a branding and web development agency: scroll-driven scenes, Spanish and English versions, and SEO.
-          </p>
-        </div>
-        <div class="case-footer">
-          <span class="tech-tag">Web Design · SEO</span>
-          <a href="https://belveragency.com/" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.visit">Visit Website</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
-        </div>
-      </div>
-
-      <!-- Live website: F6 Construcciones -->
-      <div class="case-card tech-bracket" data-category="web">
-        <div class="case-cover-container">
-          <img src="/site/img/f6-construcciones.jpg" alt="F6 Construcciones website cover" class="case-cover-img" loading="lazy">
-        </div>
-        <div>
-          <div class="case-card-header">
-            <span class="case-badge">Construction · Live Website</span>
-            <i data-lucide="globe" style="color:var(--text-dim); width:18px;"></i>
-          </div>
-          <h3 class="case-title">F6 Construcciones</h3>
-          <p class="case-desc" data-i18n="cases.w2">
-            Website for a waterproofing company: a 3D roof that gets sealed as you scroll, plus a quote calculator and client login.
-          </p>
-        </div>
-        <div class="case-footer">
-          <span class="tech-tag">3D Scroll · Quote Tool</span>
-          <a href="https://f6construcciones.com/" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.visit">Visit Website</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
-        </div>
-      </div>
-
-      <!-- Concept website: HacerK -->
-      <div class="case-card tech-bracket" data-category="web">
-        <div class="case-cover-container">
-          <img src="/site/img/hacerk.jpg" alt="HacerK website cover" class="case-cover-img" loading="lazy">
-        </div>
-        <div>
-          <div class="case-card-header">
-            <span class="case-badge">Construction · Concept</span>
-            <i data-lucide="globe" style="color:var(--text-dim); width:18px;"></i>
-          </div>
-          <h3 class="case-title">HacerK</h3>
-          <p class="case-desc" data-i18n="cases.w3">
-            Concept website for a fictional construction brand: a 3D building site that is built floor by floor as you scroll.
-          </p>
-        </div>
-        <div class="case-footer">
-          <span class="tech-tag">3D Scroll · Concept</span>
-          <a href="https://belveragency.com/hacerk/" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.visit">Visit Website</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
-        </div>
-      </div>
-
-      <!-- Live website: CLIQ Influence -->
-      <div class="case-card tech-bracket" data-category="web">
-        <div class="case-cover-container">
-          <img src="/site/img/cliq-influence.jpg" alt="CLIQ Influence website cover" class="case-cover-img" loading="lazy">
-        </div>
-        <div>
-          <div class="case-card-header">
-            <span class="case-badge">Influencer Marketing · Live Website</span>
-            <i data-lucide="globe" style="color:var(--text-dim); width:18px;"></i>
-          </div>
-          <h3 class="case-title">CLIQ Influence</h3>
-          <p class="case-desc" data-i18n="cases.w4">
-            Website for an influencer marketing and UGC agency, with separate paths for brands and creators, a language switch and SEO.
-          </p>
-        </div>
-        <div class="case-footer">
-          <span class="tech-tag">Web Design · SEO</span>
-          <a href="https://cliqinfluence.com/" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.visit">Visit Website</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
-        </div>
-      </div>
-
-      <!-- Project 0: Meli Play -->
-      <div class="case-card tech-bracket" data-category="web">
-        <div class="case-cover-container">
-          <img src="/site/img/cover-meli-play.jpg" alt="Meli Play Cover" class="case-cover-img">
-        </div>
-        <div>
-          <div class="case-card-header">
-            <span class="case-badge">Streaming · UX Challenge</span>
-            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
-          </div>
-          <h3 class="case-title">Meli Play - UX Challenge</h3>
-          <p class="case-desc" data-i18n="cases.p0">
-            Design of a new content rating and recommendation feature for the Mercado Play streaming platform.
-          </p>
-        </div>
-        <div class="case-footer">
-          <span class="tech-tag">UX/UI · Figma</span>
-          <a href="https://www.behance.net/gallery/254209087/Mercado-Play-UXUI-Design" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
-        </div>
-      </div>
-
-      <!-- Project 1: RappiEco -->
-      <div class="case-card tech-bracket" data-category="mobile">
-        <div class="case-cover-container">
-          <img src="/site/img/cover-rappi-eco.jpg" alt="RappiEco Cover" class="case-cover-img">
-        </div>
-        <div>
-          <div class="case-card-header">
-            <span class="case-badge">Mobile App · Sustainability</span>
-            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
-          </div>
-          <h3 class="case-title">RappiEco</h3>
-          <p class="case-desc" data-i18n="cases.p1">
-            Eco-friendly delivery initiative integration, reducing single-use plastics and tracking carbon emissions per order.
-          </p>
-        </div>
-        <div class="case-footer">
-          <span class="tech-tag">UX Research · Figma</span>
-          <a href="https://www.behance.net/gallery/177661549/UXUI-ECO-Rappi" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
-        </div>
-      </div>
-
-      <!-- Project 2: HBO Max -->
-      <div class="case-card tech-bracket" data-category="web">
-        <div class="case-cover-container">
-          <img src="/site/img/cover-hbo-max.jpg" alt="HBO Max Cover" class="case-cover-img">
-        </div>
-        <div>
-          <div class="case-card-header">
-            <span class="case-badge">Streaming · Entertainment</span>
-            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
-          </div>
-          <h3 class="case-title">HBO Max</h3>
-          <p class="case-desc" data-i18n="cases.p2">
-            Content discovery interface redesign and personalized watch-party social experience for LATAM subscribers.
-          </p>
-        </div>
-        <div class="case-footer">
-          <span class="tech-tag">UI/UX · Prototyping</span>
-          <a href="https://www.behance.net/gallery/178194807/UXUI-HBO-MAX-CASE-STUDY" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
-        </div>
-      </div>
-
-      <!-- Project 3: Fanbase -->
-      <div class="case-card tech-bracket" data-category="web">
-        <div class="case-cover-container">
-          <img src="/site/img/cover-fanbase.jpg" alt="Fanbase Cover" class="case-cover-img">
-        </div>
-        <div>
-          <div class="case-card-header">
-            <span class="case-badge">Creator Economy · Web3</span>
-            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
-          </div>
-          <h3 class="case-title">Fanbase</h3>
-          <p class="case-desc" data-i18n="cases.p3">
-            Digital platform for music artist monetization, fan subscriptions, and exclusive drop management.
-          </p>
-        </div>
-        <div class="case-footer">
-          <span class="tech-tag">Product Design · Webflow</span>
-          <a href="https://www.behance.net/gallery/200367583/FanBase-Product-Design-(MVP)" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
-        </div>
-      </div>
-
-      <!-- Project 4: Gannar -->
-      <div class="case-card tech-bracket" data-category="mobile">
-        <div class="case-cover-container">
-          <img src="/site/img/cover-gannar.jpg" alt="Gannar Cover" class="case-cover-img">
-        </div>
-        <div>
-          <div class="case-card-header">
-            <span class="case-badge">Fintech · Investment</span>
-            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
-          </div>
-          <h3 class="case-title">Gannar</h3>
-          <p class="case-desc" data-i18n="cases.p4">
-            Automated micro-investment and savings application UI designed for millennial & Gen-Z users.
-          </p>
-        </div>
-        <div class="case-footer">
-          <span class="tech-tag">Mobile UI · Design System</span>
-          <a href="https://www.behance.net/gallery/202417835/Gannar-App-UXUI-Design" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
-        </div>
-      </div>
-
-      <!-- Project 5: Eatin -->
-      <div class="case-card tech-bracket" data-category="dashboard">
-        <div class="case-cover-container">
-          <img src="/site/img/cover-eatin.jpg" alt="Eatin Cover" class="case-cover-img">
-        </div>
-        <div>
-          <div class="case-card-header">
-            <span class="case-badge">Foodtech · B2B Dashboard</span>
-            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
-          </div>
-          <h3 class="case-title">Eatin</h3>
-          <p class="case-desc" data-i18n="cases.p5">
-            Cloud kitchen operations management dashboard, streamlining kitchen tickets and supplier ordering.
-          </p>
-        </div>
-        <div class="case-footer">
-          <span class="tech-tag">Dashboard UX · Data Viz</span>
-          <a href="https://www.behance.net/gallery/179760849/Product-Design-UXUI-eatin" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
-        </div>
-      </div>
-
-      <!-- Project 6: Colegio Virtual Nacional -->
-      <div class="case-card tech-bracket" data-category="web">
-        <div class="case-cover-container">
-          <img src="/site/img/cover-colegio-virtual.jpg" alt="Colegio Virtual Nacional Cover" class="case-cover-img">
-        </div>
-        <div>
-          <div class="case-card-header">
-            <span class="case-badge">EdTech · E-Learning</span>
-            <i data-lucide="folder-git-2" style="color:var(--text-dim); width:18px;"></i>
-          </div>
-          <h3 class="case-title">Colegio Virtual Nacional</h3>
-          <p class="case-desc" data-i18n="cases.p6">
-            E-learning portal redesign focusing on gamified student engagement, parent tracking, and accessible UI.
-          </p>
-        </div>
-        <div class="case-footer">
-          <span class="tech-tag">LMS UX · Web App</span>
-          <a href="https://www.behance.net/gallery/181362791/UXUI-Rediseno-Web-Colegio-Virtual-Nacional" target="_blank" rel="noopener noreferrer" class="case-action"><span data-i18n="cases.view">View Case Study</span> <i data-lucide="arrow-up-right" style="width:14px;"></i></a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  
 
 <!-- Profile Section -->
   <section id="profile">
