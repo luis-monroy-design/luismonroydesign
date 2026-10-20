@@ -950,8 +950,12 @@ html.stage-carousel .case-studies-grid {
   display: block;
   transform-style: preserve-3d;
   will-change: transform;
+  /* In a preserve-3d context the grid shares the active card's plane and swallows its clicks:
+     only the cards take pointer events (clicks still bubble to the grid's listener). */
+  pointer-events: none;
 }
 html.stage-carousel .case-card {
+  pointer-events: auto;
   position: absolute;
   left: 50%;
   top: 57%;
