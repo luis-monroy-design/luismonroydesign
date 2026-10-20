@@ -836,7 +836,7 @@ html.lenis, html.lenis body { height: auto; }
 html.has-stage body,
 html.has-stage footer { background: transparent; }
 html.has-stage .marquee-banner { background: transparent; }
-/* The wireframes pass behind the cards: frosted so they show through, blurred */
+/* Frosted cards: the soft background glows show through, blurred */
 html.has-stage .caps-card,
 html.has-stage .builder-card {
   background: color-mix(in srgb, var(--tile) 42%, transparent);

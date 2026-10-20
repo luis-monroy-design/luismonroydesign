@@ -1,16 +1,15 @@
 /* ==========================================================================
    Scroll-driven stage for the portfolio.
 
-   - One fixed WebGL world: a soft light field plus a set of thin, minimal
-     boxes that organise themselves into different wireframes and screens
-     (desktop page, code editor, bento grid, phone, components, form) as you scroll.
+   - One fixed WebGL background: near-black with a few very soft colour glows
+     that drift slowly and answer to the mouse (Apple-like, minimal).
    - The palette machinery can flip chapters between light and dark; today every chapter is dark.
    - "Selected work" becomes a pinned 3D carousel driven by vertical scroll.
-   - The mouse moves everything in layers (object, light field, text, cards),
+   - The mouse moves things in layers (light field, hero text, cards),
      always smoothed (lerp / damping) so nothing ever snaps.
 
    Progressive enhancement: with reduced motion or no WebGL the static page
-   keeps working untouched. The wireframes also run on phones; the pinned
+   keeps working untouched. The background also runs on phones; the pinned
    carousel, focus rows and ruler stay desktop-only.
 
    Build: see stage-src/README.md  ->  public/site/stage.js
@@ -18,7 +17,6 @@
 import Lenis from "lenis";
 import {
   Color,
-  Group,
   Mesh,
   PerspectiveCamera,
   PlaneGeometry,
@@ -37,10 +35,6 @@ const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 const lerp = (a, b, t) => a + (b - a) * t;
 // Frame-rate independent smoothing: same feel at 60 Hz and 144 Hz.
 const damp = (a, b, rate, dt) => lerp(a, b, 1 - Math.exp(-rate * dt));
-const smooth = (a, b, x) => {
-  const t = clamp((x - a) / (b - a), 0, 1);
-  return t * t * (3 - 2 * t);
-};
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
@@ -74,134 +68,6 @@ const CHAPTERS = [
   { key: "capabilities", sel: "#capabilities", dark: 1, en: "Skills", es: "Habilidades" },
   { key: "contact", sel: "#contact", dark: 1, en: "Contact", es: "Contacto" },
 ];
-
-/* ---------- Wireframe formations (one per chapter) ----------
-   Box: [x, y, w, h, radius, kind, z]. Units are per formation, y grows downward.
-   kind: OUT = thin outline, BAR = filled skeleton line, ACC = accent element.
-   A formation with fewer boxes than BOXES lets the rest shrink and fade out. */
-const OUT = 0, BAR = 1, ACC = 2;
-const BOXES = 16;
-const FORMS = [
-  // hero: loose pieces floating around the title, not yet organised
-  { scatter: true, alpha: 1, rx: 0, ry: 0 },
-  // work: a bento wall laid back behind the carousel
-  {
-    w: 24, h: 14, fitW: 1.02, fitH: 0.95, z: -1.4, alpha: 0.75, rx: -0.42, ry: 0,
-    boxes: [
-      [-6, -4.6, 11.6, 4.2, 0.4, OUT],
-      [3, -4.6, 5.6, 4.2, 0.4, OUT],
-      [9, -2.3, 5.6, 8.8, 0.4, OUT],
-      [-9, 0, 5.6, 4.2, 0.4, OUT],
-      [-3, 0, 5.6, 4.2, 0.4, OUT],
-      [3, 0, 5.6, 4.2, 0.4, OUT],
-      [-9, 4.6, 5.6, 4.2, 0.4, OUT],
-      [0, 4.6, 11.6, 4.2, 0.4, OUT],
-      [9, 4.6, 5.6, 4.2, 0.4, OUT],
-      [-8.6, -5.6, 4.4, 0.3, 0.15, BAR],
-      [-9.4, -4.9, 2.8, 0.24, 0.12, BAR],
-      [-9.9, -3.6, 1.6, 0.5, 0.25, ACC],
-    ],
-  },
-  // builder: a code editor with a live preview and a terminal
-  {
-    w: 16, h: 10, fitW: 0.56, fitH: 0.6, alpha: 0.8, rx: 0.06, ry: 0.2,
-    boxes: [
-      [0, 0, 16, 10, 0.5, OUT, -0.1],
-      [0, -4.35, 15.2, 0.5, 0.25, OUT],
-      [-6.2, 0.4, 2.8, 8.2, 0.3, OUT],
-      [-1.9, -3.2, 4.6, 0.24, 0.12, BAR],
-      [-2.6, -2.5, 3.2, 0.24, 0.12, BAR],
-      [-1.6, -1.8, 5.2, 0.24, 0.12, BAR],
-      [-2.2, -1.1, 4, 0.24, 0.12, BAR],
-      [-2.9, -0.4, 2.6, 0.24, 0.12, BAR],
-      [-1.8, 0.3, 4.8, 0.24, 0.12, BAR],
-      [0.9, 0.3, 0.14, 0.42, 0.07, ACC],
-      [4.3, -0.4, 5.8, 6.6, 0.35, OUT],
-      [4.3, -2.6, 4, 0.5, 0.25, BAR],
-      [4.3, 0.3, 4.4, 2.4, 0.3, OUT],
-      [1.4, 3.9, 12, 1.4, 0.3, OUT],
-      [-1.6, 3.9, 5.4, 0.24, 0.12, BAR],
-    ],
-  },
-  // experience: a desktop page
-  {
-    w: 16, h: 10, fitW: 0.52, fitH: 0.6, alpha: 0.72, rx: 0.08, ry: -0.22,
-    boxes: [
-      [0, 0, 16, 10, 0.5, OUT, -0.1],
-      [0, -4.25, 15.2, 0.7, 0.35, OUT],
-      [-6.3, -4.25, 1.6, 0.26, 0.13, BAR],
-      [4.5, -4.25, 1, 0.18, 0.09, BAR],
-      [5.8, -4.25, 1, 0.18, 0.09, BAR],
-      [6.95, -4.25, 0.9, 0.4, 0.2, ACC],
-      [0, -2.5, 9, 0.8, 0.2, BAR],
-      [0, -1.4, 6.5, 0.26, 0.13, BAR],
-      [0, -0.9, 5, 0.26, 0.13, BAR],
-      [0, 0.1, 2.2, 0.65, 0.33, ACC],
-      [-5, 2.9, 4.6, 3.2, 0.3, OUT],
-      [0, 2.9, 4.6, 3.2, 0.3, OUT],
-      [5, 2.9, 4.6, 3.2, 0.3, OUT],
-    ],
-  },
-  // about: a phone with a profile screen
-  {
-    w: 9, h: 19, fitW: 0.42, fitH: 0.66, alpha: 0.9, rx: 0.05, ry: 0.24,
-    boxes: [
-      [0, 0, 9, 19, 1.6, OUT, -0.1],
-      [0, -8.6, 2.6, 0.6, 0.3, BAR],
-      [0, -5.6, 2.6, 2.6, 1.3, OUT],
-      [0, -3.5, 4.6, 0.5, 0.25, BAR],
-      [0, -2.7, 3.4, 0.3, 0.15, BAR],
-      [0, -1.3, 7, 0.24, 0.12, BAR],
-      [0, -0.6, 7, 0.24, 0.12, BAR],
-      [-0.6, 0.1, 5.8, 0.24, 0.12, BAR],
-      [0, 2.4, 7.4, 2.6, 0.5, OUT],
-      [0, 5.5, 7.4, 2.6, 0.5, OUT],
-      [0, 8.1, 7.6, 1.1, 0.55, OUT],
-      [-2.4, 8.1, 0.5, 0.5, 0.25, ACC],
-      [0, 8.1, 0.5, 0.5, 0.25, BAR],
-      [2.4, 8.1, 0.5, 0.5, 0.25, BAR],
-    ],
-  },
-  // skills: a small component library
-  {
-    w: 16, h: 10, fitW: 0.56, fitH: 0.56, alpha: 0.85, rx: 0.1, ry: -0.16,
-    boxes: [
-      [-5, -3.5, 3.6, 1, 0.5, ACC],
-      [-1, -3.5, 3.6, 1, 0.5, OUT],
-      [2.4, -3.5, 1, 1, 0.5, OUT],
-      [5.2, -3.5, 2, 1, 0.5, OUT],
-      [5.7, -3.5, 0.76, 0.76, 0.38, BAR],
-      [-2.4, -1.2, 10.4, 1.1, 0.3, OUT],
-      [-6.2, 0.8, 2.4, 0.8, 0.4, OUT],
-      [-3.4, 0.8, 2.6, 0.8, 0.4, OUT],
-      [-0.5, 0.8, 2.2, 0.8, 0.4, OUT],
-      [2, 0.8, 2.2, 0.8, 0.4, OUT],
-      [-7, 2.9, 0.8, 0.8, 0.15, OUT],
-      [-5, 2.9, 2.8, 0.26, 0.13, BAR],
-      [-7, 4.1, 0.8, 0.8, 0.15, OUT],
-      [-5.3, 4.1, 2.2, 0.26, 0.13, BAR],
-      [4.2, 3.4, 6.8, 3.4, 0.4, OUT],
-    ],
-  },
-  // contact: a form
-  {
-    w: 12, h: 12, fitW: 0.4, fitH: 0.62, alpha: 0.72, rx: 0, ry: 0.18,
-    boxes: [
-      [0, 0, 12, 12, 0.6, OUT, -0.1],
-      [-1.6, -4.6, 7, 0.6, 0.2, BAR],
-      [-2.6, -3.8, 5, 0.28, 0.14, BAR],
-      [-4.3, -2.6, 1.6, 0.22, 0.11, BAR],
-      [0, -1.9, 10, 1, 0.3, OUT],
-      [-4.3, -0.5, 1.6, 0.22, 0.11, BAR],
-      [0, 0.2, 10, 1, 0.3, OUT],
-      [-4.3, 1.6, 1.6, 0.22, 0.11, BAR],
-      [0, 3.1, 10, 2.4, 0.3, OUT],
-      [2.8, 5, 4.4, 0.8, 0.4, ACC],
-    ],
-  },
-];
-// Base opacity per kind: [stroke, fill, accent mix]. Kept very low so text always reads first.
-const KIND = [[0.1, 0.008, 0], [0, 0.04, 0], [0.24, 0.05, 1]];
 
 /* ======================================================================== */
 function boot() {
@@ -312,7 +178,6 @@ function boot() {
     let idx = 0;
     for (let i = 0; i < metrics.length; i++) if (mid >= metrics[i].top) idx = i;
     const cur = metrics[idx];
-    const local = cur ? clamp((mid - cur.top) / Math.max(1, cur.bottom - cur.top), 0, 1) : 0;
     state.chapter = idx;
 
     // Palette: eases toward the chapter's tone
@@ -320,9 +185,7 @@ function boot() {
     state.dark = damp(state.dark, target, 4.2, dt);
     if (tick++ % 2 === 0) applyPalette(state.dark);
 
-    // Wireframes: morph into the next chapter's formation during the tail of each chapter
-    const k = smooth(0.55, 0.98, local);
-    gl && gl.render(dt, state, Math.min(idx, FORMS.length - 1), k, mouse);
+    gl && gl.render(state, mouse);
     carousel && carousel.update(sy, mouse, dt);
     updateHero(sy, dt);
     updateRows();
@@ -388,202 +251,64 @@ function createStage() {
   canvas.setAttribute("aria-hidden", "true");
   document.body.prepend(canvas);
 
-  const renderer = new WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
+  const renderer = new WebGLRenderer({ canvas, antialias: false, powerPreference: "high-performance" });
   renderer.outputColorSpace = SRGBColorSpace;
 
   const scene = new Scene();
-  const camera = new PerspectiveCamera(35, 1, 0.1, 60);
-  camera.position.set(0, 0, 8);
+  const camera = new PerspectiveCamera(35, 1, 0.1, 10);
 
-  /* Opaque light-field behind everything: it is the page background.
-     Colour blobs drift and answer to the mouse. */
+  /* The page background: near-black with three very soft, slowly drifting glows.
+     Kept faint on purpose (Apple-like dark), with a tiny dither so the gradients never band. */
   const bgMat = new ShaderMaterial({
     depthWrite: false, depthTest: false, toneMapped: false,
     uniforms: {
-      uBg: { value: new Color(0xfbfbfd) }, uTime: { value: 0 }, uMouse: { value: new Vector2() },
-      uDark: { value: 0 }, uAspect: { value: 1.6 }, uScroll: { value: 0 },
+      uBg: { value: new Color(0x08080a) }, uTime: { value: 0 }, uMouse: { value: new Vector2() },
+      uAspect: { value: 1.6 }, uScroll: { value: 0 },
     },
     vertexShader: "varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.999,1.0); }",
     fragmentShader: `
-      precision mediump float;
+      precision highp float;
       varying vec2 vUv;
-      uniform vec3 uBg; uniform float uTime, uDark, uAspect, uScroll; uniform vec2 uMouse;
-      // Measured in units of the shorter side, so the blobs keep their size on portrait phones
+      uniform vec3 uBg; uniform float uTime, uAspect, uScroll; uniform vec2 uMouse;
+      // Measured in units of the shorter side, so the glows keep their size on portrait phones
       float blob(vec2 p, vec2 c, float r){ vec2 d=(p-c)*vec2(uAspect,1.0)/min(uAspect,1.0); return exp(-dot(d,d)/(r*r)); }
+      float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898,78.233))) * 43758.5453); }
       void main(){
         vec2 p = vUv;
-        float t = uTime;
-        vec2 m = uMouse * 0.05;
-        float s = uScroll * 0.00006;
+        float t = uTime * 0.6;
+        vec2 m = uMouse * 0.03;
+        float s = uScroll * 0.00004;
+        float k = uAspect < 1.0 ? 0.13 : 0.16;
         vec3 c = uBg;
-        float k = mix(0.55, 0.62, uDark) * (uAspect < 1.0 ? 0.8 : 1.0);
-        c = mix(c, vec3(0.36,0.58,1.00), blob(p, vec2(0.22+sin(t*.17)*.05, 0.62+cos(t*.13)*.05 + s) - m*1.2, 0.30) * k);
-        c = mix(c, vec3(1.00,0.55,0.80), blob(p, vec2(0.80+cos(t*.15)*.05, 0.30+sin(t*.12)*.05 - s) + m*0.8, 0.26) * k);
-        c = mix(c, vec3(0.45,0.90,0.78), blob(p, vec2(0.58+sin(t*.11)*.06, 0.86+cos(t*.16)*.04) - m*0.5, 0.22) * k * 0.9);
-        float v = smoothstep(1.15, 0.2, length((p-0.5)*vec2(1.0,0.9)));
-        c *= mix(0.96, 1.0, v);
+        c += vec3(0.16,0.30,0.78) * blob(p, vec2(0.22+sin(t*.17)*.04, 0.66+cos(t*.13)*.04 + s) - m, 0.40) * k;
+        c += vec3(0.48,0.26,0.62) * blob(p, vec2(0.82+cos(t*.15)*.04, 0.30+sin(t*.12)*.04 - s) + m*0.6, 0.36) * k * 0.8;
+        c += vec3(0.12,0.46,0.42) * blob(p, vec2(0.56+sin(t*.11)*.05, 0.92+cos(t*.16)*.03) - m*0.4, 0.30) * k * 0.6;
+        c += (hash(gl_FragCoord.xy) - 0.5) / 255.0;
         gl_FragColor = vec4(c, 1.0);
       }`,
   });
   const bg = new Mesh(new PlaneGeometry(2, 2), bgMat);
   bg.frustumCulled = false;
-  bg.renderOrder = -10;
   scene.add(bg);
 
-  /* The wireframe boxes: one quad each, drawn as an anti-aliased rounded
-     rectangle (hairline outline + faint fill) in the fragment shader. */
-  const lineColor = new Color(), accentColor = new Color();
-  const quad = new PlaneGeometry(1, 1);
-  const boxVert = "varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }";
-  const boxFrag = `
-    precision highp float;
-    varying vec2 vUv;
-    uniform vec2 uSize; uniform float uRadius, uStroke, uFill, uPx; uniform vec3 uColor;
-    float sdRound(vec2 p, vec2 b, float r){ vec2 q=abs(p)-b+r; return length(max(q,0.0))+min(max(q.x,q.y),0.0)-r; }
-    void main(){
-      vec2 p = (vUv-0.5)*uSize;
-      float d = sdRound(p, 0.5*uSize, min(uRadius, 0.5*min(uSize.x,uSize.y)));
-      float dp = d / max(fwidth(d), 1e-6); // distance in screen pixels (negative inside)
-      float fill = clamp(0.5 - dp, 0.0, 1.0);
-      float line = clamp(uPx*0.5 + 0.5 - abs(dp + uPx*0.5 + 0.25), 0.0, 1.0);
-      float a = fill*uFill + line*uStroke;
-      if (a < 0.002) discard;
-      gl_FragColor = vec4(uColor, a);
-    }`;
-  const group = new Group();
-  scene.add(group);
-  const boxes = [];
-  for (let i = 0; i < BOXES; i++) {
-    const mat = new ShaderMaterial({
-      transparent: true, depthWrite: false, depthTest: false, toneMapped: false,
-      uniforms: {
-        uSize: { value: new Vector2(1, 1) }, uRadius: { value: 0 }, uStroke: { value: 0 }, uFill: { value: 0 },
-        uPx: { value: 1 }, uColor: { value: new Color() },
-      },
-      vertexShader: boxVert, fragmentShader: boxFrag,
-    });
-    const mesh = new Mesh(quad, mat);
-    mesh.renderOrder = i;
-    mesh.frustumCulled = false;
-    group.add(mesh);
-    // Displayed (smoothed) state
-    boxes.push({ mesh, mat, x: 0, y: 0, z: -3, w: 0.01, h: 0.01, r: 0, st: 0, fi: 0, ac: 0, ready: false });
-  }
-
-  const view = { hw: 1, hh: 1, phone: false };
   const resize = () => {
-    const dpr = Math.min(devicePixelRatio || 1, finePointer ? 1.75 : 1.5);
-    renderer.setPixelRatio(dpr);
+    // A soft gradient needs no high resolution: cap the pixel ratio low to save the GPU
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.25));
     renderer.setSize(innerWidth, innerHeight, false);
     canvas.style.width = "100%"; canvas.style.height = "100%";
-    camera.aspect = innerWidth / innerHeight;
-    camera.updateProjectionMatrix();
-    bgMat.uniforms.uAspect.value = camera.aspect;
-    view.hh = Math.tan((camera.fov * Math.PI) / 360) * camera.position.z; // world half-height at z = 0
-    view.hw = view.hh * camera.aspect;
-    view.phone = innerWidth < 700;
-    const px = Math.max(1, dpr * 0.9);
-    boxes.forEach((b) => { b.mat.uniforms.uPx.value = px; });
+    bgMat.uniforms.uAspect.value = innerWidth / innerHeight;
   };
   resize();
-
-  // Deterministic "random" so the scatter is the same on every visit
-  const rand = (i, s) => { const v = Math.sin(i * 127.1 + s * 311.7) * 43758.5453; return v - Math.floor(v); };
-  const SCATTER_KINDS = [[0.42, 0.3, 0.05, OUT], [0.26, 0.06, 0.03, BAR], [0.12, 0.12, 0.06, OUT], [0.3, 0.2, 0.04, OUT]];
-
-  // Target geometry of box i in formation f (world units), or null when the formation doesn't use it
-  function target(f, i, t) {
-    const F = FORMS[f];
-    if (F.scatter) {
-      const a = (i / BOXES) * Math.PI * 2 + rand(i, 1) * 0.5 - 0.3;
-      const rr = 0.74 + rand(i, 2) * 0.28;
-      const u = Math.min(view.hw, view.hh);
-      const kd = i === 7 ? [0.18, 0.06, 0.03, ACC] : SCATTER_KINDS[i % SCATTER_KINDS.length];
-      return {
-        x: Math.cos(a) * rr * view.hw + Math.sin(t * 0.21 + i) * 0.05 * u,
-        y: Math.sin(a) * rr * view.hh * 0.9 + Math.cos(t * 0.17 + i * 1.7) * 0.05 * u,
-        z: -1.3 + rand(i, 3) * 1.9,
-        w: kd[0] * u, h: kd[1] * u, r: kd[2] * u, kind: kd[3], al: F.alpha,
-      };
-    }
-    const b = F.boxes[i];
-    if (!b) return null;
-    // On narrow phones the width is the limit, so the formations may take more of it
-    const fitW = view.phone ? Math.min(F.fitW * 1.9, 0.92) : F.fitW;
-    const sc = Math.min((fitW * 2 * view.hw) / F.w, (F.fitH * 2 * view.hh) / F.h);
-    return {
-      x: b[0] * sc, y: -b[1] * sc, z: (F.z || 0) + (b[6] ?? 0.14),
-      w: b[2] * sc, h: b[3] * sc, r: b[4] * sc, kind: b[5], al: F.alpha,
-    };
-  }
-  const hidden = (o) => ({ ...o, w: o.w * 0.25, h: o.h * 0.25, r: o.r * 0.25, al: 0 });
-
-  const rot = { x: 0, y: 0 };
 
   return {
     canvas,
     resize,
     setTone(k) {
-      // The shaders write raw sRGB values, so feed them the same numbers the CSS palette uses.
+      // The shader writes raw sRGB values, so feed it the same numbers the CSS palette uses.
       bgMat.uniforms.uBg.value.setRGB(lerp(251, 8, k) / 255, lerp(251, 8, k) / 255, lerp(253, 10, k) / 255);
-      bgMat.uniforms.uDark.value = k;
-      lineColor.setRGB(lerp(29, 245, k) / 255, lerp(29, 245, k) / 255, lerp(31, 247, k) / 255);
-      accentColor.setRGB(lerp(0, 41, k) / 255, lerp(113, 151, k) / 255, lerp(227, 255, k) / 255);
     },
-    render(dt, state, f, k, mouse) {
-      const t = state.t;
-      const fa = f, fb = Math.min(f + 1, FORMS.length - 1);
-      const A = FORMS[fa], B = FORMS[fb];
-      const gain = view.phone ? 0.9 : 1;
-
-      for (let i = 0; i < BOXES; i++) {
-        const bx = boxes[i];
-        let a = target(fa, i, t), b = target(fb, i, t);
-        if (!a && !b) { bx.mesh.visible = false; bx.ready = false; continue; }
-        if (!a) a = hidden(b);
-        if (!b) b = hidden(a);
-        // Staggered: boxes move one after another, so the layout "organises" itself
-        const kb = smooth(0, 1, k * 1.5 - (i / BOXES) * 0.5);
-        const arc = Math.sin(Math.PI * kb);
-        const ka = KIND[a.kind], kz = KIND[b.kind];
-        const intro = smooth(0, 1, t * 1.2 - i * 0.04);
-        const tz = lerp(a.z, b.z, kb) + arc * (i % 2 ? 0.7 : -0.4) - (1 - intro) * 2 + state.vel * 0.0004 * ((i % 3) - 1);
-        const al = lerp(a.al, b.al, kb) * intro * gain;
-        const rate = bx.ready ? 7 : 1000;
-        bx.x = damp(bx.x, lerp(a.x, b.x, kb), rate, dt);
-        bx.y = damp(bx.y, lerp(a.y, b.y, kb), rate, dt);
-        bx.z = damp(bx.z, tz, rate, dt);
-        bx.w = damp(bx.w, lerp(a.w, b.w, kb), rate, dt);
-        bx.h = damp(bx.h, lerp(a.h, b.h, kb), rate, dt);
-        bx.r = damp(bx.r, lerp(a.r, b.r, kb), rate, dt);
-        bx.st = damp(bx.st, lerp(ka[0], kz[0], kb) * al, rate, dt);
-        bx.fi = damp(bx.fi, lerp(ka[1], kz[1], kb) * al, rate, dt);
-        bx.ac = damp(bx.ac, lerp(ka[2], kz[2], kb), rate, dt);
-        bx.ready = true;
-
-        const m = bx.mesh, u = bx.mat.uniforms;
-        m.visible = bx.st + bx.fi > 0.003;
-        m.position.set(bx.x, bx.y, bx.z);
-        m.rotation.z = arc * (i % 2 ? 0.12 : -0.08);
-        m.scale.set(Math.max(bx.w, 1e-4), Math.max(bx.h, 1e-4), 1);
-        u.uSize.value.set(Math.max(bx.w, 1e-4), Math.max(bx.h, 1e-4));
-        u.uRadius.value = bx.r;
-        u.uStroke.value = bx.st;
-        u.uFill.value = bx.fi;
-        u.uColor.value.copy(lineColor).lerp(accentColor, bx.ac);
-      }
-
-      // The whole layout tilts a little per chapter, sways, and follows the mouse
-      const kk = smooth(0, 1, k);
-      rot.x = damp(rot.x, lerp(A.rx, B.rx, kk) + mouse.y * 0.14, 3, dt);
-      rot.y = damp(rot.y, lerp(A.ry, B.ry, kk) + mouse.x * 0.2 + Math.sin(t * 0.3) * 0.04, 3, dt);
-      group.rotation.set(rot.x, rot.y, 0);
-
-      camera.position.x = mouse.x * 0.3;
-      camera.position.y = -mouse.y * 0.2;
-      camera.lookAt(0, 0, 0);
-
-      bgMat.uniforms.uTime.value = t;
+    render(state, mouse) {
+      bgMat.uniforms.uTime.value = state.t;
       bgMat.uniforms.uMouse.value.set(mouse.x, -mouse.y);
       bgMat.uniforms.uScroll.value = state.scrollY;
       renderer.render(scene, camera);
