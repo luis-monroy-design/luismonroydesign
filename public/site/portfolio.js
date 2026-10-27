@@ -21,6 +21,13 @@
         "stats.startups": "Key Companies",
         "stats.markets": "Market Sectors",
         "stats.websites": "Live Websites",
+        "work.web": "Web Development",
+        "work.backend": "Backend &amp; Integrations",
+        "work.proto": "Prototyping",
+        "work.chatbot": "WhatsApp chatbot",
+        "work.db": "Databases",
+        "work.n8n": "n8n automations",
+        "work.agents": "AI agents",
 
         "exp.tag": "Experience",
         "exp.title": "Companies & Key Projects",
@@ -163,6 +170,13 @@
         "stats.startups": "Empresas Clave",
         "stats.markets": "Mercados Distintos",
         "stats.websites": "Sitios Web al Aire",
+        "work.web": "Desarrollo Web",
+        "work.backend": "Backend e Integraciones",
+        "work.proto": "Prototipado",
+        "work.chatbot": "Chatbot de WhatsApp",
+        "work.db": "Bases de datos",
+        "work.n8n": "Automatizaciones n8n",
+        "work.agents": "Agentes de IA",
 
         "exp.tag": "Experiencia",
         "exp.title": "Empresas y Proyectos Clave",
@@ -488,4 +502,72 @@
       } else if (introOpen) {
         introOpen.hidden = true;
       }
+    // Hero "what I build" cards: the hovered/focused/tapped card opens and its
+    // preview cycles through scenes (class .on), only while it is open and on screen.
+    (function initializeHeroWork() {
+      const root = document.getElementById('heroWork');
+      if (!root) return;
+      const cards = Array.from(root.querySelectorAll('.work-card'));
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const SLOT = { web: 2600, ux: 2800, backend: 3000 };
+      let timer = null;
+      let visible = true;
+
+      const groups = (card) => {
+        const preview = card.querySelector('.work-preview');
+        if (!preview) return [];
+        return [
+          preview.querySelectorAll('.pv-scene'),
+          preview.querySelectorAll('.pv-labels > span'),
+          preview.querySelectorAll('.pv-screens img'),
+          preview.querySelectorAll('.pv-url span'),
+        ].filter((list) => list.length);
+      };
+      const show = (card, index) => {
+        groups(card).forEach((list) => list.forEach((el, i) => el.classList.toggle('on', i === index)));
+      };
+      const play = (card) => {
+        clearInterval(timer);
+        const lists = groups(card);
+        const count = lists.length ? lists[0].length : 0;
+        let index = 0;
+        show(card, index);
+        if (reduced || count < 2 || !visible) return;
+        timer = setInterval(() => {
+          index = (index + 1) % count;
+          show(card, index);
+        }, SLOT[card.dataset.card] || 2800);
+      };
+      const open = (card) => {
+        if (card.classList.contains('is-open')) return;
+        cards.forEach((c) => {
+          const isTarget = c === card;
+          c.classList.toggle('is-open', isTarget);
+          c.setAttribute('aria-expanded', String(isTarget));
+          if (!isTarget) groups(c).forEach((list) => list.forEach((el) => el.classList.remove('on')));
+        });
+        play(card);
+      };
+
+      cards.forEach((card) => {
+        card.addEventListener('mouseenter', () => open(card));
+        card.addEventListener('focusin', () => open(card));
+        card.querySelector('.work-head')?.addEventListener('click', () => open(card));
+      });
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => {
+          visible = entries.some((entry) => entry.isIntersecting);
+          const current = root.querySelector('.work-card.is-open');
+          if (visible && current) play(current);
+          else clearInterval(timer);
+        }).observe(root);
+      }
+      document.addEventListener('visibilitychange', () => {
+        const current = root.querySelector('.work-card.is-open');
+        if (document.hidden) clearInterval(timer);
+        else if (current && visible) play(current);
+      });
+      play(root.querySelector('.work-card.is-open') || cards[0]);
+    })();
 })();

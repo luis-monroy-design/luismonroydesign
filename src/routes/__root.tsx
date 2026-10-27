@@ -126,8 +126,9 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  // The home page ships its own navbar inside the static portfolio markup.
-  const showNavbar = pathname !== "/";
+  // The home page ships its own navbar inside the static portfolio markup,
+  // and the redesigned client websites carry their own brand header.
+  const showNavbar = pathname !== "/" && !pathname.startsWith("/websites");
 
   return (
     <QueryClientProvider client={queryClient}>

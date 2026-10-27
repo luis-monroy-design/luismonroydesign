@@ -15,6 +15,9 @@ import { Route as MicrositiosRouteImport } from './routes/micrositios'
 import { Route as RentekRouteImport } from './routes/rentek'
 import { Route as SeosEnergyRouteImport } from './routes/seos-energy'
 import { Route as UnalRouteImport } from './routes/unal'
+import { Route as WebsitesRentekRouteImport } from './routes/websites/rentek'
+import { Route as WebsitesSeosEnergyRouteImport } from './routes/websites/seos-energy'
+import { Route as WebsitesUnicolMayorRouteImport } from './routes/websites/unicol-mayor'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +49,21 @@ const UnalRoute = UnalRouteImport.update({
   path: '/unal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WebsitesRentekRoute = WebsitesRentekRouteImport.update({
+  id: '/websites/rentek',
+  path: '/websites/rentek',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsitesSeosEnergyRoute = WebsitesSeosEnergyRouteImport.update({
+  id: '/websites/seos-energy',
+  path: '/websites/seos-energy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsitesUnicolMayorRoute = WebsitesUnicolMayorRouteImport.update({
+  id: '/websites/unicol-mayor',
+  path: '/websites/unicol-mayor',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +72,9 @@ export interface FileRoutesByFullPath {
   '/rentek': typeof RentekRoute
   '/seos-energy': typeof SeosEnergyRoute
   '/unal': typeof UnalRoute
+  '/websites/rentek': typeof WebsitesRentekRoute
+  '/websites/seos-energy': typeof WebsitesSeosEnergyRoute
+  '/websites/unicol-mayor': typeof WebsitesUnicolMayorRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +83,9 @@ export interface FileRoutesByTo {
   '/rentek': typeof RentekRoute
   '/seos-energy': typeof SeosEnergyRoute
   '/unal': typeof UnalRoute
+  '/websites/rentek': typeof WebsitesRentekRoute
+  '/websites/seos-energy': typeof WebsitesSeosEnergyRoute
+  '/websites/unicol-mayor': typeof WebsitesUnicolMayorRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +95,9 @@ export interface FileRoutesById {
   '/rentek': typeof RentekRoute
   '/seos-energy': typeof SeosEnergyRoute
   '/unal': typeof UnalRoute
+  '/websites/rentek': typeof WebsitesRentekRoute
+  '/websites/seos-energy': typeof WebsitesSeosEnergyRoute
+  '/websites/unicol-mayor': typeof WebsitesUnicolMayorRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +108,9 @@ export interface FileRouteTypes {
     | '/rentek'
     | '/seos-energy'
     | '/unal'
+    | '/websites/rentek'
+    | '/websites/seos-energy'
+    | '/websites/unicol-mayor'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +119,9 @@ export interface FileRouteTypes {
     | '/rentek'
     | '/seos-energy'
     | '/unal'
+    | '/websites/rentek'
+    | '/websites/seos-energy'
+    | '/websites/unicol-mayor'
   id:
     | '__root__'
     | '/'
@@ -97,6 +130,9 @@ export interface FileRouteTypes {
     | '/rentek'
     | '/seos-energy'
     | '/unal'
+    | '/websites/rentek'
+    | '/websites/seos-energy'
+    | '/websites/unicol-mayor'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +142,9 @@ export interface RootRouteChildren {
   RentekRoute: typeof RentekRoute
   SeosEnergyRoute: typeof SeosEnergyRoute
   UnalRoute: typeof UnalRoute
+  WebsitesRentekRoute: typeof WebsitesRentekRoute
+  WebsitesSeosEnergyRoute: typeof WebsitesSeosEnergyRoute
+  WebsitesUnicolMayorRoute: typeof WebsitesUnicolMayorRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -152,6 +191,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UnalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/websites/rentek': {
+      id: '/websites/rentek'
+      path: '/websites/rentek'
+      fullPath: '/websites/rentek'
+      preLoaderRoute: typeof WebsitesRentekRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/websites/seos-energy': {
+      id: '/websites/seos-energy'
+      path: '/websites/seos-energy'
+      fullPath: '/websites/seos-energy'
+      preLoaderRoute: typeof WebsitesSeosEnergyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/websites/unicol-mayor': {
+      id: '/websites/unicol-mayor'
+      path: '/websites/unicol-mayor'
+      fullPath: '/websites/unicol-mayor'
+      preLoaderRoute: typeof WebsitesUnicolMayorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -162,6 +222,9 @@ const rootRouteChildren: RootRouteChildren = {
   RentekRoute: RentekRoute,
   SeosEnergyRoute: SeosEnergyRoute,
   UnalRoute: UnalRoute,
+  WebsitesRentekRoute: WebsitesRentekRoute,
+  WebsitesSeosEnergyRoute: WebsitesSeosEnergyRoute,
+  WebsitesUnicolMayorRoute: WebsitesUnicolMayorRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

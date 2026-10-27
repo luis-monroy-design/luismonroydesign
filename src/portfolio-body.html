@@ -63,31 +63,182 @@
       </div>
     </div>
 
-    <!-- Tech Card Stats (Experiencia / Experience Metrics) -->
-    <div class="hero-card tech-bracket">
-      <div class="hero-card-header">
-        <span class="hero-card-title" data-i18n="stats.cardTitle">Experience and impact</span>
-        <i data-lucide="cpu" style="color:var(--accent-green); width:18px;"></i>
-      </div>
+    <!-- What I build: three cards that open on hover/focus/tap and play an animated preview -->
+    <div class="hero-work hero-card" id="heroWork">
 
-      <div class="stat-grid">
-        <div class="stat-box">
-          <div class="stat-num">+4</div>
-          <div class="stat-label" data-i18n="stats.years">Years Experience</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">6</div>
-          <div class="stat-label" data-i18n="stats.startups">Key Companies</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">+6</div>
-          <div class="stat-label" data-i18n="stats.markets">Market Sectors</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">+5</div>
-          <div class="stat-label" data-i18n="stats.websites">Live Websites</div>
-        </div>
-      </div>
+      <article class="work-card is-open" data-card="web" tabindex="0" aria-expanded="true">
+        <header class="work-head">
+          <span class="work-icon"><i data-lucide="globe"></i></span>
+          <h2 data-i18n="work.web">Web Development</h2>
+          <span class="work-count">8</span>
+        </header>
+        <div class="work-body"><div class="work-inner">
+          <div class="work-preview pv-web" aria-hidden="true">
+            <div class="pv-browser">
+              <div class="pv-bar"><i></i><i></i><i></i>
+                <div class="pv-url">
+                  <span style="--s:0">f6construcciones.com</span><span style="--s:1">…/websites/rentek</span><span style="--s:2">…/websites/seos-energy</span><span style="--s:3">belveragency.com/hacerk</span><span style="--s:4">belveragency.com</span><span style="--s:5">belveragency.com/harmonisystems</span><span style="--s:6">cliqinfluence.com</span><span style="--s:7">…/websites/unicol-mayor</span>
+                </div>
+              </div>
+              <div class="pv-screens">
+                <img style="--s:0" src="/site/img/f6-construcciones.jpg" alt="" loading="lazy">
+                <img style="--s:1" src="/site/img/web-rentek.jpg" alt="" loading="lazy">
+                <img style="--s:2" src="/site/img/web-seos.jpg" alt="" loading="lazy">
+                <img style="--s:3" src="/site/img/hacerk.jpg" alt="" loading="lazy">
+                <img style="--s:4" src="/site/img/belver-agency.jpg" alt="" loading="lazy">
+                <img style="--s:5" src="/site/img/harmoni-systems.jpg" alt="" loading="lazy">
+                <img style="--s:6" src="/site/img/cliq-influence.jpg" alt="" loading="lazy">
+                <img style="--s:7" src="/site/img/web-unicol.jpg" alt="" loading="lazy">
+              </div>
+              <div class="pv-cursor"></div>
+            </div>
+          </div>
+          <ul class="work-links">
+            <li><a href="https://f6construcciones.com/" target="_blank" rel="noopener noreferrer">F6 Construcciones</a></li>
+            <li><a href="/websites/rentek">Rentek</a></li>
+            <li><a href="/websites/seos-energy">SEOS Energy</a></li>
+            <li><a href="https://belveragency.com/hacerk/" target="_blank" rel="noopener noreferrer">HacerK</a></li>
+            <li><a href="https://belveragency.com/" target="_blank" rel="noopener noreferrer">Belver Agency</a></li>
+            <li><a href="https://belveragency.com/harmonisystems/" target="_blank" rel="noopener noreferrer">Harmoni Systems</a></li>
+            <li><a href="https://cliqinfluence.com/" target="_blank" rel="noopener noreferrer">CLIQ</a></li>
+            <li><a href="/websites/unicol-mayor">UNICOL MAYOR</a></li>
+          </ul>
+        </div></div>
+      </article>
+
+      <article class="work-card" data-card="ux" tabindex="0" aria-expanded="false">
+        <header class="work-head">
+          <span class="work-icon"><i data-lucide="pen-tool"></i></span>
+          <h2>UX/UI &amp; Product Design</h2>
+          <span class="work-count">6</span>
+        </header>
+        <div class="work-body"><div class="work-inner">
+          <div class="work-preview pv-ux" aria-hidden="true">
+            <!-- 1. Sitemap -->
+            <div class="pv-scene" style="--s:0">
+              <div class="ux-map">
+                <b class="n0">Home</b>
+                <div class="ux-map-row"><b style="--d:1">Programas</b><b style="--d:2">Admisiones</b><b style="--d:3">Institución</b></div>
+                <div class="ux-map-row sm"><b style="--d:4"></b><b style="--d:4"></b><b style="--d:5"></b><b style="--d:5"></b><b style="--d:6"></b><b style="--d:6"></b></div>
+              </div>
+            </div>
+            <!-- 2. Card sorting -->
+            <div class="pv-scene" style="--s:1">
+              <div class="ux-sort">
+                <div class="ux-col"><span>Renting</span><b style="--d:1;--x:150px;--y:40px">Computadores</b><b style="--d:2;--x:120px;--y:-10px">Celulares</b><b style="--d:3;--x:170px;--y:-40px">Maquinaria</b></div>
+                <div class="ux-col"><span>Crédito</span><b style="--d:2;--x:-140px;--y:30px">Capital de trabajo</b><b style="--d:3;--x:-170px;--y:-6px">Vehículos</b><b style="--d:4;--x:-120px;--y:-40px">Libre inversión</b></div>
+              </div>
+            </div>
+            <!-- 3. A/B testing -->
+            <div class="pv-scene" style="--s:2">
+              <div class="ux-ab">
+                <div class="ux-variant"><em>A</em><i></i><i></i><i class="cta"></i><div class="ux-meter"><span style="--w:38%"></span></div><small>3.8%</small></div>
+                <div class="ux-variant win"><em>B</em><i class="hero"></i><i class="cta"></i><i></i><div class="ux-meter"><span style="--w:72%"></span></div><small>7.2%</small></div>
+              </div>
+            </div>
+            <!-- 4. Prototyping: low, mid, high fidelity -->
+            <div class="pv-scene" style="--s:3">
+              <div class="ux-fid">
+                <div class="ux-phone">
+                  <div class="fid lo"><i></i><i></i><i></i><i></i></div>
+                  <div class="fid mid"><i></i><i></i><i></i><i></i></div>
+                  <div class="fid hi"><div class="hi-top">Simula tu arrendamiento</div><i></i><i></i><i class="cta"></i></div>
+                </div>
+                <div class="ux-fid-steps"><span class="s1">Low</span><span class="s2">Mid</span><span class="s3">High</span></div>
+              </div>
+            </div>
+            <!-- 5. Design system -->
+            <div class="pv-scene" style="--s:4">
+              <div class="ux-ds">
+                <div class="ux-swatches"><i style="--c:#071a3d;--d:1"></i><i style="--c:#19c3c3;--d:2"></i><i style="--c:#ffc93c;--d:3"></i><i style="--c:#e8f7f4;--d:4"></i></div>
+                <div class="ux-type" style="--d:3"><b>Aa</b><span>Display 48<br>Body 16</span></div>
+                <div class="ux-comps"><i class="btn" style="--d:4"></i><i class="btn ghost" style="--d:5"></i><i class="input" style="--d:5"></i><i class="toggle" style="--d:6"></i></div>
+              </div>
+            </div>
+            <!-- 6. Handoff -->
+            <div class="pv-scene" style="--s:5">
+              <div class="ux-hand">
+                <div class="ux-spec"><div class="ux-btn-spec">Simular</div><span class="red w">160</span><span class="red h">48</span></div>
+                <pre class="ux-code"><span style="--d:1">.btn {</span><span style="--d:2">  height: 48px;</span><span style="--d:3">  radius: 12px;</span><span style="--d:4">  bg: var(--sun);</span><span style="--d:5">}</span></pre>
+              </div>
+            </div>
+            <div class="pv-labels">
+              <span style="--s:0">Sitemap <em>UNICOL MAYOR</em></span>
+              <span style="--s:1">Card sorting <em>Rentek</em></span>
+              <span style="--s:2">A/B testing <em>SEOS Energy</em></span>
+              <span style="--s:3"><span data-i18n="work.proto">Prototyping</span> <em>Rentek</em></span>
+              <span style="--s:4">Design system <em>SEOS Studio</em></span>
+              <span style="--s:5">Handoff <em>Belver Agency</em></span>
+            </div>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="work-card" data-card="backend" tabindex="0" aria-expanded="false">
+        <header class="work-head">
+          <span class="work-icon"><i data-lucide="workflow"></i></span>
+          <h2 data-i18n="work.backend">Backend &amp; Integrations</h2>
+          <span class="work-count">5</span>
+        </header>
+        <div class="work-body"><div class="work-inner">
+          <div class="work-preview pv-be" aria-hidden="true">
+            <!-- 1. WhatsApp chatbot -->
+            <div class="pv-scene" style="--s:0">
+              <div class="be-wa">
+                <div class="be-wa-top"><i></i>SEOS Energy</div>
+                <p class="in" style="--d:1">¿Cuánto pagas de luz al mes?</p>
+                <p class="out" style="--d:2">$420.000</p>
+                <p class="in" style="--d:3">Ahorras ~$336.000 al mes ☀️</p>
+              </div>
+            </div>
+            <!-- 2. Database -->
+            <div class="pv-scene" style="--s:1">
+              <div class="be-db">
+                <svg viewBox="0 0 300 170" preserveAspectRatio="none"><path d="M96 40 H124"/><path d="M216 44 C236 44 236 30 244 30"/><path d="M216 84 C236 84 236 120 244 120"/><path d="M50 82 V132 H124"/></svg>
+                <div class="tbl t1" style="--d:1"><b>proyectos</b><i></i><i></i><i></i></div>
+                <div class="tbl t2" style="--d:2"><b>apu</b><i></i><i></i><i></i><i></i></div>
+                <div class="tbl t3" style="--d:3"><b>insumos</b><i></i><i></i></div>
+                <div class="tbl t4" style="--d:3"><b>cotizaciones</b><i></i><i></i></div>
+                <div class="tbl t5" style="--d:4"><b>clientes</b><i></i><i></i></div>
+              </div>
+            </div>
+            <!-- 3. CRM sync -->
+            <div class="pv-scene" style="--s:2">
+              <div class="be-crm">
+                <span class="line l1"></span><span class="line l2"></span><span class="line l3"></span>
+                <div class="hub">API</div>
+                <div class="crm c1">monday</div><div class="crm c2">HighLevel</div><div class="crm c3">HubSpot</div>
+                <i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i>
+              </div>
+            </div>
+            <!-- 4. n8n data transformations -->
+            <div class="pv-scene" style="--s:3">
+              <div class="be-flow">
+                <div class="node" style="--d:1"><i data-lucide="image"></i><span>Img → Text</span></div>
+                <div class="node" style="--d:2"><i data-lucide="audio-lines"></i><span>Text → Voice</span></div>
+                <div class="node" style="--d:3"><i data-lucide="file-json"></i><span>PDF → JSON</span></div>
+                <i class="pulse"></i>
+              </div>
+            </div>
+            <!-- 5. AI agents -->
+            <div class="pv-scene" style="--s:4">
+              <div class="be-ai">
+                <div class="model gpt">GPT</div>
+                <div class="agent"><i data-lucide="bot"></i></div>
+                <div class="model gem">Gemini</div>
+                <div class="stream"><i style="--d:1;--w:90%"></i><i style="--d:2;--w:70%"></i><i style="--d:3;--w:82%"></i><i style="--d:4;--w:50%"></i></div>
+              </div>
+            </div>
+            <div class="pv-labels">
+              <span style="--s:0"><span data-i18n="work.chatbot">WhatsApp chatbot</span> <em>SEOS Energy</em></span>
+              <span style="--s:1"><span data-i18n="work.db">Databases</span> <em>APU · F6 / SEOS Studio</em></span>
+              <span style="--s:2">CRM <em>Monday · GoHighLevel · HubSpot</em></span>
+              <span style="--s:3"><span data-i18n="work.n8n">n8n automations</span></span>
+              <span style="--s:4"><span data-i18n="work.agents">AI agents</span> <em>GPT · Gemini</em></span>
+            </div>
+          </div>
+        </div></div>
+      </article>
     </div>
   </section>
 
