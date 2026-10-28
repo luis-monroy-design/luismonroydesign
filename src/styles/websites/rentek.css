@@ -57,8 +57,8 @@
 }
 .rtk-hero h1 { color: #fff; font-size: clamp(38px, 5.4vw, 72px); line-height: 1.02; font-weight: 800; letter-spacing: -0.035em; max-width: 13ch; }
 .rtk-hero-copy > p { color: var(--lavender); font-size: 19px; margin-top: 24px; max-width: 30ch; }
-.rtk-hero-photo { margin-top: 40px; border-radius: 28px 28px 28px 120px; overflow: hidden; aspect-ratio: 16 / 10; border: 3px solid var(--yellow); }
-.rtk-hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 30%; }
+.rtk-hero-photo { margin-top: 40px; max-width: 560px; border-radius: 28px 28px 28px 120px; overflow: hidden; aspect-ratio: 631 / 620; border: 3px solid var(--yellow); }
+.rtk-hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
 /* Simulator */
 .rtk-sim {
